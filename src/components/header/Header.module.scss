@@ -1,0 +1,42 @@
+@import '../../styles/global.scss';
+
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  color: #fff;
+  background-color: #000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
+  display: flex;
+  list-style: none;
+}
+
+.item {
+  padding: 37px 0;
+}
+
+.link {
+  position: relative;
+  padding: 37px 21px;
+  text-transform: uppercase;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: calc(100% - 2px);
+    left: 21px;
+    background-color: #fff;
+    transition: all 0.2s linear;
+  }
+  &:hover::before {
+    width: calc(100% - 42px);
+  }
+}

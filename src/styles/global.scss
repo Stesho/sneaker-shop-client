@@ -1,0 +1,32 @@
+.container {
+  width: 1800px;
+  margin: 0 auto;
+}
+
+.btn {
+  position: relative;
+  padding: 13px 27px;
+  font-size: 12px;
+  border: 1px solid #fff;
+  color: #fff;
+  overflow: hidden;
+  &::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    transform: translateX(-50%);
+    top: 0;
+    left: 50%;
+    background: #fff;
+    transition: width 0.3s ease-in-out;
+  }
+  &:hover {
+    color: #000;
+  }
+  &:hover::before {
+    width: 110%;
+  }
+}
