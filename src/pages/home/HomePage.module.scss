@@ -1,0 +1,24 @@
+@import '../../styles/global.scss';
+
+.home {
+  padding: 90px 0 0 0;
+  margin: 0 0 700px 0;
+}
+
+.slideShow {
+  width: 100%;
+  height: calc(100vh - 90px);
+  overflow: hidden;
+  &__slide {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.brands {
+  display: flex;
+  justify-content: space-between;
+}
