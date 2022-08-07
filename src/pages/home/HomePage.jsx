@@ -32,15 +32,25 @@ const HomePage = () => {
           </div>
         </div>
         <div className={styles.container}>
-          <h2 className={styles.sliderHeader}>New arrivals</h2>
-          <Slider>
-            {cards.map((item) => {
-              return (
-                <ProductCard imgUrl={item.imgUrl} brand={item.brand} caption={item.caption} price={item.price} key={item.id}/>
-              )
-            })}
-          </Slider>
+          <div className={styles.slider}>
+            <h2 className={styles.slider__header}>New arrivals</h2>
+            <Slider>
+              {cards.map((item) => {
+                return (
+                  <ProductCard imgUrl={item.imgUrl} brand={item.brand} caption={item.caption} price={item.price} key={item.id}/>
+                )
+              })}
+            </Slider>
+          </div>
         </div>
+        <div className={styles.container}>
+          <div className={styles.brands}>
+            <BrandCard brandName={'Sergio Tacchini'} imgUrl={'brand4.jpg'} />
+            <BrandCard brandName={'Paper planes'} imgUrl={'brand5.jpg'} />
+            <BrandCard brandName={'Honor the gift'} imgUrl={'brand6.jpg'} />
+          </div>
+        </div>
+        <div className={styles.parallax}></div>
       </main>
     </div>
   );

@@ -1,11 +1,11 @@
 .card {
   padding: 10px;
   margin: 30px;
-  // border: 1px solid black;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.1s linear;
   &:hover {
-    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    box-shadow: 0px 0px 15px rgb(120, 120, 120);
     transform: scale(105%);
   }
   &__img {

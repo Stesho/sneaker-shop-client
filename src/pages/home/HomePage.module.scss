@@ -8,6 +8,7 @@
 .slideShow {
   width: 100%;
   height: calc(100vh - 90px);
+  margin: 0 0 10px 0;
   overflow: hidden;
   &__slide {
     display: block;
@@ -24,9 +25,21 @@
   padding: 40px 0;
 }
 
-.sliderHeader {
-  margin: 0 0 20px 0;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 20px;
+.slider {
+  padding: 40px 0;
+  &__header {
+    margin: 0 0 20px 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+}
+
+.parallax {
+  background-image: url('../../assets/img/homePage/parallax.jpg');
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
