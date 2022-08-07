@@ -1,0 +1,36 @@
+.slider {
+  // width: 700px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  &__frame {
+    position: relative;
+    overflow: hidden;
+  }
+  &__line {
+    display: flex;
+    transition: all 500ms;
+  }
+  &__controller {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0px 10px #36363626;
+    border: none;
+    border-radius: 50%;
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+      transform: scale(110%);
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      stroke: #0033a1; 
+      stroke-width: 2px;
+    }
+  }
+}

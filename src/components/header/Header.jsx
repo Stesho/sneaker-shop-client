@@ -23,9 +23,9 @@ const Header = () => {
             <li className={styles.item}><a href="#" className={styles.link}>search</a></li>
             <li className={styles.item}><a href="#" className={styles.link}>cart</a></li>
           </ul>
-          {/* <div className={styles.btn}>
+          <div className={styles.btn}>
             
-          </div> */}
+          </div>
         </div>
       </div>
     </header>

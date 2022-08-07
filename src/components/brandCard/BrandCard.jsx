@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './BrandCard.module.scss';
+import Button1 from '../button/Button1';
 
 const BrandCard = ({brandName, imgUrl}) => {
   return (
@@ -9,9 +10,7 @@ const BrandCard = ({brandName, imgUrl}) => {
         <div className={styles.brandCard__name}>
           {brandName}
         </div>
-        <div className={[styles.brandCard__btn, styles.btn].join(' ')}>
-          Shop now
-        </div>
+        <Button1>Shop now</Button1>
       </div>
     </div>
   );
