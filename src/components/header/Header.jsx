@@ -10,18 +10,18 @@ const Header = () => {
           
           </div>
           <ul className={styles.list}>
-            <li className={styles.item}><a href="#" className={styles.link}>mens</a></li>
-            <li className={styles.item}><a href="#" className={styles.link}>womans</a></li>
-            <li className={styles.item}><a href="#" className={styles.link}>kids</a></li>
-            <li className={styles.item}><a href="#" className={styles.link}>sale</a></li>
-            <li className={styles.item}><a href="#" className={styles.link}>contacts</a></li>
+            <li className={styles.item}><a href="#" className={styles.link}>Men's</a></li>
+            <li className={styles.item}><a href="#" className={styles.link}>Woman's</a></li>
+            <li className={styles.item}><a href="#" className={styles.link}>Kid's</a></li>
+            <li className={styles.item}><a href="#" className={styles.link}>Sale</a></li>
+            <li className={styles.item}><a href="#" className={styles.link}>Contacts</a></li>
           </ul>
         </div>
         <div className={styles.userBar}>
           <ul className={styles.list}>
-            <li className={styles.item}><a href="#" className={styles.link}>account</a></li>
-            <li className={styles.item}><a href="#" className={styles.link}>search</a></li>
-            <li className={styles.item}><a href="#" className={styles.link}>cart</a></li>
+            <li className={styles.item}><a href="#" className={styles.link}>Account</a></li>
+            <li className={styles.item}><a href="#" className={styles.link}>Search</a></li>
+            <li className={styles.item}><a href="#" className={styles.link}>Cart</a></li>
           </ul>
           <div className={styles.btn}>
             

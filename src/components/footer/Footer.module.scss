@@ -1,0 +1,46 @@
+@import '../../styles/global.scss'; 
+
+.footer {
+  padding: 40px 0;
+  background-color: #fff;
+  // background-color: red;
+  border-top: 1px solid #ddd;
+  font-size: 13px;
+  color: #6a6a6a;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
+  li {
+    margin: 0 0 12px 0;
+  }
+  a {
+    letter-spacing: 0;
+  }
+}
+
+.title3 {
+  margin: 0 0 20px 0;
+  color: #000;
+}
+
+.newsLetter {
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__input {
+    width: 350px;
+    padding: 12px 14px;
+    margin: 0 0 5px 0;
+    border: 1px solid #d0d0d0;
+    &:focus {
+      outline: none;
+      border-color: #000;
+    }
+  }
+}

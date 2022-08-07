@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './HomePage.module.scss';
 import BrandCard from '../../components/brandCard/BrandCard';
 import Slider from '../../components/slider/Slider';
-import ProductCard from '../../components/productCard/ProductCard'
+import ProductCard from '../../components/productCard/ProductCard';
 
 const HomePage = () => {
   const [cards, setCards] = useState([
@@ -33,7 +33,7 @@ const HomePage = () => {
         </div>
         <div className={styles.container}>
           <div className={styles.slider}>
-            <h2 className={styles.slider__header}>New arrivals</h2>
+            <h2 className={[styles.slider__header, styles.title2].join(' ')}>New arrivals</h2>
             <Slider>
               {cards.map((item) => {
                 return (
@@ -51,6 +51,13 @@ const HomePage = () => {
           </div>
         </div>
         <div className={styles.parallax}></div>
+        <div className={styles.container}>
+          <div className={styles.brands}>
+            <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
+            <BrandCard brandName={'Up nyc'} imgUrl={'brand2.jpg'} />
+            <BrandCard brandName={'Adidas'} imgUrl={'brand3.jpg'} />
+          </div>
+        </div>
       </main>
     </div>
   );

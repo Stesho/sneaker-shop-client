@@ -1,0 +1,14 @@
+.btn {
+  padding: 13px 27px;
+  text-transform: uppercase;
+  border: 1px solid #3498db;
+  background: none;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  color: #fff;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+}
+.btn:hover {
+  color: #3498db;
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
+}
