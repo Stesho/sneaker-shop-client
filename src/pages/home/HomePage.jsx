@@ -3,8 +3,18 @@ import styles from './HomePage.module.scss';
 import BrandCard from '../../components/brandCard/BrandCard';
 import Slider from '../../components/slider/Slider';
 import ProductCard from '../../components/productCard/ProductCard';
+import SlideShow from '../../components/slideShow/SlideShow';
+import Button2 from '../../components/button/Button2';
 
 const HomePage = () => {
+  const [slides, setSlides] = useState([
+    {id: 1, imgUrl: 'assets/img/homePage/slide1.jpg', checked: true},
+    {id: 2, imgUrl: 'assets/img/homePage/slide2.jpg', checked: false},
+    {id: 3, imgUrl: 'assets/img/homePage/slide3.jpg', checked: false},
+    {id: 4, imgUrl: 'assets/img/homePage/slide4.jpg', checked: false},
+    // {id: 5, imgUrl: 'assets/img/homePage/slide3.jpg'},
+  ]);
+
   const [cards, setCards] = useState([
     {id: 1, imgUrl: 'assets/img/products/nike_dm0521-101_01_400x.jpg', brand: 'Nike', caption: 'Nike Air Trainer 1 (White Midnight Navy)', price: '125$'},
     {id: 2, imgUrl: 'assets/img/products/puma_385629-01_400x.jpg', brand: 'Puma', caption: 'Blaze of Glory The Neverworn (Whisper White)', price: '140$'},
@@ -21,9 +31,9 @@ const HomePage = () => {
   return (
     <div className={styles.home}>
       <main className={styles.main}>
-        <div className={styles.slideShow}>
-          <img src={require('../../assets/img/homePage/slide1.jpg')} alt="sneakers" className={styles.slideShow__slide}/>
-        </div>
+        <SlideShow>
+          {slides}
+        </SlideShow>
         <div className={styles.container}>
           <div className={styles.brands}>
             <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
@@ -41,6 +51,9 @@ const HomePage = () => {
                 )
               })}
             </Slider>
+            <div className={styles.slider__btn}>
+              <Button2>View all products</Button2>
+            </div>
           </div>
         </div>
         <div className={styles.container}>

@@ -52,7 +52,6 @@ const Footer = () => {
             <input className={styles.newsLetter__input} placeholder="Email address" type="text" />
             <input className={styles.newsLetter__input} placeholder="Shoe size" type="text" />
             <Button2>Subscribe</Button2>
-            {/* <button className={styles.newsLetter__btn}>Subscribe</button> */}
           </form>
         </div>
       </div>
