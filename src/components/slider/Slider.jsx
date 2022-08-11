@@ -36,9 +36,9 @@ const Slider = ({children}) => {
   return (
     <div className={styles.slider}>
       <button className={[styles.slider__controller, styles.left].join(' ')} ref={btnL} onClick={() => setActive((cur) => cur - 1)}>
-        {/* <svg viewBox="0 0 100 100">
+        <svg viewBox="0 0 100 100">
           <path d="M 20,50 L 60,90 L 60,85 L 25,50  L 60,15 L 60,10 Z"></path>
-        </svg> */}
+        </svg>
       </button> 
       <div className={styles.slider__frame} ref={frame}>
         <div className={styles.slider__line} ref={line}>
@@ -52,9 +52,9 @@ const Slider = ({children}) => {
         </div>
       </div>
       <button className={[styles.slider__controller, styles.right].join(' ')} ref={btnR} onClick={() => setActive((cur) => cur + 1)}>
-        {/* <svg viewBox="0 0 100 100">
+        <svg viewBox="0 0 100 100">
           <path d="M 20,50 L 60,90 L 60,85 L 25,50  L 60,15 L 60,10 Z" transform="translate(100, 100) rotate(180) "></path>
-        </svg> */}
+        </svg>
       </button>
     </div>
   );
