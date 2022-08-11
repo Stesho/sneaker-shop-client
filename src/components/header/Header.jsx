@@ -8,8 +8,8 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <div className={styles.navBar}>
-          <div className={styles.navBar__logo}>
+        <div className={styles.navbar}>
+          <div className={styles.navbar__logo}>
             <NavLink to='/'><img src={require('../../assets/img/homePage/logo.jpg')} alt="Atmos logo" /></NavLink>
           </div>
           <ul className={styles.list}>
@@ -20,7 +20,7 @@ const Header = () => {
             <li className={styles.item}><a href="#footer" className={styles.link}>Contacts</a></li>
           </ul>
         </div>
-        <div className={styles.userBar}>
+        <div className={styles.userbar}>
           <ul className={styles.list}>
             <li className={styles.item}><a href="#" className={styles.link}>Account</a></li>
             <li className={styles.item}><a href="#" className={styles.link}>Search</a></li>

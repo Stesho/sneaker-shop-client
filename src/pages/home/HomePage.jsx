@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styles from './HomePage.module.scss';
+import SlideShow from '../../components/slideShow/SlideShow';
 import BrandCard from '../../components/brandCard/BrandCard';
 import Slider from '../../components/slider/Slider';
 import ProductCard from '../../components/productCard/ProductCard';
-import SlideShow from '../../components/slideShow/SlideShow';
 import Button2 from '../../components/button/Button2';
+import Parallax from '../../components/parallax/Parallax';
 import products from '../../assets/data/products.json';
 
 const HomePage = () => {
@@ -53,7 +54,7 @@ const HomePage = () => {
           <BrandCard brandName={'Honor the gift'} imgUrl={'brand6.jpg'} />
         </div>
       </section>
-      <section className={styles.parallax}></section>
+      <Parallax height={400} imgUrl={'parallax.jpg'}/>
       <section className={styles.brandsWrapper}>
         <div className={[styles.container, styles.brands].join(' ')}>
           <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
