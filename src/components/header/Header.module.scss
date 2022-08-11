@@ -48,3 +48,9 @@
     width: calc(100% - 42px);
   }
 }
+
+.active {
+  &::before {
+    width: calc(100% - 42px);
+  }
+}

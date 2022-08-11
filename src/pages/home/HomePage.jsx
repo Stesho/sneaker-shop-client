@@ -20,9 +20,11 @@ const HomePage = () => {
   return (
     <div className={styles.home}>
       <main className={styles.main}>
-        <SlideShow>
-          {slides}
-        </SlideShow>
+        <div className={styles.slideShow}>
+          <SlideShow>
+            {slides}
+          </SlideShow>
+        </div>
         <div className={styles.container}>
           <div className={styles.brands}>
             <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
