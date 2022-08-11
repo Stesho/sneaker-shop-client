@@ -9,7 +9,7 @@
   color: #6a6a6a;
 }
 
-.container {
+.content {
   display: flex;
   justify-content: space-between;
 }
@@ -61,4 +61,9 @@
       border-color: #000;
     }
   }
+}
+
+.author {
+  margin: 50px 0 0 0;
+  letter-spacing: 0.05rem;
 }
