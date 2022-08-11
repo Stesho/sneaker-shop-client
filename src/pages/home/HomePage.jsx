@@ -18,52 +18,50 @@ const HomePage = () => {
   const [productsCards, setProductsCards] = useState(products);
 
   return (
-    <div className={styles.home}>
-      <main className={styles.main}>
-        <div className={styles.slideShow}>
-          <SlideShow>
-            {slides}
-          </SlideShow>
+    <main className={styles.main}>
+      <section className={styles.slideShow}>
+        <SlideShow>
+          {slides}
+        </SlideShow>
+      </section>
+      <section className={styles.brandsWrapper}>
+        <div className={[styles.container, styles.brands].join(' ')}>
+          <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
+          <BrandCard brandName={'Up nyc'} imgUrl={'brand2.jpg'} />
+          <BrandCard brandName={'Adidas'} imgUrl={'brand3.jpg'} />
         </div>
-        <div className={styles.container}>
-          <div className={styles.brands}>
-            <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
-            <BrandCard brandName={'Up nyc'} imgUrl={'brand2.jpg'} />
-            <BrandCard brandName={'Adidas'} imgUrl={'brand3.jpg'} />
+      </section>
+      <section className={styles.sliderWrapper}>
+        <div className={[styles.container, styles.slider].join(' ')}>
+          <h2 className={[styles.slider__header, styles.title2].join(' ')}>New arrivals</h2>
+          <Slider>
+            {productsCards.map((item) => {
+              return (
+                <ProductCard imgUrl={item.imgUrl} brand={item.brand} caption={item.caption} price={item.price} key={item.id}/>
+              )
+            })}
+          </Slider>
+          <div className={styles.slider__btn}>
+            <Button2>View all products</Button2>
           </div>
         </div>
-        <div className={styles.container}>
-          <div className={styles.slider}>
-            <h2 className={[styles.slider__header, styles.title2].join(' ')}>New arrivals</h2>
-            <Slider>
-              {productsCards.map((item) => {
-                return (
-                  <ProductCard imgUrl={item.imgUrl} brand={item.brand} caption={item.caption} price={item.price} key={item.id}/>
-                )
-              })}
-            </Slider>
-            <div className={styles.slider__btn}>
-              <Button2>View all products</Button2>
-            </div>
-          </div>
+      </section>
+      <section className={styles.brandsWrapper}>
+        <div className={[styles.container, styles.brands].join(' ')}>
+          <BrandCard brandName={'Sergio Tacchini'} imgUrl={'brand4.jpg'} />
+          <BrandCard brandName={'Paper planes'} imgUrl={'brand5.jpg'} />
+          <BrandCard brandName={'Honor the gift'} imgUrl={'brand6.jpg'} />
         </div>
-        <div className={styles.container}>
-          <div className={styles.brands}>
-            <BrandCard brandName={'Sergio Tacchini'} imgUrl={'brand4.jpg'} />
-            <BrandCard brandName={'Paper planes'} imgUrl={'brand5.jpg'} />
-            <BrandCard brandName={'Honor the gift'} imgUrl={'brand6.jpg'} />
-          </div>
+      </section>
+      <section className={styles.parallax}></section>
+      <section className={styles.brandsWrapper}>
+        <div className={[styles.container, styles.brands].join(' ')}>
+          <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
+          <BrandCard brandName={'Up nyc'} imgUrl={'brand2.jpg'} />
+          <BrandCard brandName={'Adidas'} imgUrl={'brand3.jpg'} />
         </div>
-        <div className={styles.parallax}></div>
-        <div className={styles.container}>
-          <div className={styles.brands}>
-            <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
-            <BrandCard brandName={'Up nyc'} imgUrl={'brand2.jpg'} />
-            <BrandCard brandName={'Adidas'} imgUrl={'brand3.jpg'} />
-          </div>
-        </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 };
 

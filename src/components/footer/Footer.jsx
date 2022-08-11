@@ -4,10 +4,10 @@ import Button2 from '../button/Button2';
 
 const Footer = () => {
   return (
-    <div className={styles.footer} id="footer">
+    <footer className={styles.footer} id="footer">
       <div className={styles.container}>
         <div className={styles.content}>
-          <div className={styles.follow}>
+          <section className={styles.follow}>
             <h3 className={[styles.follow__header, styles.title3].join(' ')}>Follow us</h3>
             <ul className={[styles.follow__list, styles.list].join(' ')}>
               <li>
@@ -43,8 +43,8 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className={styles.about}>
+          </section>
+          <section className={styles.about}>
             <h3 className={[styles.about__header, styles.title3].join(' ')}>About us</h3>
             <ul className={[styles.about__list, styles.list].join(' ')}>
               <li className="">
@@ -54,8 +54,8 @@ const Footer = () => {
                 <a href="#">About us</a>
               </li>
             </ul>
-          </div>
-          <div className={styles.contacts}>
+          </section>
+          <section className={styles.contacts}>
             <h3 className={[styles.contacts__header, styles.title3].join(' ')}>Contacts</h3>
             <ul className={[styles.contacts__list, styles.list].join(' ')}>
               <li className="">
@@ -74,21 +74,21 @@ const Footer = () => {
                 <a href="">Email Signups</a>
               </li>
             </ul>
-          </div>
-          <div className={styles.newsLetter}>
+          </section>
+          <section className={styles.newsLetter}>
             <h3 className={[styles.contacts__header, styles.title3].join(' ')}>Newsletter</h3>
             <form className={styles.newsLetter__form} action="">
               <input className={styles.newsLetter__input} placeholder="Email address" type="text" />
               <input className={styles.newsLetter__input} placeholder="Shoe size" type="text" />
               <Button2>Subscribe</Button2>
             </form>
-          </div>
+          </section>
         </div>
         <div className={styles.author}>
           &copy; Steshenko Dmitry, 2022
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
