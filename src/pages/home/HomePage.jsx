@@ -16,7 +16,7 @@ const HomePage = () => {
     {id: 4, imgUrl: 'assets/img/homePage/slide4.jpg', checked: false},
   ]);
 
-  const [productsCards, setProductsCards] = useState(products);
+  const [productCards, setProductCards] = useState(products);
 
   return (
     <main className={styles.main}>
@@ -36,7 +36,7 @@ const HomePage = () => {
         <div className={[styles.container, styles.slider].join(' ')}>
           <h2 className={[styles.slider__header, styles.title2].join(' ')}>New arrivals</h2>
           <Slider>
-            {productsCards.map((item) => {
+            {productCards.map((item) => {
               return (
                 <ProductCard imgUrl={item.imgUrl} brand={item.brand} caption={item.caption} price={item.price} key={item.id}/>
               )
