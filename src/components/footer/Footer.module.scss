@@ -49,20 +49,6 @@
   }
 }
 
-.newsLetter {
-  &__input {
-    display: block;
-    width: 350px;
-    padding: 12px 14px;
-    margin: 0 0 5px 0;
-    border: 1px solid #d0d0d0;
-    &:focus {
-      outline: none;
-      border-color: #000;
-    }
-  }
-}
-
 .author {
   margin: 50px 0 0 0;
   letter-spacing: 0.05rem;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Collection.module.scss';
 import ProductCard from '../../components/productCard/ProductCard';
-// import products from '../../assets/data/products.json';
 import DoubleRangeInput from '../../components/doubleRangeInput/DoubleRangeInput';
+import Button2 from '../../components/button/Button2';
 
 const Collection = ({title, products}) => {
   const [brands, setBrands] = useState([
@@ -84,6 +84,10 @@ const Collection = ({title, products}) => {
                 )
               })}
             </ul>
+          </div>
+          <div className={styles.filter__btns}>
+            <Button2 className={styles.filter__btn}>Apply</Button2>
+            <Button2 className={styles.filter__btn}>Reset</Button2>
           </div>
         </div>
         <div className={styles.productsWrapper}>

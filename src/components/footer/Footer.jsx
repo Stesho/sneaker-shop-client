@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import Button2 from '../button/Button2';
+import Input from '../input/Input';
 
 const Footer = () => {
   return (
@@ -78,8 +79,8 @@ const Footer = () => {
           <section className={styles.newsLetter}>
             <h3 className={[styles.contacts__header, styles.title3].join(' ')}>Newsletter</h3>
             <form className={styles.newsLetter__form} action="">
-              <input className={styles.newsLetter__input} placeholder="Email address" type="text" />
-              <input className={styles.newsLetter__input} placeholder="Shoe size" type="text" />
+              <Input style={{marginBottom: '5px'}} placeholder="Email address" />
+              <Input style={{marginBottom: '5px'}} placeholder="Shoe size" />
               <Button2>Subscribe</Button2>
             </form>
           </section>
