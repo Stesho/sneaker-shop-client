@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './ProductCard.module.scss';
 
-const ProductCard = ({imgUrl, brand, caption, price}) => (
+const ProductCard = ({imgUrl, brand, model, price}) => (
   <div className={styles.card}>
     <div className={styles.card__img}>
-      <img src={require('../../' + imgUrl)} alt=""/>
+      <img src={require('../../assets/img/products/' + imgUrl)} alt=""/>
     </div>
     <div className={styles.card__brand}>{brand}</div>
-    <div className={styles.card__caption}>{caption}</div>
+    <div className={styles.card__caption}>{model}</div>
     <div className={styles.card__price}>{price}</div>
   </div>
 );

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styles from './Collection.module.scss';
 import ProductCard from '../../components/productCard/ProductCard';
-import products from '../../assets/data/products.json';
+// import products from '../../assets/data/products.json';
 import DoubleRangeInput from '../../components/doubleRangeInput/DoubleRangeInput';
 
-const Collection = () => {
-  const [productCards, setProductCards] = useState(products);
+const Collection = ({title, products}) => {
   const [brands, setBrands] = useState([
     'Adidas',
     'Converse',
@@ -18,10 +17,10 @@ const Collection = () => {
   ]);
   const minSize = 35;
   const maxSize = 47;
-
+  
   return (
     <main className={styles.main}>
-      <h2 className={[styles.title, styles.title2].join(' ')}>Men's collection</h2>
+      <h2 className={[styles.title, styles.title2].join(' ')}>{title}</h2>
       <div className={styles.toolbar}>
         <div className={styles.toolbar__layoutSwitcher}>
           <button className={styles.toolbar__switcher}>
@@ -41,7 +40,7 @@ const Collection = () => {
             <span className={styles.toolbar__colon}>:</span>
             <span className={styles.toolbar__sortType}>low to high</span>
             <svg viewBox="0 0 19 12">
-              <polyline fill="none" points="17 2 9.5 10 2 2" fill-rule="evenodd" stroke-width="2" stroke-linecap="square"></polyline>
+              <polyline fill="none" points="17 2 9.5 10 2 2" fillRule="evenodd" strokeWidth="2" strokeLinecap="square"></polyline>
             </svg>
           </div>
         </div>
@@ -50,9 +49,9 @@ const Collection = () => {
         <div className={styles.filter}>
           <div className={styles.filter__title}>
             <svg width="25" height="18" viewBox="0 0 25 18" fill="none" stroke="#000">
-              <line x1="1.5" y1="1.5" x2="23.5" y2="1.5" stroke-width="3" stroke-linecap="square"/>
-              <line x1="1.5" y1="9" x2="16" y2="9" stroke-width="3" stroke-linecap="square"/>
-              <line x1="1.5" y1="16.5" x2="6.83333" y2="16.5" stroke-width="3" stroke-linecap="square"/>
+              <line x1="1.5" y1="1.5" x2="23.5" y2="1.5" strokeWidth="3" strokeLinecap="square"/>
+              <line x1="1.5" y1="9" x2="16" y2="9" strokeWidth="3" strokeLinecap="square"/>
+              <line x1="1.5" y1="16.5" x2="6.83333" y2="16.5" strokeWidth="3" strokeLinecap="square"/>
             </svg>
             <h3 className={[styles.title3, styles.filter__titleCaption].join(' ')}>Filter</h3>
           </div>
@@ -66,8 +65,8 @@ const Collection = () => {
               {brands.map((item, i) => {
                 return (
                   <li>
-                    <input type="checkbox" className={styles.filter__brandsCheckbox} id={'brand' + i} name="brand" />
-                    <label for={'brand' + i}>{item}</label>
+                    <input type="checkbox" className={styles.filter__brandsCheckbox} id={'brand' + i} name="brand" key={i}/>
+                    <label htmlFor={'brand' + i}>{item}</label>
                   </li>
                 )
               })}
@@ -76,21 +75,21 @@ const Collection = () => {
           <div className={styles.filter__size}>
             <h3 className={styles.filter__sizeCaption}>Size</h3>
             <ul className={styles.filter__sizeList}>
-              {[...new Array(maxSize - minSize + 1)].map((item, i) => {
+              {[...new Array(maxSize - minSize + 1)].map((_, i) => {
                 return (
                   <li>
-                    <input type="checkbox" className={styles.filter__sizeCheckbox} id={'size' + i} name="brand" />
-                    <label for={'size' + i}>{minSize + i}</label>
+                    <input type="checkbox" className={styles.filter__sizeCheckbox} id={'size' + i} name="brand" key={i}/>
+                    <label htmlFor={'size' + i}>{minSize + i}</label>
                   </li>
                 )
               })}
             </ul>
           </div>
         </div>
-        <div className={styles.products}>
-          {productCards.map((item) => {
+        <div className={styles.productsWrapper}>
+          {products.map((item) => {
             return (
-              <ProductCard imgUrl={item.imgUrl} brand={item.brand} caption={item.caption} price={item.price} key={item.id}/>
+              <ProductCard imgUrl={item.imgUrl} brand={item.brand} model={item.model} price={item.price} key={item.id}/>
             )
           })}
         </div>

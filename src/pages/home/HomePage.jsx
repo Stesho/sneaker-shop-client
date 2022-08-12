@@ -38,7 +38,7 @@ const HomePage = () => {
           <Slider>
             {productCards.map((item) => {
               return (
-                <ProductCard imgUrl={item.imgUrl} brand={item.brand} caption={item.caption} price={item.price} key={item.id}/>
+                <ProductCard imgUrl={item.imgUrl} brand={item.brand} model={item.model} price={item.price} key={item.id}/>
               )
             })}
           </Slider>

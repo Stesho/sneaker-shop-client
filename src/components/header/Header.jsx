@@ -13,10 +13,10 @@ const Header = () => {
             <NavLink to='/'><img src={require('../../assets/img/homePage/logo.jpg')} alt="Atmos logo" /></NavLink>
           </div>
           <ul className={styles.list}>
-            <li className={styles.item}><NavLink to="/collection" className={setActive}>New arrivals</NavLink></li>
+            <li className={styles.item}><NavLink to="/" className={setActive}>New arrivals</NavLink></li>
             <li className={styles.item}><NavLink to="/" className={styles.link}>Brands</NavLink></li>
-            <li className={styles.item}><NavLink to="/" className={styles.link}>Men's</NavLink></li>
-            <li className={styles.item}><NavLink to="/" className={styles.link}>Women's</NavLink></li>
+            <li className={styles.item}><NavLink to="/mens" className={styles.link}>Men's</NavLink></li>
+            <li className={styles.item}><NavLink to="/womans" className={styles.link}>Women's</NavLink></li>
             <li className={styles.item}><a href="#footer" className={styles.link}>Contacts</a></li>
           </ul>
         </div>

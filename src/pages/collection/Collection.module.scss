@@ -69,6 +69,7 @@
 }
 
 .filter {
+  width: 350px;
   padding: 33px;
   &__title {
     display: flex;
@@ -126,7 +127,7 @@
   &__sizeList {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 8px;
   }
   &__sizeCheckbox {
     display: none;
@@ -147,9 +148,16 @@
   }
 }
 
+.productsWrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex: 1;
+  margin: 0 0 0 30px;
+}
+
 .products {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
