@@ -17,7 +17,7 @@ const Login = () => {
         </form>
         <div className={styles.login__create}>
           <span>Don't have an account? </span>
-          <NavLink to="/">Create one</NavLink>
+          <NavLink to="/register">Create one</NavLink>
         </div>
       </div>
     </main>

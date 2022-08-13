@@ -6,6 +6,7 @@ import Footer from './components/footer/Footer';
 import Collection from './pages/collection/Collection';
 import products from './assets/data/products.json';
 import Login from './pages/login/Login';
+import Register from './pages/register/Register';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
         <Route
           path="/login"
           element={<Login/>}
+        />
+        <Route
+          path="/register"
+          element={<Register/>}
         />
       </Routes>
       <Footer />
