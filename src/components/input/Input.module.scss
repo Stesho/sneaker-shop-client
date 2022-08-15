@@ -3,9 +3,10 @@
   width: 350px;
   padding: 12px 14px;
   border: 1px solid #d0d0d0;
+  color: var(--secondary-color);
   background: none;
   &:focus {
     outline: none;
-    border-color: #000;
+    border-color: var(--secondary-color);
   }
 }

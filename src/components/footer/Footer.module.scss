@@ -2,11 +2,10 @@
 
 .footer {
   padding: 40px 0;
-  background-color: #fff;
-  // background-color: red;
+  background-color: var(--primary-light-color);
   border-top: 1px solid #ddd;
   font-size: 13px;
-  color: #6a6a6a;
+  // color: var(--secondary-light-color);
 }
 
 .content {
@@ -21,31 +20,29 @@
   a {
     letter-spacing: 0;
     &:hover {
-      color: #000;
+      color: var(--secondary-color);
     }
   }
 }
 
 .title3 {
   margin: 0 0 20px 0;
-  color: #000;
 }
 
-.follow {
-  &__link {
-    display: flex;
-    align-items: center;
-    & svg {
-      width: 15px;
-      height: 15px;
-      fill: currentColor;
-    }
-    & span {
-      margin: 0 0 0 10px;
-    }
-    &:hover svg {
-      fill: #000; 
-    }
+.listItem {
+  display: flex;
+  align-items: center;
+  color: var(--secondary-light-color);
+  & svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+  }
+  & span {
+    margin: 0 0 0 10px;
+  }
+  &:hover svg {
+    fill: var(--secondary-color); 
   }
 }
 

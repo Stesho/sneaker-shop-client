@@ -48,7 +48,7 @@ const Collection = ({title, products}) => {
       <div className={styles.content}>
         <div className={styles.filter}>
           <div className={styles.filter__title}>
-            <svg width="25" height="18" viewBox="0 0 25 18" fill="none" stroke="#000">
+            <svg width="25" height="18" viewBox="0 0 25 18" fill="none">
               <line x1="1.5" y1="1.5" x2="23.5" y2="1.5" strokeWidth="3" strokeLinecap="square"/>
               <line x1="1.5" y1="9" x2="16" y2="9" strokeWidth="3" strokeLinecap="square"/>
               <line x1="1.5" y1="16.5" x2="6.83333" y2="16.5" strokeWidth="3" strokeLinecap="square"/>

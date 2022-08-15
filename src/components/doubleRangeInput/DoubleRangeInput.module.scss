@@ -26,8 +26,8 @@
   width: 70px;
   margin: 0 0 20px 0;
   font-size: 0.875rem;
-  background-color: #fff;
-  color: #0033a1;
+  background-color: var(--primary-light-color);
+  color: var(--neutral-color);
   border-radius: 5px;
 }
 
@@ -45,12 +45,10 @@
 .slider__track {
   background-color: #fff;
   width: 100%;
-  z-index: 1;
 }
 
 .slider__range {
-  background-color: #0033a1;
-  z-index: 2;
+  background-color: var(--neutral-color);
 }
 
 .thumb,
@@ -64,15 +62,15 @@
   position: absolute;
   height: 0px;
   width: 300px;
-  z-index: 3;
+  z-index: 1;
   outline: none;
 }
 
 .thumb::-webkit-slider-thumb {
   position: relative;
-  background-color: #f0f0f0;
+  background-color: var(--primary-color);
   border-radius: 50%;
-  border: 1px solid #0033a1;
+  border: 1px solid var(--neutral-color);
   height: 18px;
   width: 18px;
   margin-top: 53px;

@@ -26,23 +26,23 @@
     padding: 10px;
     cursor: pointer;
     &:hover .slideShow__dot {
-      border-color: #006eff;
+      border-color: var(--hover-color);
     }
     &:active .slideShow__dot {
-      background-color: #006eff;
+      background-color: var(--hover-color);
     }
   }
   &__dot {
     width: 15px;
     height: 15px;
-    border: 2px solid #0033a1;
+    border: 2px solid var(--neutral-color);
     border-radius: 50%;
     cursor: pointer;
   }
 }
 
 .active {
-  background-color: #0033a1;
+  background-color: var(--neutral-color);
 }
 
 @keyframes toggle {

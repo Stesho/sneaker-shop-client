@@ -1,5 +1,4 @@
 .slider {
-  // width: 700px;
   display: flex;
   justify-content: space-between; 
   align-items: center;
@@ -26,11 +25,14 @@
     &:hover {
       transform: scale(110%);
     }
+    &:disabled {
+      visibility: hidden;
+    }
     svg {
       width: 20px;
       height: 20px;
-      stroke: #0033a1; 
-      stroke-width: 2px;
+      stroke: var(--neutral-color); 
+      stroke-width: 5px;
       pointer-events: none;
     }
   }

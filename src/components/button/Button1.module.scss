@@ -18,10 +18,10 @@
     transform: translate(-50%,-50%) rotate(45deg);
     z-index: -1;
     background: #fff;
-    transition: all 0.6s ease;
+    transition: all 0.7s ease;
   }
   &:hover::before{
-    height: 380%;
+    height: 500%;
   }
   &:hover {
     color: #000;

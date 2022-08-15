@@ -4,8 +4,8 @@
   width: 100%;
   position: fixed;
   z-index: 2;
-  color: #000;
-  background-color: #fff;
+  background-color: var(--primary-light-color);
+  color: var(--secondary-color);
   border-bottom: 1px solid #ddd;
 }
 
@@ -26,6 +26,11 @@
   display: flex;
 }
 
+.userbar {
+  display: flex;
+  align-items: center;
+}
+
 .item {
   padding: 37px 0;
 }
@@ -41,7 +46,7 @@
     height: 3px;
     top: calc(100% - 3px);
     left: 21px;
-    background-color: #000;
+    background-color: var(--secondary-color);
     transition: all 0.2s linear;
   }
   &:hover::before {
@@ -52,5 +57,43 @@
 .active {
   &::before {
     width: calc(100% - 42px);
+  }
+}
+
+.themeSwitcher {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 24px;
+  input {
+    display:none;
+  }
+  input:checked + &__btn {
+    background-color: var(--secondary-color);
+  }
+  input:checked + &__btn:before {
+    transform: translateX(36px);
+  }
+  &__btn {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 34px;
+    background-color: var(--secondary-color);
+    transition: 0.4s;
+    &:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      border-radius: 50%;
+      background-color: var(--primary-light-color);
+      transition: 0.4s;
+    }
   }
 }

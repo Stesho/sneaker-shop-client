@@ -1,33 +1,33 @@
 [
   {
     "id":1,
-    "imgUrl":"nike_dm0521-101_01_400x.jpg",
+    "imgUrl":"nike_dj3911-101_01_600x.jpg",
     "brand":"Nike",
-    "model":"Nike Air Trainer 1 (White Midnight Navy)",
-    "price":"125$",
+    "model":"AIR FORCE 1 LOW RETRO (WHITE | ROYAL BLUE | GUM YELLOW)",
+    "price":"150$",
     "gender":"male"
   },
   {
-    "id": 2,
-    "imgUrl":"puma_385629-01_400x.jpg",
-    "brand":"Puma",
-    "model":"Blaze of Glory The Neverworn (Whisper White)",
-    "price":"140$",
+    "id":2,
+    "imgUrl":"newbalance_M990TF3_01_600x.jpg",
+    "brand":"New balance",
+    "model":"MADE IN USA 990V3 (SCARLET)",
+    "price":"200$",
     "gender":"male"
   },
   {
-    "id": 3,
-    "imgUrl":"reebok_gz4935_01_400x.jpg",
-    "brand":"Reebok",
-    "model":"Club C Geo Mid (White | Chalk | Dark Green)",
-    "price":"100$",
+    "id":3,
+    "imgUrl":"newbalance_M990GR1_01_600x.jpg",
+    "brand":"New balance",
+    "model":"MADE IN USA 990 (GREY)",
+    "price":"175$",
     "gender":"male"
   },
   {
     "id":4,
-    "imgUrl":"reebok_gz4936_01_400x.jpg",
-    "brand":"Reebok",
-    "model":"Club C Geo Mid (Chalk | Flash Red | Vector Blue)",
+    "imgUrl":"nike_DH7561-100_01_600x.jpg",
+    "brand":"Nike",
+    "model":"NIKE AF1 '07 (WHITE | PECAN)",
     "price":"100$",
     "gender":"male"
   },
@@ -74,8 +74,8 @@
   {
     "id":10,
     "imgUrl":"converse_166800c_01_dc87be06-76d9-4035-9dc2-b00e4526b009_400x.jpg",
-    "brand":"WOMEN'S RUN STAR HIKE HI (BLACK | WHITE | GUM)",
-    "model":"model",
+    "brand":"Converse",
+    "model":"WOMEN'S RUN STAR HIKE HI (BLACK | WHITE | GUM)",
     "price":"100$",
     "gender":"female"
   }, 
@@ -121,33 +121,33 @@
   },
   {
     "id":16,
-    "imgUrl":"nike_dj3911-101_01_600x.jpg",
+    "imgUrl":"nike_dm0521-101_01_400x.jpg",
     "brand":"Nike",
-    "model":"AIR FORCE 1 LOW RETRO (WHITE | ROYAL BLUE | GUM YELLOW)",
-    "price":"150$",
+    "model":"Nike Air Trainer 1 (White Midnight Navy)",
+    "price":"125$",
     "gender":"male"
   },
   {
     "id":17,
-    "imgUrl":"newbalance_M990TF3_01_600x.jpg",
-    "brand":"New balance",
-    "model":"MADE IN USA 990V3 (SCARLET)",
-    "price":"200$",
+    "imgUrl":"puma_385629-01_400x.jpg",
+    "brand":"Puma",
+    "model":"Blaze of Glory The Neverworn (Whisper White)",
+    "price":"140$",
     "gender":"male"
   },
   {
     "id":18,
-    "imgUrl":"newbalance_M990GR1_01_600x.jpg",
-    "brand":"New balance",
-    "model":"MADE IN USA 990 (GREY)",
-    "price":"175$",
+    "imgUrl":"reebok_gz4935_01_400x.jpg",
+    "brand":"Reebok",
+    "model":"Club C Geo Mid (White | Chalk | Dark Green)",
+    "price":"100$",
     "gender":"male"
   },
   {
     "id":19,
-    "imgUrl":"nike_DH7561-100_01_600x.jpg",
-    "brand":"Nike",
-    "model":"NIKE AF1 '07 (WHITE | PECAN)",
+    "imgUrl":"reebok_gz4936_01_400x.jpg",
+    "brand":"Reebok",
+    "model":"Club C Geo Mid (Chalk | Flash Red | Vector Blue)",
     "price":"100$",
     "gender":"male"
   }
