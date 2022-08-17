@@ -21,10 +21,10 @@
     font-size: 13px;
     letter-spacing: normal;
     span {
-      color: #6a6a6a;
+      color: var(--secondary-light-color);
     }
     a:hover {
-      color: #6a6a6a;
+      color: var(--hover-color);
     }
   }
 }

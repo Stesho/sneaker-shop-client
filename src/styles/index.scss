@@ -7,8 +7,10 @@
   --navy-blue-200: #006eff;
   --navy-blue-100: #d5e7ff;
 
-  --dark-grey-200: #2C3333;
-  --dark-grey-100: #404747;
+  --dark-grey-200: #1e1e1c;
+  // --dark-grey-200: #2C3333;
+  --dark-grey-100: #272822;
+  // --dark-grey-100: #404747;
   --blue-400: #395B64;
   --blue-300: #566869;
   --blue-200: #A5C9CA;
@@ -24,7 +26,7 @@ html[color-theme="light"] {
   --secondary-color: var(--black);
   --secondary-light-color: var(--grey-200);
   --neutral-color: var(--navy-blue-300);
-  --neutral-addition-color: var(--white);
+  --neutral-additional-color: var(--white);
   --hover-color: var(--navy-blue-200);
   --hover-additional-color: var(--navy-blue-100);
   --shadow: var(--dark-shadow);
@@ -36,7 +38,7 @@ html[color-theme="dark"] {
   --secondary-color: var(--blue-200);
   --secondary-light-color: var(--blue-100);
   --neutral-color: var(--blue-200);
-  --neutral-addition-color: var(--blue-400);
+  --neutral-additional-color: var(--blue-400);
   --hover-color: var(--navy-blue-100);
   --hover-additional-color: var(--blue-300);
   --shadow: var(--light-shadow);

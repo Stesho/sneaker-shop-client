@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import HomePage from './pages/home/HomePage';
 import Header from './components/header/Header';
@@ -14,8 +14,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage/>} />
-        <Route 
-          path="/mens" 
+        <Route path="/newarrivals" element={<HomePage/>} />
+        <Route path="/brands" element={<HomePage/>} />
+        <Route
+          path="/mens"
           element={<Collection title={"Men's collection"} products={products.filter((item) => item.gender === 'male')}/>}
         />
         <Route

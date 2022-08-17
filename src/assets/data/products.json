@@ -4,7 +4,7 @@
     "imgUrl":"nike_dj3911-101_01_600x.jpg",
     "brand":"Nike",
     "model":"AIR FORCE 1 LOW RETRO (WHITE | ROYAL BLUE | GUM YELLOW)",
-    "price":"150$",
+    "price":"150",
     "gender":"male"
   },
   {
@@ -12,7 +12,7 @@
     "imgUrl":"newbalance_M990TF3_01_600x.jpg",
     "brand":"New balance",
     "model":"MADE IN USA 990V3 (SCARLET)",
-    "price":"200$",
+    "price":"200",
     "gender":"male"
   },
   {
@@ -20,7 +20,7 @@
     "imgUrl":"newbalance_M990GR1_01_600x.jpg",
     "brand":"New balance",
     "model":"MADE IN USA 990 (GREY)",
-    "price":"175$",
+    "price":"175",
     "gender":"male"
   },
   {
@@ -28,7 +28,7 @@
     "imgUrl":"nike_DH7561-100_01_600x.jpg",
     "brand":"Nike",
     "model":"NIKE AF1 '07 (WHITE | PECAN)",
-    "price":"100$",
+    "price":"100",
     "gender":"male"
   },
   {
@@ -36,7 +36,7 @@
     "imgUrl":"reebok_GX4475_01_400x.jpg",
     "brand":"Reebok",
     "model":"Beatnik Mox (Alabaster | Black | Clascobal)",
-    "price":"130$",
+    "price":"130",
     "gender":"male"
   },
   {
@@ -44,7 +44,7 @@
     "imgUrl":"reebok_GX4480_01_400x.jpg",
     "brand":"Reebok",
     "model":"Beatnik Moc (Court Blue | Black)",
-    "price":"130$",
+    "price":"130",
     "gender":"male"
   },
   {
@@ -52,7 +52,7 @@
     "imgUrl":"converse_a0187c_01_400x.jpg",
     "brand":"Converse",
     "model":"Peanuts x Converse Chuck 70 Hi (Soba | Zink Yellow)",
-    "price":"100$",
+    "price":"100",
     "gender":"female"
   },
   {
@@ -60,7 +60,7 @@
     "imgUrl":"jordan_CT8532-008_01_400x.jpg",
     "brand":"Jordan",
     "model":"Jordan 3 Retro (Black | Rush Orange)",
-    "price":"200$",
+    "price":"200",
     "gender":"male"
   },
   {
@@ -68,7 +68,7 @@
     "imgUrl":"converse_A01798c_01_400x.jpg",
     "brand":"Converse",
     "model":"Converse x Golf Chuck 70 OX (Egret | Corydalis Blue)",
-    "price":"100$",
+    "price":"100",
     "gender":"female"
   },
   {
@@ -76,7 +76,7 @@
     "imgUrl":"converse_166800c_01_dc87be06-76d9-4035-9dc2-b00e4526b009_400x.jpg",
     "brand":"Converse",
     "model":"WOMEN'S RUN STAR HIKE HI (BLACK | WHITE | GUM)",
-    "price":"100$",
+    "price":"100",
     "gender":"female"
   }, 
   {
@@ -84,7 +84,7 @@
     "imgUrl":"newbalance_wtthierp6_01_600x.jpg",
     "brand":"New balance",
     "model":"FRESH FOAM HIERRO V6 GTX (GARNET)",
-    "price":"140$",
+    "price":"140",
     "gender":"female"
   },
   {
@@ -92,7 +92,7 @@
     "imgUrl":"nike-dm9461-100_01_600x.jpg",
     "brand":"Nike",
     "model":"AIR FORCE 1 (WHITE | SUMMIT WHITE | PHOTON DUST)",
-    "price":"110$",
+    "price":"110",
     "gender":"female"
   },
   {
@@ -100,7 +100,7 @@
     "imgUrl":"nike_dm8328-600_01_600x.jpg",
     "brand":"Nike",
     "model":"W'S AIR PRESTO (PINK OXFORD)",
-    "price":"130$",
+    "price":"130",
     "gender":"female"
   },
   {
@@ -108,7 +108,7 @@
     "imgUrl":"asics_1202a045-400_01_600x.jpg",
     "brand":"Asics",
     "model":"W'S GEL-MC PLUS (MONACO BLUE | VANILLA)",
-    "price":"100$",
+    "price":"100",
     "gender":"female"
   },
   {
@@ -116,7 +116,7 @@
     "imgUrl":"newbalance_U9060BRN_01_600x.jpg",
     "brand":"New balance",
     "model":"NB 9060 (BROWN)",
-    "price":"150$",
+    "price":"150",
     "gender":"male"
   },
   {
@@ -124,7 +124,7 @@
     "imgUrl":"nike_dm0521-101_01_400x.jpg",
     "brand":"Nike",
     "model":"Nike Air Trainer 1 (White Midnight Navy)",
-    "price":"125$",
+    "price":"125",
     "gender":"male"
   },
   {
@@ -132,7 +132,7 @@
     "imgUrl":"puma_385629-01_400x.jpg",
     "brand":"Puma",
     "model":"Blaze of Glory The Neverworn (Whisper White)",
-    "price":"140$",
+    "price":"140",
     "gender":"male"
   },
   {
@@ -140,7 +140,7 @@
     "imgUrl":"reebok_gz4935_01_400x.jpg",
     "brand":"Reebok",
     "model":"Club C Geo Mid (White | Chalk | Dark Green)",
-    "price":"100$",
+    "price":"100",
     "gender":"male"
   },
   {
@@ -148,7 +148,7 @@
     "imgUrl":"reebok_gz4936_01_400x.jpg",
     "brand":"Reebok",
     "model":"Club C Geo Mid (Chalk | Flash Red | Vector Blue)",
-    "price":"100$",
+    "price":"100",
     "gender":"male"
   }
 ]

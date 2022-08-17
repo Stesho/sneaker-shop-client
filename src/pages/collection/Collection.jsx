@@ -1,22 +1,65 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Collection.module.scss';
 import ProductCard from '../../components/productCard/ProductCard';
 import DoubleRangeInput from '../../components/doubleRangeInput/DoubleRangeInput';
 import Button2 from '../../components/button/Button2';
+import { parseCommandLine } from 'typescript';
 
 const Collection = ({title, products}) => {
-  const [brands, setBrands] = useState([
-    'Adidas',
-    'Converse',
-    'New balance',
-    'Nike',
-    'Saucony',
-    'Puma',
-    'Reebok',
-    'Jordan',
+  const [productCards, setProductCards] = useState(products);
+  const [brandNames, setBrandNames] = useState([
+    {id: 1, brand: 'Adidas'},
+    {id: 2, brand: 'Converse'},
+    {id: 3, brand: 'New balance'},
+    {id: 4, brand: 'Nike'},
+    {id: 5, brand: 'Saucony'},
+    {id: 6, brand: 'Puma'},
+    {id: 7, brand: 'Reebok'},
+    {id: 8, brand: 'Jordan'},
   ]);
+  const [filterParam, setFilterParam] = useState({
+    minPrice: 0,
+    maxPrice: 1000,
+    brands: [],
+    sizes: [],
+  });
+  // [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
   const minSize = 35;
   const maxSize = 47;
+  
+  const filterItems = () => {
+    setProductCards([...products].filter((item) => {
+      return (
+        item.price >= filterParam.minPrice &&
+        item.price <= filterParam.maxPrice &&
+        filterParam.brands.indexOf(item.brand) !== -1
+        // filterParam.sizes.indexOf(item.size) !== -1
+      )
+    }));
+  }
+
+  const addBrandToFilter = (brand) => {
+    if (filterParam.brands.indexOf(brand) === -1) {
+      setFilterParam({...filterParam, brands: [...filterParam.brands, brand]});
+      console.log('no');
+      console.log({...filterParam, brands: [...filterParam.brands, brand]});
+    }
+    else {
+      setFilterParam({...filterParam, brands: [...filterParam.brands.splice(filterParam.brands.indexOf(brand), 1)]});
+      const newarr = filterParam.brands.slice();
+      console.log('yes');
+      newarr.splice(newarr.indexOf(brand), 1);
+      console.log({...filterParam, brands: newarr});
+    }
+  }
+
+  const addSizeToFilter = (size) => {
+    setFilterParam({...filterParam, sizes: [...filterParam.sizes, size]});
+  }
+
+  useEffect(() => {
+    setProductCards(products);
+  }, [products]);
   
   return (
     <main className={styles.main}>
@@ -57,16 +100,22 @@ const Collection = ({title, products}) => {
           </div>
           <div className={styles.filter__price}>
             <h3 className={styles.filter__priceCaption}>Price</h3>
-            <DoubleRangeInput min={0} max={1000} onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}/>
+            <DoubleRangeInput min={0} max={300} onChange={({min, max}) => setFilterParam({...filterParam, minPrice: min, maxPrice: max})}/>
           </div>
           <div className={styles.filter__brands}>
             <h3 className={styles.filter__brandsCaption}>Brands</h3>
             <ul>
-              {brands.map((item, i) => {
+              {brandNames.map((item, i) => {
                 return (
-                  <li>
-                    <input type="checkbox" className={styles.filter__brandsCheckbox} id={'brand' + i} name="brand" key={i}/>
-                    <label htmlFor={'brand' + i}>{item}</label>
+                  <li key={item.id}>
+                    <input 
+                      type="checkbox" 
+                      className={styles.filter__brandsCheckbox}
+                      id={'brand' + i}
+                      name="brand"
+                      onChange={() => addBrandToFilter(item.brand)}
+                    />
+                    <label htmlFor={'brand' + i}>{item.brand}</label>
                   </li>
                 )
               })}
@@ -75,10 +124,16 @@ const Collection = ({title, products}) => {
           <div className={styles.filter__size}>
             <h3 className={styles.filter__sizeCaption}>Size</h3>
             <ul className={styles.filter__sizeList}>
-              {[...new Array(maxSize - minSize + 1)].map((_, i) => {
+              {[...new Array(maxSize - minSize + 1)].map((item, i) => {
                 return (
-                  <li>
-                    <input type="checkbox" className={styles.filter__sizeCheckbox} id={'size' + i} name="brand" key={i}/>
+                  <li key={i}>
+                    <input 
+                      type="checkbox"
+                      className={styles.filter__sizeCheckbox}
+                      id={'size' + i}
+                      name="brand"
+                      onChange={() => addSizeToFilter(minSize + i)}
+                    />
                     <label htmlFor={'size' + i}>{minSize + i}</label>
                   </li>
                 )
@@ -86,16 +141,21 @@ const Collection = ({title, products}) => {
             </ul>
           </div>
           <div className={styles.filter__btns}>
-            <Button2 className={styles.filter__btn}>Apply</Button2>
+            <Button2 
+              className={styles.filter__btn}
+              onClick={() => filterItems()}
+            >
+              Apply
+            </Button2>
             <Button2 className={styles.filter__btn}>Reset</Button2>
           </div>
         </div>
         <div className={styles.productsWrapper}>
-          {products.map((item) => {
+          {productCards.map((item) => {
             return (
               <ProductCard imgUrl={item.imgUrl} brand={item.brand} model={item.model} price={item.price} key={item.id}/>
             )
-          })}
+          })}  
         </div>
       </div>
     </main>
