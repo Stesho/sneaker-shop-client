@@ -5,6 +5,12 @@ import DoubleRangeInput from '../../components/doubleRangeInput/DoubleRangeInput
 import Button2 from '../../components/button/Button2';
 import { parseCommandLine } from 'typescript';
 
+//TODO: Loader
+//TODO: No products
+//TODO: Checkboxes
+//TODO: Reset
+//TODO: set theme to the local storage
+
 const Collection = ({title, products}) => {
   const [productCards, setProductCards] = useState(products);
   const [brandNames, setBrandNames] = useState([
@@ -37,106 +43,39 @@ const Collection = ({title, products}) => {
     const minPrice = filterParam.minPrice;
     const maxPrice = filterParam.maxPrice;
 
-    if (brands.length === 0 && sizes.length !== 0) {
-      setProductCards([...products].filter((item) => {
-        return (
-          item.price >= minPrice &&
-          item.price <= maxPrice &&
-          sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
-        )
-      }));
-    }
-    else if (brands.length !== 0 && sizes.length === 0) {
-      setProductCards([...products].filter((item) => {
-        return (
-          item.price >= minPrice &&
-          item.price <= maxPrice &&
-          brands.indexOf(item.brand) !== -1
-        )
-      }));
-    }
-    else if (brands.length === 0 && sizes.length === 0) {
-      setProductCards([...products].filter((item) => {
-        return (
-          item.price >= minPrice &&
-          item.price <= maxPrice
-        )
-      }));
-    }
-    else {
-      setProductCards([...products].filter((item) => {
-        return (
-          item.price >= minPrice &&
-          item.price <= maxPrice &&
-          brands.indexOf(item.brand) !== -1 &&
-          sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
-        )
-      }));
-    }
+    console.log(filterParam);
+
+    setProductCards([...products].filter((item) => {
+      let condition;
+      if (brands.length === 0 && sizes.length !== 0) {
+        condition = sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
+      }
+      else if (brands.length !== 0 && sizes.length === 0) {
+        condition = brands.indexOf(item.brand) !== -1
+      }
+      else if (brands.length === 0 && sizes.length === 0) {
+        condition = true;
+      }
+      else {
+        condition = brands.indexOf(item.brand) !== -1 && sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
+      }
+      return (
+        item.price >= minPrice &&
+        item.price <= maxPrice &&
+        condition
+      )
+    }));
   }
 
-  // const filterItems = () => {
-  //   const brands = filterParam.brands; 
-  //   if (filterParam.brands.length === 0 && filterParam.sizes.length !== 0) {
-  //     setProductCards([...products].filter((item) => {
-  //       return (
-  //         item.price >= filterParam.minPrice &&
-  //         item.price <= filterParam.maxPrice &&
-  //         filterParam.sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
-  //       )
-  //     }));
-  //   }
-  //   else if (filterParam.brands.length !== 0 && filterParam.sizes.length === 0) {
-  //     setProductCards([...products].filter((item) => {
-  //       return (
-  //         item.price >= filterParam.minPrice &&
-  //         item.price <= filterParam.maxPrice &&
-  //         filterParam.brands.indexOf(item.brand) !== -1
-  //       )
-  //     }));
-  //   }
-  //   else if (filterParam.brands.length === 0 && filterParam.sizes.length === 0) {
-  //     setProductCards([...products].filter((item) => {
-  //       return (
-  //         item.price >= filterParam.minPrice &&
-  //         item.price <= filterParam.maxPrice
-  //       )
-  //     }));
-  //   }
-  //   else {
-  //     setProductCards([...products].filter((item) => {
-  //       return (
-  //         item.price >= filterParam.minPrice &&
-  //         item.price <= filterParam.maxPrice &&
-  //         filterParam.brands.indexOf(item.brand) !== -1 &&
-  //         filterParam.sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
-  //       )
-  //     }));
-
-  //   }
-  // }
-
-  const addBrandToFilter = (brand) => {
-    if (filterParam.brands.indexOf(brand) === -1) {
-      const newBrands = [...filterParam.brands, brand]
-      setFilterParam({...filterParam, brands: newBrands});
+  const addToFilter = (parameter, value) => {
+    if (filterParam[parameter].indexOf(value) === -1) {
+      const newArr = [...filterParam[parameter], value];
+      setFilterParam({...filterParam, [parameter]: newArr});
     }
     else {
-      const newBrands = filterParam.brands.slice();
-      newBrands.splice(newBrands.indexOf(brand), 1);
-      setFilterParam({...filterParam, brands: newBrands});
-    }
-  }
-
-  const addSizeToFilter = (size) => {
-    if (filterParam.sizes.indexOf(size) === -1) {
-      const newSizes = [...filterParam.sizes, size]
-      setFilterParam({...filterParam, sizes: newSizes});
-    }
-    else {
-      const newSizes = filterParam.sizes.slice();
-      newSizes.splice(newSizes.indexOf(size), 1);
-      setFilterParam({...filterParam, sizes: newSizes});
+      const newArr = filterParam[parameter].slice();
+      newArr.splice(newArr.indexOf(value), 1);
+      setFilterParam({...filterParam, [parameter]: newArr});
     }
   }
 
@@ -196,7 +135,7 @@ const Collection = ({title, products}) => {
                       className={styles.filter__brandsCheckbox}
                       id={'brand' + i}
                       name="brand"
-                      onChange={() => addBrandToFilter(item.brand)}
+                      onChange={() => addToFilter('brands', item.brand)}
                     />
                     <label htmlFor={'brand' + i}>{item.brand}</label>
                   </li>
@@ -215,7 +154,7 @@ const Collection = ({title, products}) => {
                       className={styles.filter__sizeCheckbox}
                       id={'size' + i}
                       name="brand"
-                      onChange={() => addSizeToFilter(minSize + i/2)}
+                      onChange={() => addToFilter('sizes', minSize + i/2)}
                     />
                     <label htmlFor={'size' + i}>{minSize + i/2}</label>
                   </li>
