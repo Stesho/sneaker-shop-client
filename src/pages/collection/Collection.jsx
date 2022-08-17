@@ -40,16 +40,15 @@ const Collection = ({title, products}) => {
 
   const addBrandToFilter = (brand) => {
     if (filterParam.brands.indexOf(brand) === -1) {
-      setFilterParam({...filterParam, brands: [...filterParam.brands, brand]});
-      console.log('no');
-      console.log({...filterParam, brands: [...filterParam.brands, brand]});
+      const newBrands = [...filterParam.brands, brand]
+      setFilterParam({...filterParam, brands: newBrands});
+      console.log({...filterParam, brands: newBrands});
     }
     else {
-      setFilterParam({...filterParam, brands: [...filterParam.brands.splice(filterParam.brands.indexOf(brand), 1)]});
-      const newarr = filterParam.brands.slice();
-      console.log('yes');
-      newarr.splice(newarr.indexOf(brand), 1);
-      console.log({...filterParam, brands: newarr});
+      const newBrands = filterParam.brands.slice();
+      newBrands.splice(newBrands.indexOf(brand), 1);
+      setFilterParam({...filterParam, brands: newBrands});
+      console.log({...filterParam, brands: newBrands});
     }
   }
 
