@@ -30,18 +30,91 @@ const Collection = ({title, products}) => {
   });
   const minSize = 35;
   const maxSize = 47;
-  
+
   const filterItems = () => {
-    setProductCards([...products].filter((item) => {
-      console.log(filterParam.sizes.some((elem) => item.sizes.indexOf(elem) !== -1));
-      return (
-        item.price >= filterParam.minPrice &&
-        item.price <= filterParam.maxPrice &&
-        filterParam.brands.indexOf(item.brand) !== -1 &&
-        filterParam.sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
-      )
-    }));
+    const brands = filterParam.brands; 
+    const sizes = filterParam.sizes;
+    const minPrice = filterParam.minPrice;
+    const maxPrice = filterParam.maxPrice;
+
+    if (brands.length === 0 && sizes.length !== 0) {
+      setProductCards([...products].filter((item) => {
+        return (
+          item.price >= minPrice &&
+          item.price <= maxPrice &&
+          sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
+        )
+      }));
+    }
+    else if (brands.length !== 0 && sizes.length === 0) {
+      setProductCards([...products].filter((item) => {
+        return (
+          item.price >= minPrice &&
+          item.price <= maxPrice &&
+          brands.indexOf(item.brand) !== -1
+        )
+      }));
+    }
+    else if (brands.length === 0 && sizes.length === 0) {
+      setProductCards([...products].filter((item) => {
+        return (
+          item.price >= minPrice &&
+          item.price <= maxPrice
+        )
+      }));
+    }
+    else {
+      setProductCards([...products].filter((item) => {
+        return (
+          item.price >= minPrice &&
+          item.price <= maxPrice &&
+          brands.indexOf(item.brand) !== -1 &&
+          sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
+        )
+      }));
+    }
   }
+
+  // const filterItems = () => {
+  //   const brands = filterParam.brands; 
+  //   if (filterParam.brands.length === 0 && filterParam.sizes.length !== 0) {
+  //     setProductCards([...products].filter((item) => {
+  //       return (
+  //         item.price >= filterParam.minPrice &&
+  //         item.price <= filterParam.maxPrice &&
+  //         filterParam.sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
+  //       )
+  //     }));
+  //   }
+  //   else if (filterParam.brands.length !== 0 && filterParam.sizes.length === 0) {
+  //     setProductCards([...products].filter((item) => {
+  //       return (
+  //         item.price >= filterParam.minPrice &&
+  //         item.price <= filterParam.maxPrice &&
+  //         filterParam.brands.indexOf(item.brand) !== -1
+  //       )
+  //     }));
+  //   }
+  //   else if (filterParam.brands.length === 0 && filterParam.sizes.length === 0) {
+  //     setProductCards([...products].filter((item) => {
+  //       return (
+  //         item.price >= filterParam.minPrice &&
+  //         item.price <= filterParam.maxPrice
+  //       )
+  //     }));
+  //   }
+  //   else {
+  //     setProductCards([...products].filter((item) => {
+  //       return (
+  //         item.price >= filterParam.minPrice &&
+  //         item.price <= filterParam.maxPrice &&
+  //         filterParam.brands.indexOf(item.brand) !== -1 &&
+  //         filterParam.sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
+  //       )
+  //     }));
+
+  //   }
+  // }
 
   const addBrandToFilter = (brand) => {
     if (filterParam.brands.indexOf(brand) === -1) {
@@ -64,7 +137,6 @@ const Collection = ({title, products}) => {
       const newSizes = filterParam.sizes.slice();
       newSizes.splice(newSizes.indexOf(size), 1);
       setFilterParam({...filterParam, sizes: newSizes});
-      console.log({...filterParam, sizes: newSizes});
     }
   }
 
