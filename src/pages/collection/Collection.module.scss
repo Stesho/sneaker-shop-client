@@ -128,13 +128,19 @@
   &__sizeList {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 8px 18px;
   }
   &__sizeCheckbox {
     display: none;
     &+label {
-      display: block;
-      padding: 5px 10px;
+      // display: block;
+      // padding: 5px 10px;
+      height: 26px;
+      width: 57px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       background-color: var(--primary-light-color);
       border-radius: 5px;
       cursor: pointer;

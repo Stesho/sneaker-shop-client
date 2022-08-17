@@ -17,23 +17,28 @@ const Collection = ({title, products}) => {
     {id: 7, brand: 'Reebok'},
     {id: 8, brand: 'Jordan'},
   ]);
+  const sizes = [35, 35.5, 36, 36.5, 37, 37.5,
+                 38, 38.5, 39, 39.5, 40, 40.5,
+                 41, 41.5, 42, 42.5, 43, 43.5,
+                 44, 44.5, 45, 45.5, 46, 46.5,
+                 47, 47.5]; 
   const [filterParam, setFilterParam] = useState({
     minPrice: 0,
     maxPrice: 1000,
     brands: [],
     sizes: [],
   });
-  // [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
   const minSize = 35;
   const maxSize = 47;
   
   const filterItems = () => {
     setProductCards([...products].filter((item) => {
+      console.log(filterParam.sizes.some((elem) => item.sizes.indexOf(elem) !== -1));
       return (
         item.price >= filterParam.minPrice &&
         item.price <= filterParam.maxPrice &&
-        filterParam.brands.indexOf(item.brand) !== -1
-        // filterParam.sizes.indexOf(item.size) !== -1
+        filterParam.brands.indexOf(item.brand) !== -1 &&
+        filterParam.sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
       )
     }));
   }
@@ -42,18 +47,25 @@ const Collection = ({title, products}) => {
     if (filterParam.brands.indexOf(brand) === -1) {
       const newBrands = [...filterParam.brands, brand]
       setFilterParam({...filterParam, brands: newBrands});
-      console.log({...filterParam, brands: newBrands});
     }
     else {
       const newBrands = filterParam.brands.slice();
       newBrands.splice(newBrands.indexOf(brand), 1);
       setFilterParam({...filterParam, brands: newBrands});
-      console.log({...filterParam, brands: newBrands});
     }
   }
 
   const addSizeToFilter = (size) => {
-    setFilterParam({...filterParam, sizes: [...filterParam.sizes, size]});
+    if (filterParam.sizes.indexOf(size) === -1) {
+      const newSizes = [...filterParam.sizes, size]
+      setFilterParam({...filterParam, sizes: newSizes});
+    }
+    else {
+      const newSizes = filterParam.sizes.slice();
+      newSizes.splice(newSizes.indexOf(size), 1);
+      setFilterParam({...filterParam, sizes: newSizes});
+      console.log({...filterParam, sizes: newSizes});
+    }
   }
 
   useEffect(() => {
@@ -123,7 +135,7 @@ const Collection = ({title, products}) => {
           <div className={styles.filter__size}>
             <h3 className={styles.filter__sizeCaption}>Size</h3>
             <ul className={styles.filter__sizeList}>
-              {[...new Array(maxSize - minSize + 1)].map((item, i) => {
+              {[...new Array(2 * (maxSize - minSize) + 1)].map((item, i) => {
                 return (
                   <li key={i}>
                     <input 
@@ -131,9 +143,9 @@ const Collection = ({title, products}) => {
                       className={styles.filter__sizeCheckbox}
                       id={'size' + i}
                       name="brand"
-                      onChange={() => addSizeToFilter(minSize + i)}
+                      onChange={() => addSizeToFilter(minSize + i/2)}
                     />
-                    <label htmlFor={'size' + i}>{minSize + i}</label>
+                    <label htmlFor={'size' + i}>{minSize + i/2}</label>
                   </li>
                 )
               })}
