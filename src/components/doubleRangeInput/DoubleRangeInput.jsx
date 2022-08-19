@@ -1,79 +1,98 @@
-import React, { useCallback, useEffect, useState, useRef } from "react";
+import React from 'react';
+import { useRef, useState, useEffect } from 'react';
 import styles from './DoubleRangeInput.module.scss';
 
-const DoubleRangeInput = ({ min, max, onChange }) => {
-  const [minVal, setMinVal] = useState(min);
-  const [maxVal, setMaxVal] = useState(max);
-  const minValRef = useRef(min);
-  const maxValRef = useRef(max);
-  const range = useRef(null);
+const DoubleRangeInput = ({min, max, setMin, setMax, onChange}) => {
+  const [minVal, setMinVal] = useState();
+  const [maxVal, setMaxVal] = useState();
+  const [isOnFocus, setIsOnFocuse] = useState(false);
+  const track = useRef();
+  const step = 269.8/300;
 
-  // Convert to percentage
-  const getPercent = useCallback(
-    (value) => Math.round(((value - min) / (max - min)) * 100),
-    [min, max]
-  );
+  const moveLeftThumb = (minValue, maxValue) => {
+    track.current.style.left = `${minValue * step}px`;
+    track.current.style.width = `${(maxValue - minValue) * step}px`;
+    setMin(minValue);
+  }
 
-  // Set width of the range to decrease from the left side
+  const moveRightThumb = (minValue, maxValue) => {
+    track.current.style.width = `${(maxValue - minValue) * step}px`;
+    setMax(maxValue);
+  }
+
   useEffect(() => {
-    const minPercent = getPercent(minVal);
-    const maxPercent = getPercent(maxValRef.current);
-
-    if (range.current) {
-      range.current.style.left = `${minPercent}%`;
-      range.current.style.width = `${maxPercent - minPercent}%`;
+    if(min === 0 && max === 300) {
+      track.current.style.left = '0px';
+      track.current.style.width = '100%';
     }
-  }, [minVal, getPercent]);
+    setMinVal(min);
+    setMaxVal(max);
+  }, [min, max]);
 
-  // Set width of the range to decrease from the right side
   useEffect(() => {
-    const minPercent = getPercent(minValRef.current);
-    const maxPercent = getPercent(maxVal);
-
-    if (range.current) {
-      range.current.style.width = `${maxPercent - minPercent}%`;
-    }
-  }, [maxVal, getPercent]);
-
-  // Get min and max values when their state changes
-  useEffect(() => {
-    onChange({ min: minVal, max: maxVal });
-  }, [minVal, maxVal]);
+    onChange(Number(min), Number(max));
+  }, [min, max]);
 
   return (
-    <div className={styles.doubleRangeInput}>
+    <div className={styles.doubleInput}>
+      <div className={styles.doubleInput__values}>
+        <input 
+          type="text"
+          value={isOnFocus ? minVal : min}
+          onFocus={() => {
+            setIsOnFocuse(true);
+          }}
+          onChange={(event) => {
+            setMinVal(event.target.value);
+          }}
+          onBlur={(event) => {
+            setIsOnFocuse(false);
+            const value = Math.min(event.target.value, max);
+            moveLeftThumb(value, max);
+          }}
+        />
+        <input
+          type="text"
+          value={isOnFocus ? maxVal : max}
+          onFocus={() => {
+            setIsOnFocuse(true);
+          }}
+          onChange={(event) => {
+            setMaxVal(event.target.value);
+          }}
+          onBlur={(event) => {
+            setIsOnFocuse(false);
+            const value = Math.max(event.target.value, min);
+            value <= 300 ? moveRightThumb(min, value) : moveRightThumb(min, 300);
+          }}
+        />
+      </div>
       <input
+        className={styles.doubleInput__thumb}
         type="range"
-        min={min}
-        max={max}
-        value={minVal}
+        min={0}
+        max={300}
+        value={min}
         onChange={(event) => {
-          const value = Math.min(Number(event.target.value), maxVal - 1);
-          setMinVal(value);
-          minValRef.current = value;
+          const value = Math.min(Number(event.target.value), max);
+          moveLeftThumb(value, max);
         }}
-        className={[styles.thumb, styles.thumbLeft].join(' ')}
       />
       <input
+        className={styles.doubleInput__thumb}
         type="range"
-        min={min}
-        max={max}
-        value={maxVal}
+        min={0}
+        max={300}
+        value={max}
         onChange={(event) => {
-          const value = Math.max(Number(event.target.value), minVal + 1);
-          setMaxVal(value);
-          maxValRef.current = value;
+          const value = Math.max(Number(event.target.value), min);
+          moveRightThumb(min, value)
         }}
-        className={[styles.thumb, styles.thumbRight].join(' ')}
       />
-
-      <div className={styles.slider}>
-        <div className={styles.slider__value}>
-          <div className={styles.slider__minValue}>{minVal}</div>
-          <div className={styles.slider__maxValue}>{maxVal}</div>
+      <div className={styles.doubleInput__slider}>
+        <div className={styles.doubleInput__sliderRange}>
+          <div ref={track} className={styles.doubleInput__sliderTrack} />
         </div>
-        <div className={styles.slider__track} />
-        <div ref={range} className={styles.slider__range} />
       </div>
     </div>
   );

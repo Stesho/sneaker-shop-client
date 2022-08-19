@@ -9,7 +9,7 @@ const ProductCard = ({imgUrl, brand, model, price}) => {
       </div>
       <div className={styles.card__brand}>{brand}</div>
       <div className={styles.card__caption}>{model}</div>
-      <div className={styles.card__price}>{price}</div>
+      <div className={styles.card__price}>{price}$</div>
     </div>
   );
 };

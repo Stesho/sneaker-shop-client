@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Collection.module.scss';
 import ProductCard from '../../components/productCard/ProductCard';
-import DoubleRangeInput from '../../components/doubleRangeInput/DoubleRangeInput';
 import Button2 from '../../components/button/Button2';
-import { parseCommandLine } from 'typescript';
+import { useRef } from 'react';
+import DoubleRangeInput from '../../components/doubleRangeInput/DoubleRangeInput';
 
 //TODO: Loader
 //TODO: No products
@@ -12,6 +12,8 @@ import { parseCommandLine } from 'typescript';
 //TODO: set theme to the local storage
 
 const Collection = ({title, products}) => {
+  const [min, setMin] = useState(0);
+  const [max, setMax] = useState(300);
   const [productCards, setProductCards] = useState(products);
   const [brandNames, setBrandNames] = useState([
     {id: 1, brand: 'Adidas'},
@@ -23,17 +25,14 @@ const Collection = ({title, products}) => {
     {id: 7, brand: 'Reebok'},
     {id: 8, brand: 'Jordan'},
   ]);
-  const sizes = [35, 35.5, 36, 36.5, 37, 37.5,
-                 38, 38.5, 39, 39.5, 40, 40.5,
-                 41, 41.5, 42, 42.5, 43, 43.5,
-                 44, 44.5, 45, 45.5, 46, 46.5,
-                 47, 47.5]; 
   const [filterParam, setFilterParam] = useState({
     minPrice: 0,
     maxPrice: 1000,
     brands: [],
     sizes: [],
   });
+  const brandCheckbox = useRef();
+  const sizeCheckbox = useRef();
   const minSize = 35;
   const maxSize = 47;
 
@@ -42,8 +41,6 @@ const Collection = ({title, products}) => {
     const sizes = filterParam.sizes;
     const minPrice = filterParam.minPrice;
     const maxPrice = filterParam.maxPrice;
-
-    console.log(filterParam);
 
     setProductCards([...products].filter((item) => {
       let condition;
@@ -77,6 +74,23 @@ const Collection = ({title, products}) => {
       newArr.splice(newArr.indexOf(value), 1);
       setFilterParam({...filterParam, [parameter]: newArr});
     }
+  }
+
+  const setDefaultFilter = () => {
+    setMin(0);
+    setMax(300);
+    brandCheckbox.current.querySelectorAll('input').forEach((item) => {
+      item.checked = false;
+    });
+    sizeCheckbox.current.querySelectorAll('input').forEach((item) => {
+      item.checked = false;
+    });
+    setFilterParam({
+      minPrice: 0,
+      maxPrice: 1000,
+      brands: [],
+      sizes: [],
+    })
   }
 
   useEffect(() => {
@@ -122,15 +136,15 @@ const Collection = ({title, products}) => {
           </div>
           <div className={styles.filter__price}>
             <h3 className={styles.filter__priceCaption}>Price</h3>
-            <DoubleRangeInput min={0} max={300} onChange={({min, max}) => setFilterParam({...filterParam, minPrice: min, maxPrice: max})}/>
+            <DoubleRangeInput min={min} max={max} setMin={(value) => setMin(value)} setMax={(value) => setMax(value)} onChange={(min, max) => setFilterParam({...filterParam, minPrice: min, maxPrice: max})}/>
           </div>
           <div className={styles.filter__brands}>
             <h3 className={styles.filter__brandsCaption}>Brands</h3>
-            <ul>
+            <ul ref={brandCheckbox}>
               {brandNames.map((item, i) => {
                 return (
                   <li key={item.id}>
-                    <input 
+                    <input
                       type="checkbox" 
                       className={styles.filter__brandsCheckbox}
                       id={'brand' + i}
@@ -145,11 +159,11 @@ const Collection = ({title, products}) => {
           </div>
           <div className={styles.filter__size}>
             <h3 className={styles.filter__sizeCaption}>Size</h3>
-            <ul className={styles.filter__sizeList}>
+            <ul ref={sizeCheckbox} className={styles.filter__sizeList}>
               {[...new Array(2 * (maxSize - minSize) + 1)].map((item, i) => {
                 return (
                   <li key={i}>
-                    <input 
+                    <input
                       type="checkbox"
                       className={styles.filter__sizeCheckbox}
                       id={'size' + i}
@@ -163,13 +177,8 @@ const Collection = ({title, products}) => {
             </ul>
           </div>
           <div className={styles.filter__btns}>
-            <Button2 
-              className={styles.filter__btn}
-              onClick={() => filterItems()}
-            >
-              Apply
-            </Button2>
-            <Button2 className={styles.filter__btn}>Reset</Button2>
+            <Button2 className={styles.filter__btn} onClick={() => filterItems()}>Apply</Button2>
+            <Button2 className={styles.filter__btn} onClick={() => setDefaultFilter()}>Reset</Button2>
           </div>
         </div>
         <div className={styles.productsWrapper}>
