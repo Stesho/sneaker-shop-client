@@ -7,8 +7,6 @@ import DoubleRangeInput from '../../components/doubleRangeInput/DoubleRangeInput
 
 //TODO: Loader
 //TODO: No products
-//TODO: Checkboxes
-//TODO: Reset
 //TODO: set theme to the local storage
 
 const Collection = ({title, products}) => {
@@ -95,6 +93,7 @@ const Collection = ({title, products}) => {
 
   useEffect(() => {
     setProductCards(products);
+    setDefaultFilter();
   }, [products]);
   
   return (

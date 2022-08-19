@@ -1,11 +1,17 @@
 import React, { useRef } from 'react';
+import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import useTheme from '../../hooks/useTheme';
 import styles from './Header.module.scss';
 
 const Header = () => {
   const setActive = ({isActive}) => isActive ? [styles.active, styles.link].join(' ') : styles.link;
-  const [theme, setTheme] = useTheme();
+  const [theme, toggleTheme] = useTheme();
+  const toggleBtn = useRef();
+
+  useEffect(() => {
+    toggleBtn.current.checked = theme === 'dark' ? true : false;
+  }, [theme]);
 
   return (
     <header className={styles.header}>
@@ -24,7 +30,7 @@ const Header = () => {
         </div>
         <div className={styles.userbar}>
           <label className={styles.themeSwitcher}>
-            <input type="checkbox" onChange={(event) => event.target.checked ? setTheme('dark') : setTheme('light')}/>
+            <input ref={toggleBtn} type="checkbox" onChange={(event) => toggleTheme(event.target.checked)}/>
             <span className={styles.themeSwitcher__btn}></span>
           </label>
           <ul className={styles.list}>

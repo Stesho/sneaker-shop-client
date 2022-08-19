@@ -37,7 +37,7 @@ const DoubleRangeInput = ({min, max, setMin, setMax, onChange}) => {
     <div className={styles.doubleInput}>
       <div className={styles.doubleInput__values}>
         <input 
-          type="text"
+          type="number"
           value={isOnFocus ? minVal : min}
           onFocus={() => {
             setIsOnFocuse(true);
@@ -48,11 +48,11 @@ const DoubleRangeInput = ({min, max, setMin, setMax, onChange}) => {
           onBlur={(event) => {
             setIsOnFocuse(false);
             const value = Math.min(event.target.value, max);
-            moveLeftThumb(value, max);
+            value >= 0 ? moveLeftThumb(value, max) : moveLeftThumb(0, max);
           }}
         />
         <input
-          type="text"
+          type="number"
           value={isOnFocus ? maxVal : max}
           onFocus={() => {
             setIsOnFocuse(true);
