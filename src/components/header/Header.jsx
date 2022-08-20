@@ -5,9 +5,12 @@ import useTheme from '../../hooks/useTheme';
 import styles from './Header.module.scss';
 
 const Header = () => {
-  const setActive = ({isActive}) => isActive ? [styles.active, styles.link].join(' ') : styles.link;
   const [theme, toggleTheme] = useTheme();
   const toggleBtn = useRef();
+
+  const setActive = ({isActive}) => {
+    return isActive ? [styles.active, styles.link].join(' ') : styles.link;
+  }
 
   useEffect(() => {
     toggleBtn.current.checked = theme === 'dark' ? true : false;

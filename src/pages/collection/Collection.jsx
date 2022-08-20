@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Collection.module.scss';
+import Select from '../../components/select/Select.jsx';
 import ProductCard from '../../components/productCard/ProductCard';
 import Button2 from '../../components/button/Button2';
 import { useRef } from 'react';
@@ -7,21 +8,22 @@ import DoubleRangeInput from '../../components/doubleRangeInput/DoubleRangeInput
 
 //TODO: Loader
 //TODO: No products
-//TODO: set theme to the local storage
 
 const Collection = ({title, products}) => {
   const [min, setMin] = useState(0);
   const [max, setMax] = useState(300);
   const [productCards, setProductCards] = useState(products);
+  console.log('WORK');
   const [brandNames, setBrandNames] = useState([
     {id: 1, brand: 'Adidas'},
-    {id: 2, brand: 'Converse'},
-    {id: 3, brand: 'New balance'},
-    {id: 4, brand: 'Nike'},
-    {id: 5, brand: 'Saucony'},
-    {id: 6, brand: 'Puma'},
-    {id: 7, brand: 'Reebok'},
-    {id: 8, brand: 'Jordan'},
+    {id: 2, brand: 'Asics'},
+    {id: 3, brand: 'Converse'},
+    {id: 4, brand: 'Jordan'},
+    {id: 5, brand: 'New balance'},
+    {id: 6, brand: 'Nike'},
+    {id: 7, brand: 'Puma'},
+    {id: 8, brand: 'Reebok'},
+    {id: 9, brand: 'Saucony'},
   ]);
   const [filterParam, setFilterParam] = useState({
     minPrice: 0,
@@ -33,6 +35,37 @@ const Collection = ({title, products}) => {
   const sizeCheckbox = useRef();
   const minSize = 35;
   const maxSize = 47;
+
+  const sortToHighByAlph = () => {
+    setProductCards([...productCards.sort((a, b) => {
+      return a.brand.localeCompare(b.brand);
+    })]);
+  }
+
+  const sortToLowByAlph = () => {
+    setProductCards([...productCards.sort((a, b) => {
+      return b.brand.localeCompare(a.brand);
+    })]);
+  }
+
+  const sortToHighByPrice = () => {
+    setProductCards([...productCards.sort((a, b) => {
+      return a.price - b.price;
+    })]);
+  }
+  
+  const sortToLowByPrice = () => {
+    setProductCards([...productCards.sort((a, b) => {
+      return b.price - a.price;
+    })]);
+  }
+
+  const [options, setOptions] = useState([
+    {id: 1, value: 'Alphabetically, a-z', sortFunc: sortToHighByAlph},
+    {id: 2, value: 'Alphabetically, z-a', sortFunc: sortToLowByAlph},
+    {id: 3, value: 'Price, low to high', sortFunc: sortToHighByPrice},
+    {id: 4, value: 'Price, high to low', sortFunc: sortToLowByPrice},
+  ]);
 
   const filterItems = () => {
     const brands = filterParam.brands; 
@@ -95,7 +128,7 @@ const Collection = ({title, products}) => {
     setProductCards(products);
     setDefaultFilter();
   }, [products]);
-  
+
   return (
     <main className={styles.main}>
       <h2 className={[styles.title, styles.title2].join(' ')}>{title}</h2>
@@ -103,25 +136,16 @@ const Collection = ({title, products}) => {
         <div className={styles.toolbar__layoutSwitcher}>
           <button className={styles.toolbar__switcher}>
             <svg viewBox="0 0 36 36">
-              <path d="M21 36V21h15v15H21zm0-36h15v15H21V0zM0 21h15v15H0V21zM0 0h15v15H0V0z"></path>
+              <path d="M21 36V21h15v15H21zm0-36h15v15H21V0zM0 21h15v15H0V21zM0 0h15v15H0V0z" />
             </svg>
           </button>
           <button className={styles.toolbar__switcher}>
             <svg viewBox="0 0 36 36">
-              <path d="M28 36v-8h8v8h-8zm0-22h8v8h-8v-8zm0-14h8v8h-8V0zM14 28h8v8h-8v-8zm0-14h8v8h-8v-8zm0-14h8v8h-8V0zM0 28h8v8H0v-8zm0-14h8v8H0v-8zM0 0h8v8H0V0z"></path>
+              <path d="M28 36v-8h8v8h-8zm0-22h8v8h-8v-8zm0-14h8v8h-8V0zM14 28h8v8h-8v-8zm0-14h8v8h-8v-8zm0-14h8v8h-8V0zM0 28h8v8H0v-8zm0-14h8v8H0v-8zM0 0h8v8H0V0z" />
             </svg>
           </button>
         </div>
-        <div className={styles.toolbar__sort}>
-          <div className={styles.toolbar__sortBtn}>
-            <span>Sort</span>
-            <span className={styles.toolbar__colon}>:</span>
-            <span className={styles.toolbar__sortType}>low to high</span>
-            <svg viewBox="0 0 19 12">
-              <polyline fill="none" points="17 2 9.5 10 2 2" fillRule="evenodd" strokeWidth="2" strokeLinecap="square"></polyline>
-            </svg>
-          </div>
-        </div>
+        <Select options={options}/>
       </div>
       <div className={styles.content}>
         <div className={styles.filter}>

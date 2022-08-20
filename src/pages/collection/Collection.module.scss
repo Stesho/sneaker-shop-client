@@ -14,11 +14,9 @@
   align-items: center;
   border-bottom: 1px solid #d0d0d0;
   border-top: 1px solid #d0d0d0;
-  color: var(--secondary-light-color);
   &__layoutSwitcher {
     display: flex;
     padding: 18px 27px;
-    border-right: 1px solid #d0d0d0;
   }
   &__switcher {
     cursor: pointer;
@@ -32,35 +30,6 @@
         fill: var(--secondary-color);
       }
     }
-  }
-  &__sortBtn {
-    display: flex;
-    align-items: center;
-    padding: 18px 45px;
-    line-height: 18px;
-    border-right: 1px solid #d0d0d0;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.15rem;
-    cursor: pointer;
-    &:hover svg {
-      stroke: var(--secondary-color);
-    }
-    &:hover .toolbar__sortType {
-      color: var(--secondary-color);
-    }
-    svg {
-      width: 12px;
-      height: 6px;
-      margin: 0 0 0 5px;
-      stroke: var(--secondary-light-color);
-    }
-  }
-  &__colon {
-    font-weight: 600;
-  }
-  &__sortType {
-    margin: 0 0 0 10px;
   }
 }
 
@@ -133,8 +102,6 @@
   &__sizeCheckbox {
     display: none;
     &+label {
-      // display: block;
-      // padding: 5px 10px;
       height: 26px;
       width: 57px;
       display: flex;
@@ -142,6 +109,7 @@
       align-items: center;
       background-color: var(--primary-light-color);
       border-radius: 5px;
+      user-select: none;
       cursor: pointer;
       &:hover {
         background-color: var(--hover-additional-color);
