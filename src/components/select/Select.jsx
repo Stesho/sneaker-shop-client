@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './Select.module.scss';
 
-const Select = ({options}) => {
+const Select = ({options, onChange}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0].value || 'select');
   const select = useRef();
@@ -11,12 +11,12 @@ const Select = ({options}) => {
   const setSelected = (option) => {
     setSelectedOption(option.value);
     setIsOpen(!isOpen);
-    option.sortFunc();
+    onChange(option);
   }
 
   useEffect(() => {
     const onClick = (event) => {
-      return select.current.contains(event.target) || setIsOpen(!isOpen);
+      return select.current.contains(event.target) || setIsOpen(false);
     }
     document.addEventListener('click', onClick);
     return () => document.removeEventListener('click', onClick);

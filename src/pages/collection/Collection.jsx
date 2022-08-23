@@ -2,131 +2,19 @@ import React, { useEffect, useState } from 'react';
 import styles from './Collection.module.scss';
 import Select from '../../components/select/Select.jsx';
 import ProductCard from '../../components/productCard/ProductCard';
-import Button2 from '../../components/button/Button2';
-import { useRef } from 'react';
-import DoubleRangeInput from '../../components/doubleRangeInput/DoubleRangeInput';
+import Filter from '../../components/filter/Filter';
+import useSort from '../../hooks/useSort';
 
 //TODO: Loader
 //TODO: No products
+//TODO: Use scss variables for width and other
 
 const Collection = ({title, products}) => {
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(300);
   const [productCards, setProductCards] = useState(products);
-  console.log('WORK');
-  const [brandNames, setBrandNames] = useState([
-    {id: 1, brand: 'Adidas'},
-    {id: 2, brand: 'Asics'},
-    {id: 3, brand: 'Converse'},
-    {id: 4, brand: 'Jordan'},
-    {id: 5, brand: 'New balance'},
-    {id: 6, brand: 'Nike'},
-    {id: 7, brand: 'Puma'},
-    {id: 8, brand: 'Reebok'},
-    {id: 9, brand: 'Saucony'},
-  ]);
-  const [filterParam, setFilterParam] = useState({
-    minPrice: 0,
-    maxPrice: 1000,
-    brands: [],
-    sizes: [],
-  });
-  const brandCheckbox = useRef();
-  const sizeCheckbox = useRef();
-  const minSize = 35;
-  const maxSize = 47;
-
-  const sortToHighByAlph = () => {
-    setProductCards([...productCards.sort((a, b) => {
-      return a.brand.localeCompare(b.brand);
-    })]);
-  }
-
-  const sortToLowByAlph = () => {
-    setProductCards([...productCards.sort((a, b) => {
-      return b.brand.localeCompare(a.brand);
-    })]);
-  }
-
-  const sortToHighByPrice = () => {
-    setProductCards([...productCards.sort((a, b) => {
-      return a.price - b.price;
-    })]);
-  }
-  
-  const sortToLowByPrice = () => {
-    setProductCards([...productCards.sort((a, b) => {
-      return b.price - a.price;
-    })]);
-  }
-
-  const [options, setOptions] = useState([
-    {id: 1, value: 'Alphabetically, a-z', sortFunc: sortToHighByAlph},
-    {id: 2, value: 'Alphabetically, z-a', sortFunc: sortToLowByAlph},
-    {id: 3, value: 'Price, low to high', sortFunc: sortToHighByPrice},
-    {id: 4, value: 'Price, high to low', sortFunc: sortToLowByPrice},
-  ]);
-
-  const filterItems = () => {
-    const brands = filterParam.brands; 
-    const sizes = filterParam.sizes;
-    const minPrice = filterParam.minPrice;
-    const maxPrice = filterParam.maxPrice;
-
-    setProductCards([...products].filter((item) => {
-      let condition;
-      if (brands.length === 0 && sizes.length !== 0) {
-        condition = sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
-      }
-      else if (brands.length !== 0 && sizes.length === 0) {
-        condition = brands.indexOf(item.brand) !== -1
-      }
-      else if (brands.length === 0 && sizes.length === 0) {
-        condition = true;
-      }
-      else {
-        condition = brands.indexOf(item.brand) !== -1 && sizes.some((elem) => item.sizes.indexOf(elem) !== -1)
-      }
-      return (
-        item.price >= minPrice &&
-        item.price <= maxPrice &&
-        condition
-      )
-    }));
-  }
-
-  const addToFilter = (parameter, value) => {
-    if (filterParam[parameter].indexOf(value) === -1) {
-      const newArr = [...filterParam[parameter], value];
-      setFilterParam({...filterParam, [parameter]: newArr});
-    }
-    else {
-      const newArr = filterParam[parameter].slice();
-      newArr.splice(newArr.indexOf(value), 1);
-      setFilterParam({...filterParam, [parameter]: newArr});
-    }
-  }
-
-  const setDefaultFilter = () => {
-    setMin(0);
-    setMax(300);
-    brandCheckbox.current.querySelectorAll('input').forEach((item) => {
-      item.checked = false;
-    });
-    sizeCheckbox.current.querySelectorAll('input').forEach((item) => {
-      item.checked = false;
-    });
-    setFilterParam({
-      minPrice: 0,
-      maxPrice: 1000,
-      brands: [],
-      sizes: [],
-    })
-  }
+  const options = useSort(productCards, setProductCards);
 
   useEffect(() => {
     setProductCards(products);
-    setDefaultFilter();
   }, [products]);
 
   return (
@@ -145,65 +33,10 @@ const Collection = ({title, products}) => {
             </svg>
           </button>
         </div>
-        <Select options={options}/>
+        <Select options={options} onChange={(option) => option.sortFunc()}/>
       </div>
       <div className={styles.content}>
-        <div className={styles.filter}>
-          <div className={styles.filter__title}>
-            <svg width="25" height="18" viewBox="0 0 25 18" fill="none">
-              <line x1="1.5" y1="1.5" x2="23.5" y2="1.5" strokeWidth="3" strokeLinecap="square"/>
-              <line x1="1.5" y1="9" x2="16" y2="9" strokeWidth="3" strokeLinecap="square"/>
-              <line x1="1.5" y1="16.5" x2="6.83333" y2="16.5" strokeWidth="3" strokeLinecap="square"/>
-            </svg>
-            <h3 className={[styles.title3, styles.filter__titleCaption].join(' ')}>Filter</h3>
-          </div>
-          <div className={styles.filter__price}>
-            <h3 className={styles.filter__priceCaption}>Price</h3>
-            <DoubleRangeInput min={min} max={max} setMin={(value) => setMin(value)} setMax={(value) => setMax(value)} onChange={(min, max) => setFilterParam({...filterParam, minPrice: min, maxPrice: max})}/>
-          </div>
-          <div className={styles.filter__brands}>
-            <h3 className={styles.filter__brandsCaption}>Brands</h3>
-            <ul ref={brandCheckbox}>
-              {brandNames.map((item, i) => {
-                return (
-                  <li key={item.id}>
-                    <input
-                      type="checkbox" 
-                      className={styles.filter__brandsCheckbox}
-                      id={'brand' + i}
-                      name="brand"
-                      onChange={() => addToFilter('brands', item.brand)}
-                    />
-                    <label htmlFor={'brand' + i}>{item.brand}</label>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-          <div className={styles.filter__size}>
-            <h3 className={styles.filter__sizeCaption}>Size</h3>
-            <ul ref={sizeCheckbox} className={styles.filter__sizeList}>
-              {[...new Array(2 * (maxSize - minSize) + 1)].map((item, i) => {
-                return (
-                  <li key={i}>
-                    <input
-                      type="checkbox"
-                      className={styles.filter__sizeCheckbox}
-                      id={'size' + i}
-                      name="brand"
-                      onChange={() => addToFilter('sizes', minSize + i/2)}
-                    />
-                    <label htmlFor={'size' + i}>{minSize + i/2}</label>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-          <div className={styles.filter__btns}>
-            <Button2 className={styles.filter__btn} onClick={() => filterItems()}>Apply</Button2>
-            <Button2 className={styles.filter__btn} onClick={() => setDefaultFilter()}>Reset</Button2>
-          </div>
-        </div>
+        <Filter products={products} setProductCards={setProductCards}/>
         <div className={styles.productsWrapper}>
           {productCards.map((item) => {
             return (
