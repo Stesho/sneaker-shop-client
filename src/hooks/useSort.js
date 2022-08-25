@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useSort = (value, setValue) => {
+const useSort = (setValue) => {
   const [options, setOptions] = useState([
     {id: 1, value: 'Alphabetically, a-z', sortFunc: sortToHighByAlph},
     {id: 2, value: 'Alphabetically, z-a', sortFunc: sortToLowByAlph},

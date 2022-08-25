@@ -12,7 +12,7 @@ const Filter = ({products, setProductCards}) => {
   const brandCheckbox = useRef();
   const sizeCheckbox = useRef(); 
   const minSize = 35;
-  const maxSize = 47;
+  const maxSize = 48;
   const [brandNames, setBrandNames] = useState([
     {id: 1, brand: 'Adidas'},
     {id: 2, brand: 'Asics'},
@@ -92,7 +92,7 @@ const Filter = ({products, setProductCards}) => {
                   type="checkbox"
                   className={styles.filter__sizeCheckbox}
                   id={'size' + i}
-                  name="brand"
+                  name="size"
                   onChange={() => addToFilter('sizes', minSize + i/2)}
                 />
                 <label htmlFor={'size' + i}>{minSize + i/2}</label>

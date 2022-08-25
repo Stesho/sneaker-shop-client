@@ -5,7 +5,7 @@ import styles from './Register.module.scss';
 
 const Register = () => {
   return (
-    <main className={styles.registerWrapper}>
+    <main className={[styles.registerWrapper, styles.main].join(' ')}>
       <div className={styles.register}>
         <h2 className={[styles.register__title, styles.title2].join(' ')}>Register</h2>
         <p className={styles.register__caption}>Please fill in the information below:</p>

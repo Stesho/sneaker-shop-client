@@ -1,6 +1,13 @@
+$container-width: 1800px;
+$header-height: 91px;
+
 .container {
-  width: 1800px;
+  width: $container-width;
   margin: 0 auto;
+}
+
+.main {
+  padding-top: $header-height;
 }
 
 .title2 {

@@ -7,6 +7,7 @@ import Collection from './pages/collection/Collection';
 import products from './assets/data/products.json';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import ProductPage from './pages/productPage/ProductPage';
 
 function App() {
   return (
@@ -31,6 +32,10 @@ function App() {
         <Route
           path="/register"
           element={<Register/>}
+        />
+        <Route
+          path="/:id"
+          element={<ProductPage products={products}/>}
         />
       </Routes>
       <Footer />

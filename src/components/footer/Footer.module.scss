@@ -30,19 +30,21 @@
 }
 
 .listItem {
-  display: flex;
-  align-items: center;
   color: var(--secondary-light-color);
-  & svg {
+  &:hover svg {
+    fill: var(--secondary-color); 
+  }
+  a {
+    display: flex;
+    align-items: center;
+  }
+  svg {
     width: 15px;
     height: 15px;
     fill: currentColor;
   }
-  & span {
+  span {
     margin: 0 0 0 10px;
-  }
-  &:hover svg {
-    fill: var(--secondary-color); 
   }
 }
 

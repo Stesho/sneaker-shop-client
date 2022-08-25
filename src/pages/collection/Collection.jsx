@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Collection.module.scss';
 import Select from '../../components/select/Select.jsx';
 import ProductCard from '../../components/productCard/ProductCard';
@@ -6,12 +7,12 @@ import Filter from '../../components/filter/Filter';
 import useSort from '../../hooks/useSort';
 
 //TODO: Loader
-//TODO: No products
 //TODO: Use scss variables for width and other
+//TODO: NotFound page
 
 const Collection = ({title, products}) => {
   const [productCards, setProductCards] = useState(products);
-  const options = useSort(productCards, setProductCards);
+  const options = useSort(setProductCards);
 
   useEffect(() => {
     setProductCards(products);
@@ -37,13 +38,19 @@ const Collection = ({title, products}) => {
       </div>
       <div className={styles.content}>
         <Filter products={products} setProductCards={setProductCards}/>
-        <div className={styles.productsWrapper}>
-          {productCards.map((item) => {
-            return (
-              <ProductCard imgUrl={item.imgUrl} brand={item.brand} model={item.model} price={item.price} key={item.id}/>
-            )
-          })}  
-        </div>
+        {productCards.length > 0 
+          ? <div className={styles.productsWrapper}>
+              {productCards.map((item) => {
+              return (
+                <Link to={`/${item.id}`} key={item.id}>
+                  <ProductCard imgUrl={item.imgUrl} brand={item.brand} model={item.model} price={item.price} />
+                </Link>
+              )})}
+            </div>
+          : <div className={styles.noProducts}>
+              Selected products are missing
+            </div>
+        }  
       </div>
     </main>
   );

@@ -20,9 +20,9 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.navbar}>
-          <div className={styles.navbar__logo}>
+          <h1 className={styles.navbar__logo}>
             <NavLink to='/'><img src={require('../../assets/img/homePage/logo.jpg')} alt="Atmos logo" /></NavLink>
-          </div>
+          </h1>
           <ul className={styles.list}>
             <li className={styles.item}><NavLink to="/newarrivals" className={setActive}>New arrivals</NavLink></li>
             <li className={styles.item}><NavLink to="/brands" className={setActive}>Brands</NavLink></li>
