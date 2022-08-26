@@ -1,9 +1,9 @@
 import React from 'react';
 import Button2 from '../../components/button/Button2';
 import Input from '../../components/input/Input';
-import styles from './Register.module.scss';
+import styles from './RegisterPage.module.scss';
 
-const Register = () => {
+const RegisterPage = () => {
   return (
     <main className={[styles.registerWrapper, styles.main].join(' ')}>
       <div className={styles.register}>
@@ -21,4 +21,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterPage;

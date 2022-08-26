@@ -35,15 +35,28 @@
 
 .productsWrapper {
   display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  flex-direction: column;
   flex: 1;
   margin: 0 0 0 30px;
 }
 
 .products {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
+}
+
+.pagination {
+  display: flex;
+  &__item {
+    padding: 20px;
+    margin: 0 5px;
+    font-size: 1.125rem;
+    color: var(--neutral-color);
+    &:hover {
+      border-bottom: 3px solid;
+    }
+  }
 }
 
 .noProducts {

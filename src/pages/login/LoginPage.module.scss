@@ -1,11 +1,11 @@
 @import '../../styles/global.scss';
 
-.register {
+.login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - $header-height);
   &__caption {
     margin: 26px 0 28px 0;
     font-size: 13px;
@@ -14,5 +14,16 @@
   &__form {
     display: flex;
     flex-direction: column;
+  }
+  &__create {
+    margin: 24px 0 40px 0;
+    font-size: 13px;
+    letter-spacing: normal;
+    span {
+      color: var(--secondary-light-color);
+    }
+    a:hover {
+      color: var(--hover-color);
+    }
   }
 }

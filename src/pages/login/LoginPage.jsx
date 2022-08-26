@@ -2,9 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Button2 from '../../components/button/Button2';
 import Input from '../../components/input/Input';
-import styles from './Login.module.scss';
+import styles from './LoginPage.module.scss';
 
-const Login = () => {
+const LoginPage = () => {
   return (
     <main className={[styles.main, styles.loginWrapper].join(' ')}>
       <div className={styles.login}>
@@ -24,4 +24,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;

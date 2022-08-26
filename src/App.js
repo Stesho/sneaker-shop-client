@@ -1,13 +1,13 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
-import HomePage from './pages/home/HomePage';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import Collection from './pages/collection/Collection';
-import products from './assets/data/products.json';
-import Login from './pages/login/Login';
-import Register from './pages/register/Register';
+import HomePage from './pages/home/HomePage';
+import CollectionPage from './pages/collection/CollectionPage';
+import LoginPage from './pages/login/LoginPage';
+import RegisterPage from './pages/register/RegisterPage';
 import ProductPage from './pages/productPage/ProductPage';
+import products from './assets/data/products.json';
 
 function App() {
   return (
@@ -19,19 +19,20 @@ function App() {
         <Route path="/brands" element={<HomePage/>} />
         <Route
           path="/mens"
-          element={<Collection title={"Men's collection"} products={products.filter((item) => item.gender === 'male')}/>}
+          // element={<Collection title={"Men's collection"} products={products.filter((item) => item.gender === 'male')}/>}
+          element={<CollectionPage title={"Men's collection"} products={products}/>}
         />
         <Route
           path="/womans"
-          element={<Collection title={"Womens's collection"} products={products.filter((item) => item.gender === 'female')}/>}
+          element={<CollectionPage title={"Womens's collection"} products={products.filter((item) => item.gender === 'female')}/>}
         />
         <Route
           path="/login"
-          element={<Login/>}
+          element={<LoginPage/>}
         />
         <Route
           path="/register"
-          element={<Register/>}
+          element={<RegisterPage/>}
         />
         <Route
           path="/:id"
