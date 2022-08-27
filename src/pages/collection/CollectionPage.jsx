@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './CollectionPage.module.scss';
 import Select from '../../components/select/Select.jsx';
-import ProductCard from '../../components/productCard/ProductCard';
 import Filter from '../../components/filter/Filter';
 import useSort from '../../hooks/useSort';
+import ProductList from '../../components/productList/ProductList';
 
 //TODO: Loader
 //TODO: Use scss variables for width and other
 //TODO: NotFound page
+//TODO: close modal on overlay click
+//TODO: modal sizes table
 
 const CollectionPage = ({title, products}) => {
   const [productCards, setProductCards] = useState(products);
@@ -34,28 +35,20 @@ const CollectionPage = ({title, products}) => {
             </svg>
           </button>
         </div>
-        <Select options={options} onChange={(option) => option.sortFunc()}/>
+        <Select
+          options={options}
+          onChange={(option) => option.sortFunc()}
+          caption="Sort"
+          style={{
+            select__btn: {borderTop: 'none', borderBottom: 'none'},
+            select__list: {borderTop: '1px solid #d0d0d0'}
+          }}
+        />
       </div>
       <div className={styles.content}>
         <Filter products={products} setProductCards={setProductCards}/>
         {productCards.length > 0 
-          ? <div className={styles.productsWrapper}>
-              <div className={styles.products}>
-                {productCards.map((item) => {
-                return (
-                  <Link to={`/${item.id}`} key={item.id} style={{margin: '30px'}}>
-                    <ProductCard imgUrl={item.imgUrl} brand={item.brand} model={item.model} price={item.price} />
-                  </Link>
-                )})}
-              </div>
-              <div className={styles.pagination}>
-                <div className={styles.pagination__item}>1</div>
-                <div className={styles.pagination__item}>2</div>
-                <div className={styles.pagination__item}>3</div>
-                <div className={styles.pagination__item}>4</div>
-                <div className={styles.pagination__item}>5</div>
-              </div>
-            </div>
+          ? <ProductList productCards={productCards}/>
           : <div className={styles.noProducts}>
               Selected products are missing
             </div>

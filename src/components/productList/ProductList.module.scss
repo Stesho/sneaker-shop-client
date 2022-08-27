@@ -1,0 +1,51 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 0 0 30px;
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+.pagination {
+  display: flex;
+  margin: 0 0 0 30px;
+  &__btn {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    &:hover svg {
+      stroke: var(--hover-color); 
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--neutral-color); 
+      stroke-width: 5px;
+      pointer-events: none;
+    }
+  }
+  &__item {
+    display: none;
+    &+label {
+      display: block;
+      padding: 20px;
+      margin: 0 5px;
+      font-size: 1.125rem;
+      color: var(--neutral-color);
+      user-select: none;
+    }
+    &:checked+label {
+      border-bottom: 3px solid;
+    }
+    &:hover+label {
+      cursor: pointer;
+      color: var(--hover-color);
+      border-bottom: 3px solid;
+    }
+  }
+}

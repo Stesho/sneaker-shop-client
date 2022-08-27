@@ -169,5 +169,87 @@
     "price":"100",
     "gender":"male",
     "sizes":[39, 39.5, 42, 43, 47]
+  },
+  
+  {
+    "id":20,
+    "imgUrl":"newbalance_wtthierp6_01_600x.jpg",
+    "brand":"New balance",
+    "model":"FRESH FOAM HIERRO V6 GTX (GARNET)",
+    "price":"140",
+    "gender":"female",
+    "sizes":[35, 35.5, 36, 37, 38, 38.5, 39, 41]
+  },
+  {
+    "id":21,
+    "imgUrl":"nike-dm9461-100_01_600x.jpg",
+    "brand":"Nike",
+    "model":"AIR FORCE 1 (WHITE | SUMMIT WHITE | PHOTON DUST)",
+    "price":"110",
+    "gender":"female",
+    "sizes":[36, 36.5, 37, 37.5, 39, 40, 40.5]
+  },
+  {
+    "id":22,
+    "imgUrl":"nike_dm8328-600_01_600x.jpg",
+    "brand":"Nike",
+    "model":"W'S AIR PRESTO (PINK OXFORD)",
+    "price":"130",
+    "gender":"female",
+    "sizes":[35, 35.5, 37, 37.5, 38, 39, 40, 41]
+  },
+  {
+    "id":23,
+    "imgUrl":"asics_1202a045-400_01_600x.jpg",
+    "brand":"Asics",
+    "model":"W'S GEL-MC PLUS (MONACO BLUE | VANILLA)",
+    "price":"100",
+    "gender":"female",
+    "sizes":[35.5, 36.5, 37.5, 38, 38.5, 39]
+  },
+  {
+    "id":24,
+    "imgUrl":"newbalance_U9060BRN_01_600x.jpg",
+    "brand":"New balance",
+    "model":"NB 9060 (BROWN)",
+    "price":"150",
+    "gender":"male",
+    "sizes":[42, 42.5, 43, 43.5, 45, 47]
+  },
+  {
+    "id":25,
+    "imgUrl":"nike_dm0521-101_01_400x.jpg",
+    "brand":"Nike",
+    "model":"Nike Air Trainer 1 (White Midnight Navy)",
+    "price":"125",
+    "gender":"male",
+    "sizes":[44, 44.5, 45, 45.5, 46, 46.5, 47]
+  },
+  {
+    "id":26,
+    "imgUrl":"puma_385629-01_400x.jpg",
+    "brand":"Puma",
+    "model":"Blaze of Glory The Neverworn (Whisper White)",
+    "price":"140",
+    "gender":"male",
+    "sizes":[40, 40.5, 41, 42, 43, 44, 45, 46, 46.5]
+  },
+  {
+    "id":27,
+    "imgUrl":"reebok_gz4935_01_400x.jpg",
+    "brand":"Reebok",
+    "model":"Club C Geo Mid (White | Chalk | Dark Green)",
+    "price":"100",
+    "gender":"male",
+    "sizes":[40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44, 44.5, 45, 45.5, 46, 46.5, 47]
+  },
+  {
+    "id":28,
+    "imgUrl":"reebok_gz4936_01_400x.jpg",
+    "brand":"Reebok",
+    "model":"Club C Geo Mid (Chalk | Flash Red | Vector Blue)",
+    "price":"100",
+    "gender":"male",
+    "sizes":[39, 39.5, 42, 43, 47]
   }
 ]

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './HomePage.module.scss';
 import SlideShow from '../../components/slideShow/SlideShow';
 import BrandCard from '../../components/brandCard/BrandCard';
@@ -17,6 +17,10 @@ const HomePage = () => {
   ]);
 
   const [productCards, setProductCards] = useState(products);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className={styles.main}>

@@ -1,17 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './ProductPage.module.scss';
+import Input from '../../components/input/Input';
+import Select from '../../components/select/Select';
 import Button2 from '../../components/button/Button2';
-import { useState } from 'react';
+import Modal from '../../components/modal/Modal';
 
 const ProductPage = ({products}) => {
   const {id} = useParams();
+  const [isActive, setIsActive] = useState(false);
   const [product, setProduct] = useState(products.find((item) => item.id === Number(id)));
   const minSize = 35;
   const maxSize = 48;
+  const options = [
+    {id:1, value: '45'},
+    {id:2, value: '46'},
+    {id:3, value: '47'},
+  ]
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  console.log('render');
 
   return (
     <main className={styles.main}>
+      <Modal isActive={isActive} setIsActive={setIsActive}>
+        <div className={styles.modal}>
+          <h2 className={[styles.modal__title, styles.title2].join(' ')}>Subscribe to size</h2>
+          <span className={styles.modal__model}>{product.model}</span>
+          <Select
+            options={options}
+            caption="Size"
+            style={{
+              select: {width: '100%', marginBottom: '15px'},
+              select__btn: {width: '100%', padding: '12px 14px'},
+              select__option: {padding: '12px 14px'}
+            }}
+          />
+          <Input
+            style={{
+              input: {width: '100%', marginBottom: '15px'}
+            }}
+            placeholder="Email"
+          />
+          <Button2>Notify me when available</Button2>
+        </div>
+      </Modal>
       <div className={styles.productPage}>
         <div className={styles.images}>
           <div className={styles.img}>
@@ -34,7 +70,7 @@ const ProductPage = ({products}) => {
           <span className={styles.info__price}>${product.price}</span>
           <div className={styles.info__size}>
             <span className={styles.info__sizeCaption}>Select size:</span>
-            <span className={styles.info__fitGuide}>Size & fit guide</span>
+            <button className={styles.info__fitGuide}>Size & fit guide</button>
           </div>
           <ul className={styles.info__sizeList}>
             {[...new Array(2 * (maxSize - minSize) + 1)].map((item, i) => {
@@ -52,7 +88,9 @@ const ProductPage = ({products}) => {
               )
             })}
           </ul>
-          <span className={styles.info__subscription}>Don't see your size? notify me when available.</span>
+          <button className={styles.info__subscription} onClick={() => setIsActive(true)}>
+            Don't see your size? notify me when available.
+          </button>
           <Button2>Add to card</Button2>
           <div className={styles.info__description}>
             Creative directed by Joe Freshgoods, Conversations
