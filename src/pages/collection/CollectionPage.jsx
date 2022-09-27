@@ -37,7 +37,7 @@ const CollectionPage = ({title, products}) => {
         </div>
         <Select
           options={options}
-          onChange={(option) => option.sortFunc()}
+          onChange={(option) => option.sortFunction()}
           caption="Sort"
           style={{
             select__btn: {borderTop: 'none', borderBottom: 'none'},

@@ -5,8 +5,8 @@ import Footer from './components/footer/Footer';
 import HomePage from './pages/home/HomePage';
 import CollectionPage from './pages/collection/CollectionPage';
 import LoginPage from './pages/login/LoginPage';
-import RegisterPage from './pages/register/RegisterPage';
-import ProductPage from './pages/productPage/ProductPage';
+import RegisterPage from './pages/registration/RegisterPage';
+import ProductPage from './pages/product/ProductPage';
 import products from './assets/data/products.json';
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
           element={<LoginPage/>}
         />
         <Route
-          path="/register"
+          path="/registration"
           element={<RegisterPage/>}
         />
         <Route

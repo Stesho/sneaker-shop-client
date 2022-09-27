@@ -1,9 +1,17 @@
 import React from 'react';
 import styles from './Input.module.scss';
 
-const Input = ({style, placeholder}) => {
+const Input = ({value, onChange, onBlur, type, style, placeholder}) => {
   return (
-    <input className={styles.input} placeholder={placeholder} type="text" style={style?.input}/>
+    <input
+      className={styles.input}
+      value={value}
+      onChange={onChange}
+      onBlur={onBlur}
+      type={type}
+      style={style?.input}
+      placeholder={placeholder}
+    />
   );
 };
 

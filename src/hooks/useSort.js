@@ -2,34 +2,38 @@ import { useState } from 'react';
 
 const useSort = (setValue) => {
   const [options, setOptions] = useState([
-    {id: 1, value: 'Alphabetically, a-z', sortFunc: sortToHighByAlph},
-    {id: 2, value: 'Alphabetically, z-a', sortFunc: sortToLowByAlph},
-    {id: 3, value: 'Price, low to high', sortFunc: sortToHighByPrice},
-    {id: 4, value: 'Price, high to low', sortFunc: sortToLowByPrice},
+    { 
+      id: 1,
+      value: 'Alphabetically, a-z',
+      sortFunction: () => sort((a, b) => {
+        return a.brand.localeCompare(b.brand);
+      })
+    },
+    { 
+      id: 2,
+      value: 'Alphabetically, z-a',
+      sortFunction: () => sort((a, b) => {
+        return b.brand.localeCompare(a.brand);
+      })
+    },
+    { 
+      id: 3,
+      value: 'Price, low to high',
+      sortFunction: () => sort((a, b) => {
+        return a.price - b.price;
+      })
+    },
+    { 
+      id: 4,
+      value: 'Price, high to low',
+      sortFunction: () => sort((a, b) => {
+        return b.price - a.price;
+      })
+    },
   ]);
-
-  function sortToHighByAlph() {
-    setValue((currentValue) => [...currentValue.sort((a, b) => {
-      return a.brand.localeCompare(b.brand);
-    })]);
-  }
-
-  function sortToLowByAlph() {
-    setValue((currentValue) => [...currentValue.sort((a, b) => {
-      return b.brand.localeCompare(a.brand);
-    })]);
-  }
-
-  function sortToHighByPrice() {
-    setValue((currentValue) => [...currentValue.sort((a, b) => {
-      return a.price - b.price;
-    })]);
-  }
   
-  function sortToLowByPrice() {
-    setValue((currentValue) => [...currentValue.sort((a, b) => {
-      return b.price - a.price;
-    })]);
+  function sort(compareFunction) {
+    setValue((currentValue) => [...currentValue.sort(compareFunction)]);
   }
 
   return options;

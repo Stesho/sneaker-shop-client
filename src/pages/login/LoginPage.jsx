@@ -25,7 +25,7 @@ const LoginPage = () => {
         </form>
         <div className={styles.login__create}>
           <span>Don't have an account? </span>
-          <NavLink to="/register">Create one</NavLink>
+          <NavLink to="/registration">Create one</NavLink>
         </div>
       </div>
     </main>
