@@ -14,12 +14,17 @@ const useInput = (initialValue, validations, validationMessages) => {
     setIsDirty(true);
   }
 
+  const isInvalid = () => {
+    return isDirty && validation.isError();
+  }
+
   return {
     value,
+    isDirty,
     onChange,
     onBlur,
-    isDirty,
-    validation
+    isInvalid,
+    validation,
   }
 }
 

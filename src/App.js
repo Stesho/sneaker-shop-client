@@ -7,6 +7,7 @@ import CollectionPage from './pages/collection/CollectionPage';
 import LoginPage from './pages/login/LoginPage';
 import RegisterPage from './pages/registration/RegisterPage';
 import ProductPage from './pages/product/ProductPage';
+import AccountPage from './pages/account/AccountPage';
 import products from './assets/data/products.json';
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
         <Route
           path="/registration"
           element={<RegisterPage/>}
+        />
+        <Route
+          path="/account"
+          element={<AccountPage/>}
         />
         <Route
           path="/:id"

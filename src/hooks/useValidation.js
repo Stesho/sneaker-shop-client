@@ -68,7 +68,7 @@ const useValidation = (value, validations, validationMessages) => {
     isEmpty,
     lengthError,
     emailError,
-    message
+    message,
   }
 }
 

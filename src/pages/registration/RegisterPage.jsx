@@ -1,9 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import Button2 from '../../components/button/Button2';
 import Input from '../../components/input/Input';
 import styles from './RegisterPage.module.scss';
 import useInput from '../../hooks/useInput';
+import ValidationError from '../../components/validationError/ValidationError';
 
 const RegisterPage = () => {
   const validationMessages = {
@@ -31,10 +33,11 @@ const RegisterPage = () => {
     {isPassword: true, length: {min: 8, max: 40}, notEmpty: true},
     {...validationMessages, length: 'Field must contain from 8 to 40 symbols'},
   );
+  // TODO: const [isRequestError, setIsRequestError] = useState(false);
 
   const registration = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/api/user', {
+      const response = await axios.post('http://localhost:3001/auth/registration', {
         name: name.value,
         surname: surname.value,
         email: email.value,
@@ -46,8 +49,11 @@ const RegisterPage = () => {
     }
   }
 
-  const isError = (input) => {
-    return input.isDirty && input.validation.isError();
+  const isValidForm = () => {
+    return name.validation.isError() ||
+           surname.validation.isError() ||
+           email.validation.isError() ||
+           password.validation.isError();
   }
 
   return (
@@ -56,7 +62,8 @@ const RegisterPage = () => {
         <h2 className={[styles.register__title, styles.title2].join(' ')}>Register</h2>
         <p className={styles.register__caption}>Please fill in the information below:</p>
         <form className={styles.register__form} action="">
-          {isError(name) && <div>{name.validation.message}</div>}
+          {/* {isRequestError && <div>This user already exists</div>} */}
+          {name.isInvalid() && <ValidationError message={name.validation.message}/>}
           <Input 
             value={name.value}
             onChange={(event) => name.onChange(event)}
@@ -67,7 +74,7 @@ const RegisterPage = () => {
             }}
             placeholder={'First name'}
           />
-          {isError(surname) && <div>{surname.validation.message}</div>}
+          {surname.isInvalid() && <ValidationError message={surname.validation.message}/>}
           <Input 
             value={surname.value}
             onChange={(event) => surname.onChange(event)}
@@ -78,7 +85,7 @@ const RegisterPage = () => {
             }}
             placeholder={'Last name'}
           />
-          {isError(email) && <div>{email.validation.message}</div>}
+          {email.isInvalid() && <ValidationError message={email.validation.message}/>}
           <Input
             value={email.value}
             onChange={(event) => email.onChange(event)}
@@ -89,7 +96,7 @@ const RegisterPage = () => {
             }}
             placeholder={'Email'}
           />
-          {isError(password) && <div>{password.validation.message}</div>}
+          {password.isInvalid() && <ValidationError message={password.validation.message}/>}
           <Input
             value={password.value}
             onChange={(event) => password.onChange(event)}
@@ -100,7 +107,7 @@ const RegisterPage = () => {
             }}
             placeholder={'Password'}
           />
-          <Button2 onClick={() => registration()}>Create my account</Button2>
+          <Button2 disabled={isValidForm()} onClick={() => registration()}>Create my account</Button2>
         </form>
       </div>
     </main>
