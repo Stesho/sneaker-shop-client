@@ -1,4 +1,6 @@
 @import '../../styles/global.scss';
+$pink: #e4c4c4;
+$red: #cb2b2b;
 
 .login {
   display: flex;
@@ -14,6 +16,19 @@
   &__form {
     display: flex;
     flex-direction: column;
+    width: 400px;
+  }
+  &__requestError {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 0 0 15px 0;
+    text-align: center;
+    color: $red;
+    background-color: $pink;
+  }
+  &__input {
+    width: 100%;
+    margin: 0 0 15px 0;
   }
   &__create {
     margin: 24px 0 40px 0;

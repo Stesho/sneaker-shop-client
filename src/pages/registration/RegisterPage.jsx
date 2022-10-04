@@ -69,42 +69,34 @@ const RegisterPage = () => {
             onChange={(event) => name.onChange(event)}
             onBlur={name.onBlur}
             type="text"
-            style={{
-              input: {width: '400px', marginBottom: '15px'}
-            }}
+            className={styles.register__input}
             placeholder={'First name'}
-          />
+            />
           {surname.isInvalid() && <ValidationError message={surname.validation.message}/>}
           <Input 
             value={surname.value}
             onChange={(event) => surname.onChange(event)}
             onBlur={surname.onBlur}
             type="text"
-            style={{
-              input: {width: '400px', marginBottom: '15px'}
-            }}
+            className={styles.register__input}
             placeholder={'Last name'}
-          />
+            />
           {email.isInvalid() && <ValidationError message={email.validation.message}/>}
           <Input
             value={email.value}
             onChange={(event) => email.onChange(event)}
             onBlur={email.onBlur}
             type="email"
-            style={{
-              input: {width: '400px', marginBottom: '15px'}
-            }}
+            className={styles.register__input}
             placeholder={'Email'}
-          />
+            />
           {password.isInvalid() && <ValidationError message={password.validation.message}/>}
           <Input
             value={password.value}
             onChange={(event) => password.onChange(event)}
             onBlur={password.onBlur}
             type="password"
-            style={{
-              input: {width: '400px', marginBottom: '15px'}
-            }}
+            className={styles.register__input}
             placeholder={'Password'}
           />
           <Button2 disabled={isValidForm()} onClick={() => registration()}>Create my account</Button2>

@@ -1,0 +1,31 @@
+@import '../../../styles/global.scss';
+
+.overview {
+  padding: 0 30px 30px 30px;
+  &__icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 0 10px 0;
+    svg {
+      fill: var(--secondary-color);
+    }
+  }
+  &__title {
+    margin: 10px 0;
+    letter-spacing: 0.1rem;
+  }
+  &__caption {
+    margin: 0 0 30px 0;
+    letter-spacing: 0.05rem;
+  }
+  &__form {
+    width: 400px;
+  }
+  &__input {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+  &__button {
+    width: 100%;
+  }
+}

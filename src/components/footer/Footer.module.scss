@@ -48,6 +48,12 @@
   }
 }
 
+.newsLetter {
+  &__input {
+    margin: 0 0 5px 0;
+  }
+}
+
 .author {
   margin: 50px 0 0 0;
   letter-spacing: 0.05rem;

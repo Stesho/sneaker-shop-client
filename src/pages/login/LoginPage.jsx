@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Button2 from '../../components/button/Button2';
@@ -17,22 +17,25 @@ const LoginPage = () => {
   const email = useInput('', {isEmail: true, notEmpty: true}, validationMessages);
   const password = useInput('', {isPassword: true, length: {min: 8, max: 40}, notEmpty: true}, validationMessages);
   const navigate = useNavigate();
+  const [requestErrorMessage, setRequestErrorMessage] = useState('');
 
   const isValidForm = () => {
     return email.validation.isError() || password.validation.isError();
   }
 
   const login = async (event) => {
+    event.preventDefault();
     try {
-      event.preventDefault();
       const response = await axios.post('http://localhost:3001/auth/login', {
         email: email.value,
         password: password.value,
       });
-      navigate('/account');
+      document.cookie = `token=${response.data.token}`;
+      navigate('/account/overview');
     }
     catch(err) {
       console.log(err);
+      setRequestErrorMessage(err.response.data.message);
     }
   }
 
@@ -42,32 +45,29 @@ const LoginPage = () => {
         <h2 className={[styles.login__title, styles.title2].join(' ')}>Login</h2>
         <p className={styles.login__caption}>Please enter your e-mail and password:</p>
         <form className={styles.login__form} action="">
+          <div style={{display: requestErrorMessage ? 'block' : 'none'}} className={styles.login__requestError}>
+            {requestErrorMessage}
+          </div>
           {email.isInvalid() && <ValidationError message={email.validation.message}/>}
           <Input 
             value={email.value}
             onChange={(event) => email.onChange(event)}
             onBlur={email.onBlur}
             type="email"
-            style={{
-              input: {width: '400px', marginBottom: '15px'}
-            }}
+            className={styles.login__input}
             placeholder={'Email'}
-          />
+            />
           {password.isInvalid() && <ValidationError message={password.validation.message}/>}
           <Input
             value={password.value}
             onChange={(event) => password.onChange(event)}
             onBlur={password.onBlur}
             type="password"
-            style={{
-              input: {width: '400px', marginBottom: '15px'}
-            }}
+            className={styles.login__input}
             placeholder={'Password'}
           />
           <Button2 disabled={isValidForm()} onClick={(event) => login(event)}>
-            {/* <NavLink to='/'> */}
-              Login
-            {/* </NavLink> */}
+            Login
           </Button2>
         </form>
         <div className={styles.login__create}>

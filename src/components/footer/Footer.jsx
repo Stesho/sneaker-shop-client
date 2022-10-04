@@ -79,14 +79,12 @@ const Footer = () => {
           <section className={styles.newsLetter}>
             <h3 className={[styles.contacts__header, styles.title3].join(' ')}>Newsletter</h3>
             <form className={styles.newsLetter__form} action="">
-              <Input style={{
-                  input: {marginBottom: '5px'}
-                }}
+              <Input 
+                className={styles.newsLetter__input}
                 placeholder="Email address"
-              />
-              <Input style={{
-                  input: {marginBottom: '5px'}
-                }}
+                />
+              <Input
+                className={styles.newsLetter__input}
                 placeholder="Shoe size"
               />
               <Button2>Subscribe</Button2>

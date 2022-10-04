@@ -37,7 +37,7 @@ const Header = () => {
             <span className={styles.themeSwitcher__btn}></span>
           </label>
           <ul className={styles.list}>
-            <li className={styles.item}><NavLink to="/login" className={styles.link}>Account</NavLink></li>
+            <li className={styles.item}><NavLink to="/account/overview" className={styles.link}>Account</NavLink></li>
             <li className={styles.item}><a href="#" className={styles.link}>Search</a></li>
             <li className={styles.item}><a href="#" className={styles.link}>Cart</a></li>
           </ul>

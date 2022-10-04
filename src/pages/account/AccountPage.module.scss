@@ -1,2 +1,48 @@
 @import '../../styles/global.scss';
 
+.title {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.account {
+  max-width: 1260px;
+  width: 100%;
+  min-height: calc(100vh);
+  margin: 0 auto;
+  &__content {
+    display: flex;
+    // justify-content: center;
+  }
+}
+
+.navigation {
+  max-width: 300px;
+  width: 100%;
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    svg {
+      width: 20px;
+      height: 20px;
+      margin: 0 24px 0 0;
+      fill: var(--secondary-color);
+    }
+  }
+}
+
+.active {
+  // position: relative;
+  background-color: var(--hover-additional-color);
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   width: 2px;
+  //   height: 100%;
+  //   left: 0;
+  //   background-color: var(--secondary-color);
+  //   background-color: var(--neutral-color);
+  //   background-color: var(--hover-color);
+  // }
+}

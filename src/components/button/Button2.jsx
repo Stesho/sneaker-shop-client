@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Button2.module.scss';
 
-const Button2 = ({children, onClick, disabled}) => {
+const Button2 = ({className, children, onClick, disabled}) => {
   return (
-    <button className={styles.btn} onClick={onClick} disabled={disabled}>
+    <button className={[styles.btn, className].join(' ')} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );
