@@ -1,11 +1,15 @@
 import { React, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setIsAuth, setUserProps } from '../../store/userSlice';
 import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
+import useInput from '../../hooks/useInput';
+import cookies from '../../services/cookies';
 import Button2 from '../../components/button/Button2';
 import Input from '../../components/input/Input';
 import ValidationError from '../../components/validationError/ValidationError';
+
 import styles from './LoginPage.module.scss';
-import useInput from '../../hooks/useInput';
 
 const LoginPage = () => {
   const validationMessages = {
@@ -16,8 +20,9 @@ const LoginPage = () => {
   }
   const email = useInput('', {isEmail: true, notEmpty: true}, validationMessages);
   const password = useInput('', {isPassword: true, length: {min: 8, max: 40}, notEmpty: true}, validationMessages);
-  const navigate = useNavigate();
   const [requestErrorMessage, setRequestErrorMessage] = useState('');
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const isValidForm = () => {
     return email.validation.isError() || password.validation.isError();
@@ -30,8 +35,13 @@ const LoginPage = () => {
         email: email.value,
         password: password.value,
       });
-      document.cookie = `token=${response.data.token}`;
-      navigate('/account/overview');
+
+      cookies.setCookie('token', response.data.token);
+
+      dispatch(setIsAuth(true));
+      dispatch(setUserProps(response.data.user));
+
+      navigate('/account');
     }
     catch(err) {
       console.log(err);

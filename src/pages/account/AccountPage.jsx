@@ -1,17 +1,26 @@
-import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { React } from 'react';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './AccountPage.module.scss';
+import cookies from '../../services/cookies';
 
 const AccountPage = () => {
+  const navigate = useNavigate();
+
   const setActive = ({isActive}) => {
     return isActive ? [styles.active, styles.navigation__link].join(' ') : styles.navigation__link;
   }
 
+  const signOut = () => {
+    cookies.deleteCookie('token');
+    navigate('/login');
+  }
+
   return (
-    <main className={[styles.account, styles.main].join(' ')}>
+    <main className={styles.main}>
       <h2 className={[styles.title, styles.title2].join(' ')}>My account</h2>
-      <div className={styles.account__content}>
+      <div className={[styles.account, styles.account__content].join(' ')}>
         <nav className={styles.navigation}>
+          {/* <span>Welcom back, Name</span> */}
           <ul className={styles.navigation__list}>
             <li className={styles.navigation__item}>
               <NavLink to='/account/overview' className={setActive}>
@@ -34,7 +43,7 @@ const AccountPage = () => {
               </NavLink>
             </li>
             <li className={styles.navigation__item}>
-              <NavLink to='/account/change-password' className={styles.navigation__link}>
+              <NavLink to='/account/change-password' className={setActive}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20">
                   <g fillRule="evenodd">
                     <path d="M16 7h-3V5c0-2.8-2.2-5-5-5S3 2.2 3 5v2H0v13h16V7zm-4.9 0H4.9V5c0-1.7 1.4-3.1 3.1-3.1 1.7 0 3.1 1.4 3.1 3.1v2zM2 9h12v9H2V9z"/>
@@ -56,16 +65,16 @@ const AccountPage = () => {
               </NavLink>
             </li>
             <li className={styles.navigation__item}>
-              <NavLink to='/' className={styles.navigation__link}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
-                  <g fill="#2D2D2D" fill-rule="evenodd">
+              <div className={styles.navigation__link} onClick={() => signOut()}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 17">
+                  <g fillRule="evenodd">
                     <path d="M19.965.1v16.8h-9.441v-2.067h7.388s.04-12.689 0-12.689h-7.388V.1h9.441z"/>
                     <path d="M2.143 9.55v-2.1h11.524v2.1z"/>
                     <path d="M1.525 10.034l-.002.002L.042 8.554l.001-.001-.001-.002L1.523 7.07l.002.001 3.714-3.714L6.721 4.84 3.007 8.553l3.714 3.714-1.482 1.481-3.714-3.714z"/>
                   </g>
                 </svg>
                 <span>Sign out</span>
-              </NavLink>
+              </div>
             </li>
           </ul>
         </nav>

@@ -1,22 +1,16 @@
-import { React, useEffect, useState } from 'react';
+import { React, useContext, useEffect, useState } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import axios from 'axios';
+import cookies from './cookies';
 
 // TODO: change params to headers in request
 
 const PrivateRoutes = () => {
   const [isAuth, setIsAuth] = useState(true);
 
-  const getCookie = (name) => {
-    let matches = document.cookie.match(new RegExp(
-      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
-
   const checkAuth = async () => {
     try {
-      const token = 'Bearer ' +  getCookie('token');
+      const token = 'Bearer ' +  cookies.getCookie('token');
       const response = await axios.get('http://localhost:3001/auth/check', {
         params: {
           authorization: token,
@@ -24,6 +18,7 @@ const PrivateRoutes = () => {
       });
     }
     catch(err) {
+      console.log(err);
       setIsAuth(false);
     }
   }
