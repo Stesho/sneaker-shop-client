@@ -1,21 +1,28 @@
 import { React, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUserProps } from '../../../store/userSlice';
+import ValidationError from '../../validationError/ValidationError';
+import useInput from '../../../hooks/useInput';
 import axios from 'axios';
 import Button2 from '../../button/Button2';
 import Input from '../../input/Input';
 import styles from './ChangePassword.module.scss';
 
 const ChangePassword = () => {
+  const validationMessages = {
+    notEmpty: "Filed can't be empty",
+    length: 'Field must contain from 1 to 40 symbols',
+    isPassword: 'Password must contain at least 1 letter and 1 number',
+  }
   const user = useSelector(state => state.user);
-  const [password, setPassword] = useState('');
-  const [newPassword, setNewPassword] = useState('');
+  const password = useInput('', {isPassword: true, length: {min: 8, max: 40}, notEmpty: true}, validationMessages);
+  const newPassword = useInput('', {isPassword: true, length: {min: 8, max: 40}, notEmpty: true}, validationMessages);
   const [requestErrorMessage, setRequestErrorMessage] = useState('');
   const dispatch = useDispatch();
 
   const savePassword = async (event) => {
     event.preventDefault();
-    if(password !== user.props.password) {
+    if(password.value !== user.props.password) {
       setRequestErrorMessage('Invalid password');
       return;
     }
@@ -23,7 +30,7 @@ const ChangePassword = () => {
       name: user.props.name,
       surname: user.props.surname,
       email: user.props.email,
-      password: newPassword,
+      password: newPassword.value,
     }
     try {
       const response = await axios.put(`http://localhost:3001/auth/user/${user.props.id}`, newUser);
@@ -32,6 +39,11 @@ const ChangePassword = () => {
     catch (err) {
       console.log(err);
     }
+  }
+
+  const isValidForm = () => {
+    return password.validation.isError() ||
+           newPassword.validation.isError();
   }
 
   return (
@@ -53,24 +65,29 @@ const ChangePassword = () => {
           {requestErrorMessage}
         </div>
         <span className={styles.changePass__label}>Current password:</span>
+        {password.isInvalid() && <ValidationError message={password.validation.message}/>}
         <Input
           className={styles.changePass__input}
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
+          value={password.value}
+          onChange={(event) => password.onChange(event)}
+          onFocus={password.onFocus}
           placeholder='current password'
           type='password'
-          />
+        />
         <span className={styles.changePass__label}>New password:</span>
+        {newPassword.isInvalid() && <ValidationError message={newPassword.validation.message}/>}
         <Input
           className={styles.changePass__input}
-          value={newPassword}
-          onChange={(event) => setNewPassword(event.target.value)}
+          value={newPassword.value}
+          onChange={(event) => newPassword.onChange(event)}
+          onFocus={newPassword.onFocus}
           placeholder='new password'
           type='password'
         />
         <Button2
           className={styles.changePass__button}
           onClick={(event) => savePassword(event)}
+          disabled={isValidForm()}
         >
           Save password
         </Button2>

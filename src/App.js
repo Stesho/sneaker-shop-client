@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -12,17 +12,38 @@ import Overview from './components/account/overview/Overview';
 import MyOrders from './components/account/myOrders/MyOrders';
 import ChangePassword from './components/account/changePassword/ChangePassword';
 import PrivateRoutes from './services/PrivateRoutes';
-import products from './assets/data/products.json';
+// import products from './assets/data/products.json';
+import axios from 'axios';
 
 function App() {
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/collection/product');
+      setProducts(response.data);
+    }
+    catch(err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  if(products.length === 0) {
+    // Preloader
+    return false;
+  }
+
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path="/newarrivals" element={<HomePage/>} />
-        <Route path="/brands" element={<HomePage/>} />
-        {/* element={<Collection title={"Men's collection"} products={products.filter((item) => item.gender === 'male')}/>} */}
+        <Route path="/" element={<HomePage products={products}/>} />
+        <Route path="/newarrivals" element={<HomePage products={products}/>} />
+        <Route path="/brands" element={<HomePage products={products}/>} />
         <Route path="/mens" element={<CollectionPage title={"Men's collection"} products={products}/>} />
         <Route path="/womans" element={<CollectionPage title={"Womens's collection"} products={products.filter((item) => item.gender === 'female')}/>} />
         <Route path="/login" element={<LoginPage/>}/>

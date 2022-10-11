@@ -10,7 +10,7 @@ const useInput = (initialValue, validations, validationMessages) => {
     setValue(event.target.value);
   }
 
-  const onBlur = () => {
+  const onFocus = () => {
     setIsDirty(true);
   }
 
@@ -22,7 +22,7 @@ const useInput = (initialValue, validations, validationMessages) => {
     value,
     isDirty,
     onChange,
-    onBlur,
+    onFocus,
     isInvalid,
     validation,
   }

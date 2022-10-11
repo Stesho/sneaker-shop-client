@@ -1,88 +1,141 @@
 [
   {
-    "id":1,
-    "imgUrl":"nike_dj3911-101_01_600x.jpg",
-    "brand":"Nike",
-    "model":"AIR FORCE 1 LOW RETRO (WHITE | ROYAL BLUE | GUM YELLOW)",
-    "price":"150",
-    "gender":"male",
-    "sizes":[40, 40.5, 42, 42.5, 43, 43.5, 46, 47]
-  },
-  {
-    "id":2,
-    "imgUrl":"newbalance_M990TF3_01_600x.jpg",
+    "imgUrlss":[
+      "newbalance_u574lgaa_01.webp",
+      "newbalance_u574lgaa_02.webp",
+      "newbalance_u574lgaa_03.webp"
+    ],
     "brand":"New balance",
-    "model":"MADE IN USA 990V3 (SCARLET)",
-    "price":"200",
+    "model":"NB 574 LEGACY",
+    "price":100,
     "gender":"male",
-    "sizes":[39, 41, 41.5, 44, 44.5, 45, 45.5]
+    "sizes":[40, 40.5, 42, 42.5, 43, 43.5, 46, 47],
+    "description":"Add some chunky, retro style to your sneaker collection with this style. Fitted with burgundy suede uppers - and added mesh for breathability - they feature a chunky rubber sole and the brands iconic 'N' branding at each sidewall.",
+    "sku":30200570,
+    "style":"U574LGAA"
   },
   {
-    "id":3,
-    "imgUrl":"newbalance_M990GR1_01_600x.jpg",
+    "imgUrlss":[
+      "asics_1201A645-020_01.webp",
+      "asics_1201A645-020_02.webp",
+      "asics_1201A645-020_03.webp"
+    ],
+    "brand":"Asics",
+    "model":"UB4-S GEL-1130",
+    "price":120,
+    "gender":"male",
+    "sizes":[39, 41, 41.5, 44, 44.5, 45, 45.5],
+    "description":"The UB4-S GEL-1130™ sneaker pays homage to the ninth iteration of the GEL-1000™ series. Creative consultants from the Kiko Kostadinov Studio updated the shoe with mixed materials and new aesthetic influences.",
+    "sku":30200450,
+    "style":"1201A645-020"
+  },
+  {
+    "imgUrlss":[
+      "U5748H2_01.webp",
+      "U5748H2_02.webp",
+      "U5748H2_03.webp"
+    ],
     "brand":"New balance",
-    "model":"MADE IN USA 990 (GREY)",
-    "price":"175",
+    "model":"NB X JFG CONVERSATIONS AMONGST US 574",
+    "price":90,
     "gender":"male",
-    "sizes":[38, 38.5, 40, 40.5, 41, 41.5, 42, 42.5, 43, 44, 44.5, 45, 45.5, 46, 46.5]
+    "sizes":[38, 38.5, 40, 40.5, 41, 41.5, 42, 42.5, 43, 44, 44.5, 45, 45.5, 46, 46.5],
+    "description":"Creative directed by Joe Freshgoods, Conversations Amongst Us reimagines the 574, an icon rooted in versatility. In a culture where you’re only as fresh as your white sneaks and your fit is the perfect conversation starter, this 574 design takes cues from the historical and cultural styles of communication and celebrates the conversations within the Black community, while opening the landscape for new dialogue.",
+    "sku":30189271,
+    "style":"U574BH2"
   },
   {
-    "id":4,
-    "imgUrl":"nike_DH7561-100_01_600x.jpg",
-    "brand":"Nike",
-    "model":"NIKE AF1 '07 (WHITE | PECAN)",
-    "price":"100",
-    "gender":"male",
-    "sizes":[40, 40.5, 42, 42.5, 43, 47]
-  },
-  {
-    "id":5,
-    "imgUrl":"reebok_GX4475_01_400x.jpg",
-    "brand":"Reebok",
-    "model":"Beatnik Mox (Alabaster | Black | Clascobal)",
-    "price":"130",
-    "gender":"male",
-    "sizes":[41.5, 42.5, 43.5, 44, 45]
-  },
-  {
-    "id":6,
-    "imgUrl":"reebok_GX4480_01_400x.jpg",
-    "brand":"Reebok",
-    "model":"Beatnik Moc (Court Blue | Black)",
-    "price":"130",
-    "gender":"male",
-    "sizes":[36.5, 37, 37.5, 38, 38.5, 39, 41, 41.5]
-  },
-  {
-    "id":7,
-    "imgUrl":"converse_a0187c_01_400x.jpg",
+    "imgUrlss":[
+      "CONVERSE_A00752C_01.webp",
+      "CONVERSE_A00752C_02.webp",
+      "CONVERSE_A00752C_03.webp"
+    ],
     "brand":"Converse",
-    "model":"Peanuts x Converse Chuck 70 Hi (Soba | Zink Yellow)",
-    "price":"100",
-    "gender":"female",
-    "sizes":[37, 37.5, 38, 39, 40, 41.5, 42.5, 43, 44]
-  },
-  {
-    "id":8,
-    "imgUrl":"jordan_CT8532-008_01_400x.jpg",
-    "brand":"Jordan",
-    "model":"Jordan 3 Retro (Black | Rush Orange)",
-    "price":"200",
+    "model":"CHUCK TAYLOR ALL STAR 70 H",
+    "price":85,
     "gender":"male",
-    "sizes":[41, 41.5, 42, 43, 43.5, 44, 44.5, 45, 46.5, 47]
+    "sizes":[40, 40.5, 42, 42.5, 43, 47],
+    "description":"A true-blue hue that's ready for every aesthetic. The Chuck 70 is built off of the original 1970s design, with premium materials, extraordinary craftsmanship, and enhanced cushioning to keep you feeling good. The poly-canvas upper is joined by classic Chuck 70 details, like premium cotton laces, winged tongue stitching for reinforcement, and varnished egret foxing with vintage license plate.",
+    "sku":30199789,
+    "style":"A00752C"
   },
   {
-    "id":9,
-    "imgUrl":"converse_A01798c_01_400x.jpg",
+    "imgUrls":[
+      "asics_1201A676-020_01.webp",
+      "asics_1201A676-020_02.webp",
+      "asics_1201A676-020_03.webp"
+    ],
+    "brand":"Asics",
+    "model":"ASICS X PLEASURES GEL LYTE III OG",
+    "price":120,
+    "gender":"male",
+    "sizes":[41.5, 42.5, 43.5, 44, 45],
+    "description":"Los Angeles streetwear label, PLEASURES implements normcore influences into their rendition of the GEL-LYTE™ III OG sneaker.A piping detail over the seams is met with greyscale hues to represent the general space between black and white—where the PLEASURES design ethos exists.Key details include: suede overlays, pigskin nubuck ASICS Stripes, a terry cloth lining, and debossed PLEASURES logos on the heel counter.",
+    "sku":30200731,
+    "style":"1201A676-020"
+  },
+  {
+    "imgUrls":[
+      "asics_1201a296-700_01.webp",
+      "asics_1201a296-700_02.webp",
+      "asics_1201a296-700_03.webp"
+    ],
+    "brand":"Asics",
+    "model":"GEL-LYTE III OG",
+    "price":120,
+    "gender":"male",
+    "sizes":[36.5, 37, 37.5, 38, 38.5, 39, 41, 41.5],
+    "description":"Los Angeles streetwear label, PLEASURES implements normcore influences into their rendition of the GEL-LYTE™ III OG sneaker.A piping detail over the seams is met with greyscale hues to represent the general space between black and white—where the PLEASURES design ethos exists.Key details include: suede overlays, pigskin nubuck ASICS Stripes, a terry cloth lining, and debossed PLEASURES logos on the heel counter.",
+    "sku":30180132,
+    "style":"1201A296-700"
+  },
+  {
+    "imgUrls":[
+      "reebok_gw5012_01.webp",
+      "reebok_gw5012_02.webp",
+      "reebok_gw5012_03.webp"
+    ],
+    "brand":"Reebok",
+    "model":"REEBOK X MM6 PROJECT 0 CLUB C MO",
+    "price":350,
+    "gender":"male",
+    "sizes":[37, 37.5, 38, 39, 40, 41.5, 42.5, 43, 44],
+    "description":"These suede shoes take a page from Reebok's climbing archive. Don't overlook a single detail, like the durable rubber toe cap, luxe suede upper or nylon loop on the heel that was inspired by chalk bags. Watch your credibility reach a new altitude.",
+    "sku":30187961,
+    "style":"GW5012"
+  },
+  {
+    "imgUrls":[
+      "reebok_reebok_gx4659_01.webp",
+      "reebok_reebok_gx4659_02.webp",
+      "reebok_reebok_gx4659_03.webp"
+    ],
+    "brand":"Reebok",
+    "model":"REEBOK PREMIER ROAD MODERN",
+    "price":200,
+    "gender":"male",
+    "sizes":[41, 41.5, 42, 43, 43.5, 44, 44.5, 45, 46.5, 47],
+    "description":"Flash back to classic Reebok running style. These shoes have a comfortable dual-density midsole and a TPU shank that provides extra stability. The one-piece moulded upper has mesh inserts for a layered look. A geometric design adds style points.",
+    "sku":30197537,
+    "style":"GX4659"
+  },
+
+
+
+  {
+    "imgUrls":"converse_A01798c_01_400x.jpg",
     "brand":"Converse",
     "model":"Converse x Golf Chuck 70 OX (Egret | Corydalis Blue)",
     "price":"100",
     "gender":"female",
-    "sizes":[44, 44.5, 45, 45.5, 46]
+    "sizes":[44, 44.5, 45, 45.5, 46],
+    "description":"Flash back to classic Reebok running style. These shoes have a comfortable dual-density midsole and a TPU shank that provides extra stability. The one-piece moulded upper has mesh inserts for a layered look. A geometric design adds style points.",
+    "sku":30197537,
+    "style":"GX4659"
   },
   {
     "id":10,
-    "imgUrl":"converse_166800c_01_dc87be06-76d9-4035-9dc2-b00e4526b009_400x.jpg",
+    "imgUrls":"converse_166800c_01_dc87be06-76d9-4035-9dc2-b00e4526b009_400x.jpg",
     "brand":"Converse",
     "model":"WOMEN'S RUN STAR HIKE HI (BLACK | WHITE | GUM)",
     "price":"100",
@@ -91,7 +144,7 @@
   }, 
   {
     "id":11,
-    "imgUrl":"newbalance_wtthierp6_01_600x.jpg",
+    "imgUrls":"newbalance_wtthierp6_01_600x.jpg",
     "brand":"New balance",
     "model":"FRESH FOAM HIERRO V6 GTX (GARNET)",
     "price":"140",
@@ -100,7 +153,7 @@
   },
   {
     "id":12,
-    "imgUrl":"nike-dm9461-100_01_600x.jpg",
+    "imgUrls":"nike-dm9461-100_01_600x.jpg",
     "brand":"Nike",
     "model":"AIR FORCE 1 (WHITE | SUMMIT WHITE | PHOTON DUST)",
     "price":"110",
@@ -109,7 +162,7 @@
   },
   {
     "id":13,
-    "imgUrl":"nike_dm8328-600_01_600x.jpg",
+    "imgUrls":"nike_dm8328-600_01_600x.jpg",
     "brand":"Nike",
     "model":"W'S AIR PRESTO (PINK OXFORD)",
     "price":"130",
@@ -118,7 +171,7 @@
   },
   {
     "id":14,
-    "imgUrl":"asics_1202a045-400_01_600x.jpg",
+    "imgUrls":"asics_1202a045-400_01_600x.jpg",
     "brand":"Asics",
     "model":"W'S GEL-MC PLUS (MONACO BLUE | VANILLA)",
     "price":"100",
@@ -127,7 +180,7 @@
   },
   {
     "id":15,
-    "imgUrl":"newbalance_U9060BRN_01_600x.jpg",
+    "imgUrls":"newbalance_U9060BRN_01_600x.jpg",
     "brand":"New balance",
     "model":"NB 9060 (BROWN)",
     "price":"150",
@@ -136,7 +189,7 @@
   },
   {
     "id":16,
-    "imgUrl":"nike_dm0521-101_01_400x.jpg",
+    "imgUrls":"nike_dm0521-101_01_400x.jpg",
     "brand":"Nike",
     "model":"Nike Air Trainer 1 (White Midnight Navy)",
     "price":"125",
@@ -145,7 +198,7 @@
   },
   {
     "id":17,
-    "imgUrl":"puma_385629-01_400x.jpg",
+    "imgUrls":"puma_385629-01_400x.jpg",
     "brand":"Puma",
     "model":"Blaze of Glory The Neverworn (Whisper White)",
     "price":"140",
@@ -154,7 +207,7 @@
   },
   {
     "id":18,
-    "imgUrl":"reebok_gz4935_01_400x.jpg",
+    "imgUrls":"reebok_gz4935_01_400x.jpg",
     "brand":"Reebok",
     "model":"Club C Geo Mid (White | Chalk | Dark Green)",
     "price":"100",
@@ -163,89 +216,7 @@
   },
   {
     "id":19,
-    "imgUrl":"reebok_gz4936_01_400x.jpg",
-    "brand":"Reebok",
-    "model":"Club C Geo Mid (Chalk | Flash Red | Vector Blue)",
-    "price":"100",
-    "gender":"male",
-    "sizes":[39, 39.5, 42, 43, 47]
-  },
-  
-  {
-    "id":20,
-    "imgUrl":"newbalance_wtthierp6_01_600x.jpg",
-    "brand":"New balance",
-    "model":"FRESH FOAM HIERRO V6 GTX (GARNET)",
-    "price":"140",
-    "gender":"female",
-    "sizes":[35, 35.5, 36, 37, 38, 38.5, 39, 41]
-  },
-  {
-    "id":21,
-    "imgUrl":"nike-dm9461-100_01_600x.jpg",
-    "brand":"Nike",
-    "model":"AIR FORCE 1 (WHITE | SUMMIT WHITE | PHOTON DUST)",
-    "price":"110",
-    "gender":"female",
-    "sizes":[36, 36.5, 37, 37.5, 39, 40, 40.5]
-  },
-  {
-    "id":22,
-    "imgUrl":"nike_dm8328-600_01_600x.jpg",
-    "brand":"Nike",
-    "model":"W'S AIR PRESTO (PINK OXFORD)",
-    "price":"130",
-    "gender":"female",
-    "sizes":[35, 35.5, 37, 37.5, 38, 39, 40, 41]
-  },
-  {
-    "id":23,
-    "imgUrl":"asics_1202a045-400_01_600x.jpg",
-    "brand":"Asics",
-    "model":"W'S GEL-MC PLUS (MONACO BLUE | VANILLA)",
-    "price":"100",
-    "gender":"female",
-    "sizes":[35.5, 36.5, 37.5, 38, 38.5, 39]
-  },
-  {
-    "id":24,
-    "imgUrl":"newbalance_U9060BRN_01_600x.jpg",
-    "brand":"New balance",
-    "model":"NB 9060 (BROWN)",
-    "price":"150",
-    "gender":"male",
-    "sizes":[42, 42.5, 43, 43.5, 45, 47]
-  },
-  {
-    "id":25,
-    "imgUrl":"nike_dm0521-101_01_400x.jpg",
-    "brand":"Nike",
-    "model":"Nike Air Trainer 1 (White Midnight Navy)",
-    "price":"125",
-    "gender":"male",
-    "sizes":[44, 44.5, 45, 45.5, 46, 46.5, 47]
-  },
-  {
-    "id":26,
-    "imgUrl":"puma_385629-01_400x.jpg",
-    "brand":"Puma",
-    "model":"Blaze of Glory The Neverworn (Whisper White)",
-    "price":"140",
-    "gender":"male",
-    "sizes":[40, 40.5, 41, 42, 43, 44, 45, 46, 46.5]
-  },
-  {
-    "id":27,
-    "imgUrl":"reebok_gz4935_01_400x.jpg",
-    "brand":"Reebok",
-    "model":"Club C Geo Mid (White | Chalk | Dark Green)",
-    "price":"100",
-    "gender":"male",
-    "sizes":[40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44, 44.5, 45, 45.5, 46, 46.5, 47]
-  },
-  {
-    "id":28,
-    "imgUrl":"reebok_gz4936_01_400x.jpg",
+    "imgUrls":"reebok_gz4936_01_400x.jpg",
     "brand":"Reebok",
     "model":"Club C Geo Mid (Chalk | Flash Red | Vector Blue)",
     "price":"100",

@@ -48,23 +48,18 @@ const ProductPage = ({products}) => {
       </Modal>
       <div className={styles.productPage}>
         <div className={styles.images}>
-          <div className={styles.img}>
-            <img src={require(`../../assets/img/products/${product.imgUrl}`)} alt="NIKE AIR MAX" />
-          </div>
-          <div className={styles.img}>
-            <img src={require(`../../assets/img/products/${product.imgUrl}`)} alt="NIKE AIR MAX" />
-          </div>
-          <div className={styles.img}>
-            <img src={require(`../../assets/img/products/${product.imgUrl}`)} alt="NIKE AIR MAX" />
-          </div>
-          <div className={styles.img}>
-            <img src={require(`../../assets/img/products/${product.imgUrl}`)} alt="NIKE AIR MAX" />
-          </div>
+          {product.img_urls.map((item, index) => {
+            return (
+              <div className={styles.img} key={index}>
+                <img src={require(`../../assets/img/products/${item}`)} alt="NIKE AIR MAX" />
+              </div>
+            )
+          })}
         </div>
         <div className={styles.info}>
           <span className={styles.info__brand}>{product.brand}</span>
           <h2 className={[styles.info__model, styles.title2].join(' ')}>{product.model}</h2>
-          <span className={styles.info__sku}>Sku: 30200129</span>
+          <span className={styles.info__sku}>Sku: {product.sku}</span>
           <span className={styles.info__price}>${product.price}</span>
           <div className={styles.info__size}>
             <span className={styles.info__sizeCaption}>Select size:</span>
@@ -91,16 +86,10 @@ const ProductPage = ({products}) => {
           </button>
           <Button2>Add to card</Button2>
           <div className={styles.info__description}>
-            Creative directed by Joe Freshgoods, Conversations
-            Amongst Us reimagines the 574, an icon rooted in versatility.
-            In a culture where you're only as fresh as your white sneaks
-            and your fit is the perfect conversation starter, this 574
-            design takes cues from the historical and cultural styles of
-            communication and celebrates the conversations within the
-            Black community, while opening the landscape for new dialogue.
+            {product.description}
           </div>
           <ul className={styles.info__additionList}>
-            <li className={styles.info__additionItem}>Style: U574BH2</li>
+            <li className={styles.info__additionItem}>Style: {product.style}</li>
             <li className={styles.info__additionItem}>All Sales Are Final. NO Cancellations, Returns, Exchanges or Merchandise Credit on this Special Release Product</li>
             <li className={styles.info__additionItem}>Sizing listed in EU Men's</li>
           </ul>

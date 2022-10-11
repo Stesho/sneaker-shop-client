@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Button2 from '../../components/button/Button2';
 import Input from '../../components/input/Input';
@@ -33,9 +33,11 @@ const RegisterPage = () => {
     {isPassword: true, length: {min: 8, max: 40}, notEmpty: true},
     {...validationMessages, length: 'Field must contain from 8 to 40 symbols'},
   );
+  const navigate = useNavigate();
   // TODO: const [isRequestError, setIsRequestError] = useState(false);
 
-  const registration = async () => {
+  const registration = async (event) => {
+    event.preventDefault();
     try {
       const response = await axios.post('http://localhost:3001/auth/registration', {
         name: name.value,
@@ -43,6 +45,7 @@ const RegisterPage = () => {
         email: email.value,
         password: password.value
       });
+      navigate('/login');
     }
     catch (err) {
       console.log(err);
@@ -67,7 +70,7 @@ const RegisterPage = () => {
           <Input 
             value={name.value}
             onChange={(event) => name.onChange(event)}
-            onBlur={name.onBlur}
+            onFocus={name.onFocus}
             type="text"
             className={styles.register__input}
             placeholder={'First name'}
@@ -76,7 +79,7 @@ const RegisterPage = () => {
           <Input 
             value={surname.value}
             onChange={(event) => surname.onChange(event)}
-            onBlur={surname.onBlur}
+            onFocus={surname.onFocus}
             type="text"
             className={styles.register__input}
             placeholder={'Last name'}
@@ -85,7 +88,7 @@ const RegisterPage = () => {
           <Input
             value={email.value}
             onChange={(event) => email.onChange(event)}
-            onBlur={email.onBlur}
+            onFocus={email.onFocus}
             type="email"
             className={styles.register__input}
             placeholder={'Email'}
@@ -94,12 +97,12 @@ const RegisterPage = () => {
           <Input
             value={password.value}
             onChange={(event) => password.onChange(event)}
-            onBlur={password.onBlur}
+            onFocus={password.onFocus}
             type="password"
             className={styles.register__input}
             placeholder={'Password'}
           />
-          <Button2 disabled={isValidForm()} onClick={() => registration()}>Create my account</Button2>
+          <Button2 disabled={isValidForm()} onClick={(event) => registration(event)}>Create my account</Button2>
         </form>
       </div>
     </main>

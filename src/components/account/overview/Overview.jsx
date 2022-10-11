@@ -37,6 +37,12 @@ const Overview = () => {
     }
   }
 
+  const isValidForm = () => {
+    return name.validation.isError() ||
+           surname.validation.isError() ||
+           email.validation.isError();
+  }
+
   return (
     <div className={styles.overview}>
       <div className={styles.overview__icon}>
@@ -55,26 +61,31 @@ const Overview = () => {
           className={styles.overview__input}
           value={name.value}
           onChange={(event) => name.onChange(event)}
-          onBlur={name.onBlur}
+          onFocus={name.onFocus}
           placeholder='name'
         />
         <span className={styles.overview__label}>Surname:</span>
+        {surname.isInvalid() && <ValidationError message={surname.validation.message}/>}
         <Input
           className={styles.overview__input}
           value={surname.value}
           onChange={(event) => surname.onChange(event)}
+          onFocus={surname.onFocus}
           placeholder='surname'
         />
         <span className={styles.overview__label}>Email:</span>
+        {email.isInvalid() && <ValidationError message={email.validation.message}/>}
         <Input
           className={styles.overview__input}
           value={email.value}
           onChange={(event) => email.onChange(event)}
+          onFocus={email.onFocus}
           placeholder='email'
         />
         <Button2
           className={styles.overview__button}
           onClick={() => saveChanges()}
+          disabled={isValidForm()}
         >
           Save changes
         </Button2>

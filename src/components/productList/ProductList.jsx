@@ -29,7 +29,7 @@ const ProductList = ({productCards}) => {
         {currentItems.map((item) => {
           return (
             <Link to={`/${item.id}`} key={item.id} style={{margin: '30px'}}>
-              <ProductCard imgUrl={item.imgUrl} brand={item.brand} model={item.model} price={item.price} />
+              <ProductCard imgUrl={item.img_urls[0]} brand={item.brand} model={item.model} price={item.price} />
             </Link>
           )
         })}

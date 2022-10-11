@@ -12,7 +12,7 @@
     box-shadow: 0px 0px 10px var(--hover-color);
   }
   &:disabled {
-    background-color: var(--secondary-light-color);
+    background-color: var(--grey-200);
   }
   &:disabled:hover {
     box-shadow: none;

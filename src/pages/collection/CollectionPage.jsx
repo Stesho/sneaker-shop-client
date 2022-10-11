@@ -10,6 +10,7 @@ import ProductList from '../../components/productList/ProductList';
 //TODO: NotFound page
 //TODO: close modal on overlay click
 //TODO: modal sizes table
+//TODO: set max price 400
 
 const CollectionPage = ({title, products}) => {
   const [productCards, setProductCards] = useState(products);

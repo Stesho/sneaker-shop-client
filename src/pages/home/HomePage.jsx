@@ -6,16 +6,14 @@ import Slider from '../../components/slider/Slider';
 import ProductCard from '../../components/productCard/ProductCard';
 import Button2 from '../../components/button/Button2';
 import Parallax from '../../components/parallax/Parallax';
-import products from '../../assets/data/products.json';
 
-const HomePage = () => {
+const HomePage = ({products}) => {
   const [slides, setSlides] = useState([
     {id: 1, imgUrl: 'assets/img/homePage/slide1.jpg', checked: true},
     {id: 2, imgUrl: 'assets/img/homePage/slide2.jpg', checked: false},
     {id: 3, imgUrl: 'assets/img/homePage/slide3.jpg', checked: false},
     {id: 4, imgUrl: 'assets/img/homePage/slide4.jpg', checked: false},
   ]);
-
   const [productCards, setProductCards] = useState(products);
 
   useEffect(() => {
@@ -43,7 +41,7 @@ const HomePage = () => {
             {productCards.map((item) => {
               return (
                 <ProductCard
-                  imgUrl={item.imgUrl}
+                  imgUrl={item.img_urls[0]}
                   brand={item.brand}
                   model={item.model}
                   price={item.price}

@@ -62,7 +62,7 @@ const LoginPage = () => {
           <Input 
             value={email.value}
             onChange={(event) => email.onChange(event)}
-            onBlur={email.onBlur}
+            onFocus={email.onFocus}
             type="email"
             className={styles.login__input}
             placeholder={'Email'}
@@ -71,7 +71,7 @@ const LoginPage = () => {
           <Input
             value={password.value}
             onChange={(event) => password.onChange(event)}
-            onBlur={password.onBlur}
+            onFocus={password.onFocus}
             type="password"
             className={styles.login__input}
             placeholder={'Password'}
