@@ -14,6 +14,7 @@ import ChangePassword from './components/account/changePassword/ChangePassword';
 import PrivateRoutes from './services/PrivateRoutes';
 // import products from './assets/data/products.json';
 import axios from 'axios';
+import CartPage from './pages/cart/CartPage';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -56,6 +57,7 @@ function App() {
               <Route path="change-password" element={<ChangePassword/>} />
             </Route>
         </Route>
+        <Route path="/cart" element={<CartPage/>} />
         <Route path="/:id" element={<ProductPage products={products}/>} />
       </Routes>
       <Footer />

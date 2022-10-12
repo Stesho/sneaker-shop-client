@@ -1,6 +1,6 @@
 [
   {
-    "imgUrlss":[
+    "imgUrls":[
       "newbalance_u574lgaa_01.webp",
       "newbalance_u574lgaa_02.webp",
       "newbalance_u574lgaa_03.webp"
@@ -10,12 +10,12 @@
     "price":100,
     "gender":"male",
     "sizes":[40, 40.5, 42, 42.5, 43, 43.5, 46, 47],
-    "description":"Add some chunky, retro style to your sneaker collection with this style. Fitted with burgundy suede uppers - and added mesh for breathability - they feature a chunky rubber sole and the brands iconic 'N' branding at each sidewall.",
+    "description":"Add some chunky, retro style to your sneaker collection with this style. Fitted with burgundy suede uppers - and added mesh for breathability - they feature a chunky rubber sole and the brands iconic ’N’ branding at each sidewall.",
     "sku":30200570,
     "style":"U574LGAA"
   },
   {
-    "imgUrlss":[
+    "imgUrls":[
       "asics_1201A645-020_01.webp",
       "asics_1201A645-020_02.webp",
       "asics_1201A645-020_03.webp"
@@ -30,7 +30,7 @@
     "style":"1201A645-020"
   },
   {
-    "imgUrlss":[
+    "imgUrls":[
       "U5748H2_01.webp",
       "U5748H2_02.webp",
       "U5748H2_03.webp"
@@ -45,7 +45,7 @@
     "style":"U574BH2"
   },
   {
-    "imgUrlss":[
+    "imgUrls":[
       "CONVERSE_A00752C_01.webp",
       "CONVERSE_A00752C_02.webp",
       "CONVERSE_A00752C_03.webp"
@@ -55,7 +55,7 @@
     "price":85,
     "gender":"male",
     "sizes":[40, 40.5, 42, 42.5, 43, 47],
-    "description":"A true-blue hue that's ready for every aesthetic. The Chuck 70 is built off of the original 1970s design, with premium materials, extraordinary craftsmanship, and enhanced cushioning to keep you feeling good. The poly-canvas upper is joined by classic Chuck 70 details, like premium cotton laces, winged tongue stitching for reinforcement, and varnished egret foxing with vintage license plate.",
+    "description":"A true-blue hue that’s ready for every aesthetic. The Chuck 70 is built off of the original 1970s design, with premium materials, extraordinary craftsmanship, and enhanced cushioning to keep you feeling good. The poly-canvas upper is joined by classic Chuck 70 details, like premium cotton laces, winged tongue stitching for reinforcement, and varnished egret foxing with vintage license plate.",
     "sku":30199789,
     "style":"A00752C"
   },
@@ -100,7 +100,7 @@
     "price":350,
     "gender":"male",
     "sizes":[37, 37.5, 38, 39, 40, 41.5, 42.5, 43, 44],
-    "description":"These suede shoes take a page from Reebok's climbing archive. Don't overlook a single detail, like the durable rubber toe cap, luxe suede upper or nylon loop on the heel that was inspired by chalk bags. Watch your credibility reach a new altitude.",
+    "description":"These suede shoes take a page from Reebok’s climbing archive. Don’t overlook a single detail, like the durable rubber toe cap, luxe suede upper or nylon loop on the heel that was inspired by chalk bags. Watch your credibility reach a new altitude.",
     "sku":30187961,
     "style":"GW5012"
   },
@@ -137,7 +137,7 @@
     "id":10,
     "imgUrls":"converse_166800c_01_dc87be06-76d9-4035-9dc2-b00e4526b009_400x.jpg",
     "brand":"Converse",
-    "model":"WOMEN'S RUN STAR HIKE HI (BLACK | WHITE | GUM)",
+    "model":"WOMEN’S RUN STAR HIKE HI (BLACK | WHITE | GUM)",
     "price":"100",
     "gender":"female",
     "sizes":[35, 35.5, 36, 36.5, 37, 37.5, 38, 38.5, 39, 40, 41.5]
@@ -164,7 +164,7 @@
     "id":13,
     "imgUrls":"nike_dm8328-600_01_600x.jpg",
     "brand":"Nike",
-    "model":"W'S AIR PRESTO (PINK OXFORD)",
+    "model":"W’S AIR PRESTO (PINK OXFORD)",
     "price":"130",
     "gender":"female",
     "sizes":[35, 35.5, 37, 37.5, 38, 39, 40, 41]
@@ -173,7 +173,7 @@
     "id":14,
     "imgUrls":"asics_1202a045-400_01_600x.jpg",
     "brand":"Asics",
-    "model":"W'S GEL-MC PLUS (MONACO BLUE | VANILLA)",
+    "model":"W’S GEL-MC PLUS (MONACO BLUE | VANILLA)",
     "price":"100",
     "gender":"female",
     "sizes":[35.5, 36.5, 37.5, 38, 38.5, 39]

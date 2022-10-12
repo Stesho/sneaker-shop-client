@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/cartSlice';
+import ValidationError from '../../components/validationError/ValidationError';
 import styles from './ProductPage.module.scss';
 import Input from '../../components/input/Input';
 import Select from '../../components/select/Select';
@@ -10,6 +13,10 @@ const ProductPage = ({products}) => {
   const {id} = useParams();
   const [isActive, setIsActive] = useState(false);
   const [product, setProduct] = useState(products.find((item) => item.id === Number(id)));
+  const [selectedSize, setSelectedSize] = useState(0);
+  const [isError, setIsError] = useState(false);
+  const navigation = useNavigate();
+  const dispatch = useDispatch();
   const minSize = 35;
   const maxSize = 48;
   const options = [
@@ -21,6 +28,16 @@ const ProductPage = ({products}) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const addProductToCart = () => {
+    if(!selectedSize) {
+      setIsError(true);
+      return;
+    }
+    const size = product.sizes.filter((item) => item === selectedSize);
+    dispatch(addToCart({...product, sizes: size}));
+    navigation('/cart');
+  }
 
   return (
     <main className={styles.main}>
@@ -75,6 +92,7 @@ const ProductPage = ({products}) => {
                     id={'size' + i}
                     name="brand"
                     disabled={product.sizes.indexOf(minSize + i/2) !== -1 ? false : true}
+                    onChange={() => setSelectedSize(minSize + i/2)}
                   />
                   <label disabled htmlFor={'size' + i}>{minSize + i/2}</label>
                 </li>
@@ -84,7 +102,8 @@ const ProductPage = ({products}) => {
           <button className={styles.info__subscription} onClick={() => setIsActive(true)}>
             Don't see your size? notify me when available.
           </button>
-          <Button2>Add to card</Button2>
+          {isError && <ValidationError message='Choose your size please'/>}
+          <Button2 onClick={() => addProductToCart()}>Add to card</Button2>
           <div className={styles.info__description}>
             {product.description}
           </div>

@@ -1,20 +1,16 @@
-import React, { useRef } from 'react';
-import { useEffect } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import useTheme from '../../hooks/useTheme';
 import styles from './Header.module.scss';
 
 const Header = () => {
+  const cart = useSelector(state => state.cart);
   const [theme, toggleTheme] = useTheme();
-  const toggleBtn = useRef();
 
   const setActive = ({isActive}) => {
     return isActive ? [styles.active, styles.link].join(' ') : styles.link;
   }
-
-  useEffect(() => {
-    toggleBtn.current.checked = theme === 'dark' ? true : false;
-  }, [theme]);
 
   return (
     <header className={styles.header}>
@@ -32,14 +28,24 @@ const Header = () => {
           </ul>
         </div>
         <div className={styles.userbar}>
-          <label className={styles.themeSwitcher}>
-            <input ref={toggleBtn} type="checkbox" onChange={(event) => toggleTheme(event.target.checked)}/>
-            <span className={styles.themeSwitcher__btn}></span>
-          </label>
+          <div className={styles.themeSwitcherWrapper}>
+            <div className={styles.themeSwitcherCaption}>Theme</div>
+            <label className={styles.themeSwitcher}>
+              <input
+                type="checkbox"
+                onChange={(event) => toggleTheme(event.target.checked)}
+                checked={theme === 'dark' ? true : false}
+              />
+              <div className={styles.themeSwitcher__btn} />
+              {/* <span className={styles.themeSwitcher__btn}></span> */}
+            </label>
+          </div>
           <ul className={styles.list}>
             <li className={styles.item}><NavLink to="/account" className={styles.link}>Account</NavLink></li>
             <li className={styles.item}><a href="#" className={styles.link}>Search</a></li>
-            <li className={styles.item}><a href="#" className={styles.link}>Cart</a></li>
+            <li className={styles.item}>
+              <NavLink to="/cart" className={styles.link}>Cart ({cart.products.length})</NavLink>
+            </li>
           </ul>
         </div>
       </div>
