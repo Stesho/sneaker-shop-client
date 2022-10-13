@@ -35,7 +35,7 @@ const ProductPage = ({products}) => {
       return;
     }
     const size = product.sizes.filter((item) => item === selectedSize);
-    dispatch(addToCart({...product, sizes: size}));
+    dispatch(addToCart({...product, sizes: size, count: 1}));
     navigation('/cart');
   }
 
@@ -110,7 +110,7 @@ const ProductPage = ({products}) => {
           <ul className={styles.info__additionList}>
             <li className={styles.info__additionItem}>Style: {product.style}</li>
             <li className={styles.info__additionItem}>All Sales Are Final. NO Cancellations, Returns, Exchanges or Merchandise Credit on this Special Release Product</li>
-            <li className={styles.info__additionItem}>Sizing listed in EU Men's</li>
+            <li className={styles.info__additionItem}>Sizing listed in EU {product.gender === 'male' ? "Men's" : "Women's"}</li>
           </ul>
         </div>
       </div>

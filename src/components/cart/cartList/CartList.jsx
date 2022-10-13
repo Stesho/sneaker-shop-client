@@ -1,9 +1,21 @@
-import React from 'react';
+import { React, useState } from 'react';
 import styles from './CartList.module.scss';
 import CartItem from '../cartItem/CartItem';
 import Button2 from '../../button/Button2';
+import { useEffect } from 'react';
 
 const CartList = ({products}) => {
+  const [total, setTotal] = useState(0);
+
+  const calculateTotal = () => {
+    const sum = products.reduce((sum, item) => sum + (item.count * item.price), 0);
+    setTotal(sum);
+  }
+
+  useEffect(() => {
+    calculateTotal();
+  }, [products]);
+
   return (
     <div className={styles.cartList}>
       <div className={styles.cartList__listHeader}>
@@ -13,12 +25,12 @@ const CartList = ({products}) => {
       </div>
       {products.map((item, index) => {
         return (
-          <CartItem item={item} key={item.id + index}/>
+          <CartItem item={item} calculateTotal={calculateTotal} key={index}/>
         )
       })}
       <div className={styles.checkout}>
         <div className={styles.checkout__total}>
-          TOTAL: $110
+          TOTAL: ${total}
         </div>
         <div className={styles.checkout__caption}>
           Shipping & taxes calculated at checkout

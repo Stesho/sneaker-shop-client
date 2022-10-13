@@ -1,7 +1,44 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateProductById, removeProductById } from '../../../store/cartSlice';
 import styles from './CartItem.module.scss';
 
-const CartItem = ({item}) => {
+const CartItem = ({item, calculateTotal}) => {
+  const [count, setCount] = useState(item.count);
+  const dispatch = useDispatch();
+
+  const updateProduct = (newCount) => {
+    dispatch(updateProductById({
+      id: item.id,
+      product: {
+        ...item,
+        count: newCount,
+      }
+    }));
+  }
+
+  const incrementCount = () => {
+    if(count < 99) {
+      setCount(count + 1);
+      updateProduct(count + 1);
+    }
+  }
+  
+  const decrementCount = () => {
+    if(count > 1) {
+      setCount(count - 1);
+      updateProduct(count - 1);
+    }
+  }
+  
+  const removeProduct = (id) => {
+    dispatch(removeProductById({id: id}));
+  }
+
+  useEffect(() => {
+    calculateTotal();
+  }, [count]);
+
   return (
     <div className={styles.cartItem}>
       <div className={styles.cartItem__product}>
@@ -22,22 +59,22 @@ const CartItem = ({item}) => {
       </div>
       <div className={styles.cartItem__quantity}>
         <div className={styles.counter}>
-          <button className={styles.counter__minus}>
+          <button className={styles.counter__minus} onClick={() => decrementCount()}>
             &ndash;
           </button>
           <div className={styles.counter__count}>
-            1
+            {count}
           </div>
-          <button className={styles.counter__plus}>
+          <button className={styles.counter__plus} onClick={() => incrementCount()}>
             +
           </button>
         </div>
-        <div className={styles.cartItem__remove}>
+        <button className={styles.cartItem__remove} onClick={() => removeProduct(item.id)}>
           Remove
-        </div>
+        </button>
       </div>
       <button className={styles.cartItem__price}>
-        ${item.price}
+        ${item.price * count}
       </button>
     </div>
   );
