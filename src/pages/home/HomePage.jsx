@@ -6,18 +6,22 @@ import Slider from '../../components/slider/Slider';
 import ProductCard from '../../components/productCard/ProductCard';
 import Button2 from '../../components/button/Button2';
 import Parallax from '../../components/parallax/Parallax';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const HomePage = ({products}) => {
   const [slides, setSlides] = useState([
-    {id: 1, imgUrl: 'assets/img/homePage/slide1.jpg', checked: true},
-    {id: 2, imgUrl: 'assets/img/homePage/slide2.jpg', checked: false},
-    {id: 3, imgUrl: 'assets/img/homePage/slide3.jpg', checked: false},
-    {id: 4, imgUrl: 'assets/img/homePage/slide4.jpg', checked: false},
+    {id: 1, imgUrl: 'assets/img/homePage/slide1.jpg', brand: 'Adidas collection', model: 'We are familia', checked: true},
+    {id: 2, imgUrl: 'assets/img/homePage/slide2.jpg', brand: 'Just dropped', model: "New in men's footwear", checked: false},
+    {id: 3, imgUrl: 'assets/img/homePage/slide3.jpg', brand: 'Just released styles', model: 'Jordan brand', checked: false},
+    {id: 4, imgUrl: 'assets/img/homePage/slide4.jpg', brand: 'Nike presents', model: 'Nike hight', checked: false},
   ]);
   const [productCards, setProductCards] = useState(products);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
   }, []);
 
   return (
@@ -29,9 +33,15 @@ const HomePage = ({products}) => {
       </section>
       <section className={styles.brandsWrapper}>
         <div className={[styles.container, styles.brands].join(' ')}>
-          <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
-          <BrandCard brandName={'Up nyc'} imgUrl={'brand2.jpg'} />
-          <BrandCard brandName={'Adidas'} imgUrl={'brand3.jpg'} />
+          <AnimationOnScroll animateIn="animate__fadeInLeft" animateOnce={true} offset={0}>
+            <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
+          </AnimationOnScroll>
+          <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true} offset={0}>
+            <BrandCard brandName={'Up nyc'} imgUrl={'brand2.jpg'} />
+          </AnimationOnScroll>
+          <AnimationOnScroll animateIn="animate__fadeInRight" animateOnce={true} offset={0}>
+            <BrandCard brandName={'Adidas'} imgUrl={'brand3.jpg'} />
+          </AnimationOnScroll>
         </div>
       </section>
       <section className={styles.sliderWrapper}>
@@ -58,17 +68,29 @@ const HomePage = ({products}) => {
       </section>
       <section className={styles.brandsWrapper}>
         <div className={[styles.container, styles.brands].join(' ')}>
-          <BrandCard brandName={'Sergio Tacchini'} imgUrl={'brand4.jpg'} />
-          <BrandCard brandName={'Paper planes'} imgUrl={'brand5.jpg'} />
-          <BrandCard brandName={'Honor the gift'} imgUrl={'brand6.jpg'} />
+          <AnimationOnScroll animateIn="animate__fadeInLeft" animateOnce={true} offset={0}>
+            <BrandCard brandName={'Sergio Tacchini'} imgUrl={'brand4.jpg'} />
+          </AnimationOnScroll>
+          <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true} offset={0}>
+            <BrandCard brandName={'Paper planes'} imgUrl={'brand5.jpg'} />
+          </AnimationOnScroll>
+          <AnimationOnScroll animateIn="animate__fadeInRight" animateOnce={true} offset={0}>
+            <BrandCard brandName={'Honor the gift'} imgUrl={'brand6.jpg'} />
+          </AnimationOnScroll>
         </div>
       </section>
       <Parallax height={400} imgUrl={'parallax.jpg'}/>
       <section className={styles.brandsWrapper}>
         <div className={[styles.container, styles.brands].join(' ')}>
-          <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
-          <BrandCard brandName={'Up nyc'} imgUrl={'brand2.jpg'} />
-          <BrandCard brandName={'Adidas'} imgUrl={'brand3.jpg'} />
+          <AnimationOnScroll animateIn="animate__fadeInLeft" animateOnce={true} offset={0}>
+            <BrandCard brandName={'Purple brand'} imgUrl={'brand1.jpg'} />
+          </AnimationOnScroll>
+          <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce={true} offset={0}>
+            <BrandCard brandName={'Up nyc'} imgUrl={'brand2.jpg'} />
+          </AnimationOnScroll>
+          <AnimationOnScroll animateIn="animate__fadeInRight" animateOnce={true} offset={50}>
+            <BrandCard brandName={'Adidas'} imgUrl={'brand3.jpg'} />
+          </AnimationOnScroll>
         </div>
       </section>
     </main>

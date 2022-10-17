@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './AccountPage.module.scss';
 import cookies from '../../services/cookies';
@@ -14,6 +14,13 @@ const AccountPage = () => {
     cookies.deleteCookie('token');
     navigate('/login');
   }
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
 
   return (
     <main className={styles.main}>

@@ -13,6 +13,7 @@ const Filter = ({products, setProductCards}) => {
   const sizeCheckbox = useRef(); 
   const minSize = 35;
   const maxSize = 48;
+  const sizes = [...new Array(2 * (maxSize - minSize) + 1)].map((_, index) => minSize + index/2);
   const [brandNames, setBrandNames] = useState([
     {id: 1, brand: 'Adidas'},
     {id: 2, brand: 'Asics'},
@@ -85,17 +86,17 @@ const Filter = ({products, setProductCards}) => {
       <div className={styles.filter__size}>
         <h3 className={styles.filter__sizeCaption}>Size</h3>
         <ul ref={sizeCheckbox} className={styles.filter__sizeList}>
-          {[...new Array(2 * (maxSize - minSize) + 1)].map((item, i) => {
+          {sizes.map((item, i) => {
             return (
-              <li key={i}>
+              <li key={item}>
                 <input
                   type="checkbox"
                   className={styles.filter__sizeCheckbox}
-                  id={'size' + i}
+                  id={'size' + item}
                   name="size"
-                  onChange={() => addToFilter('sizes', minSize + i/2)}
+                  onChange={() => addToFilter('sizes', item)}
                 />
-                <label htmlFor={'size' + i}>{minSize + i/2}</label>
+                <label htmlFor={'size' + item}>{item}</label>
               </li>
             )
           })}

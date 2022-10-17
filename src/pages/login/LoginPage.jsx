@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setIsAuth, setUserProps } from '../../store/userSlice';
 import axios from 'axios';
@@ -8,7 +8,6 @@ import cookies from '../../services/cookies';
 import Button2 from '../../components/button/Button2';
 import Input from '../../components/input/Input';
 import ValidationError from '../../components/validationError/ValidationError';
-
 import styles from './LoginPage.module.scss';
 
 const LoginPage = () => {
@@ -49,6 +48,13 @@ const LoginPage = () => {
     }
   }
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
+
   return (
     <main className={[styles.main, styles.loginWrapper].join(' ')}>
       <div className={styles.login}>
@@ -66,7 +72,7 @@ const LoginPage = () => {
             type="email"
             className={styles.login__input}
             placeholder={'Email'}
-            />
+          />
           {password.isInvalid() && <ValidationError message={password.validation.message}/>}
           <Input
             value={password.value}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Button2 from '../../components/button/Button2';
@@ -58,6 +58,13 @@ const RegisterPage = () => {
            email.validation.isError() ||
            password.validation.isError();
   }
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
 
   return (
     <main className={[styles.registerWrapper, styles.main].join(' ')}>

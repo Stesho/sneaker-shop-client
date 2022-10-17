@@ -12,6 +12,18 @@ const Header = () => {
     return isActive ? [styles.active, styles.link].join(' ') : styles.link;
   }
 
+  const scroll = () => {
+    const scrollHeight = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight,
+      document.body.clientHeight, document.documentElement.clientHeight
+    );
+    window.scrollTo({
+      top: scrollHeight,
+      behavior: 'smooth'
+    });
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -24,7 +36,7 @@ const Header = () => {
             <li className={styles.item}><NavLink to="/brands" className={setActive}>Brands</NavLink></li>
             <li className={styles.item}><NavLink to="/mens" className={setActive}>Men's</NavLink></li>
             <li className={styles.item}><NavLink to="/womans" className={setActive}>Women's</NavLink></li>
-            <li className={styles.item}><a href="#footer" className={styles.link}>Contacts</a></li>
+            <li className={styles.item}><a onClick={() => scroll()} className={styles.link}>Contacts</a></li>
           </ul>
         </div>
         <div className={styles.userbar}>

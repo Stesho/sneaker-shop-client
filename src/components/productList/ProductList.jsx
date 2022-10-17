@@ -5,7 +5,7 @@ import ProductCard from '../../components/productCard/ProductCard';
 import styles from './ProductList.module.scss';
 
 const ProductList = ({productCards}) => {
-  const itemsPerPage = 12;
+  const itemsPerPage = 4;
   const [activePage, setActivePage] = useState(0);
   const [firstIndex, setFirstIndex] = useState(0);
   const [lastIndex, setLastIndex]= useState(itemsPerPage);
@@ -13,7 +13,10 @@ const ProductList = ({productCards}) => {
   const pageCount = Math.ceil(productCards.length / itemsPerPage);
 
   const changePage = (page) => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
     setFirstIndex(page * itemsPerPage);
     setLastIndex((page + 1) * itemsPerPage);
     setActivePage(page);

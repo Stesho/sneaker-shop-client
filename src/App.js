@@ -12,7 +12,6 @@ import Overview from './components/account/overview/Overview';
 import MyOrders from './components/account/myOrders/MyOrders';
 import ChangePassword from './components/account/changePassword/ChangePassword';
 import PrivateRoutes from './services/PrivateRoutes';
-// import products from './assets/data/products.json';
 import axios from 'axios';
 import CartPage from './pages/cart/CartPage';
 

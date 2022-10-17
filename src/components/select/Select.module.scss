@@ -38,6 +38,7 @@
     border-left: 1px solid #d0d0d0;
     border-right: 1px solid #d0d0d0;
     background-color: var(--primary-light-color);
+    overflow: auto;
   }
   &__option {
     padding: 20px 45px;

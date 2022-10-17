@@ -9,7 +9,6 @@ import ProductList from '../../components/productList/ProductList';
 //TODO: Use scss variables for width and other
 //TODO: NotFound page
 //TODO: close modal on overlay click
-//TODO: modal sizes table
 //TODO: set max price 400
 
 const CollectionPage = ({title, products}) => {

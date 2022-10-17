@@ -33,6 +33,7 @@ const CartItem = ({item, calculateTotal}) => {
   
   const removeProduct = (id) => {
     dispatch(removeProductById({id: id}));
+    calculateTotal();
   }
 
   useEffect(() => {

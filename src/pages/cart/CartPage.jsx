@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import styles from './CartPage.module.scss';
@@ -7,7 +7,13 @@ import Button2 from '../../components/button/Button2';
 
 const CartPage = () => {
   const cart = useSelector(state => state.cart);
-  console.log(cart);
+  
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
 
   return (
     <main className={styles.main}>
