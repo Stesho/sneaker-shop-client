@@ -17,7 +17,7 @@ const CartPage = () => {
 
   return (
     <main className={styles.main}>
-      <h2 className={[styles.title, styles.title2].join(' ')}>Cart</h2>
+      <h2 className={[styles.pageTitle, styles.title2].join(' ')}>Cart</h2>
       <div className={styles.cart}>
         {cart.products.length === 0
         ? <div className={styles.emptyCart}>

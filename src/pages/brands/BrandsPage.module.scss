@@ -1,0 +1,72 @@
+@import '../../styles/global.scss';
+
+.brands {
+  display: flex;
+  justify-content: center;
+  // width: 800px;
+  margin: 0 auto;
+  padding: 35px;
+  flex-wrap: wrap;
+  gap: 50px 100px;
+}
+
+.brandCard {
+  position: relative;
+  width: 240px;
+  height: 250px;
+  perspective: 500px;
+  cursor: pointer;
+  &:hover img {
+    transform: rotateY(180deg);
+    border: 1px solid #d0d0d0;
+  }
+  &:hover &__description {
+    transform: rotateY(360deg);;
+  }
+  & img {
+    border-radius: 8px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0 20px;
+    backface-visibility: hidden;
+    background-color: var(--grey-100);
+    transition: 1s;
+  }
+  &__description {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    left: 0;
+    top: 0;
+    background-color: var(--primary-light-color);
+    border-radius: 8px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 1s;
+  }
+  &__descriptionText {
+    width: 100%;
+    height: 100%;
+    letter-spacing: normal;
+    overflow: auto;
+    span {
+      font-weight: 600;
+    }
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: var(--primary-color); 
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--secondary-color);  
+      border-radius: 5px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
+  }
+}

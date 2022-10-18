@@ -24,7 +24,7 @@ const AccountPage = () => {
 
   return (
     <main className={styles.main}>
-      <h2 className={[styles.title, styles.title2].join(' ')}>My account</h2>
+      <h2 className={[styles.pageTitle, styles.title2].join(' ')}>My account</h2>
       <div className={[styles.account, styles.account__content].join(' ')}>
         <nav className={styles.navigation}>
           {/* <span>Welcom back, Name</span> */}

@@ -21,7 +21,7 @@ const CollectionPage = ({title, products}) => {
 
   return (
     <main className={styles.main}>
-      <h2 className={[styles.title, styles.title2].join(' ')}>{title}</h2>
+      <h2 className={[styles.pageTitle, styles.title2].join(' ')}>{title}</h2>
       <div className={styles.toolbar}>
         <div className={styles.toolbar__layoutSwitcher}>
           <button className={styles.toolbar__switcher}>

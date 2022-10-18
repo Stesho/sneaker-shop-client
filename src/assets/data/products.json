@@ -123,61 +123,98 @@
 
 
   {
-    "imgUrls":"converse_A01798c_01_400x.jpg",
-    "brand":"Converse",
-    "model":"Converse x Golf Chuck 70 OX (Egret | Corydalis Blue)",
-    "price":"100",
-    "gender":"female",
+    "imgUrls":[
+      "nike_DX2305-100_01.webp",
+      "nike_DX2305-100_02.webp",
+      "nike_DX2305-100_03.webp"
+    ],
+    "brand":"Nike",
+    "model":"AIR FORCE 1 LOW '07 PREMIUM 40TH ANNIVERSARY EDITION BRONX ORIGINS",
+    "price":140,
+    "gender":"male",
     "sizes":[44, 44.5, 45, 45.5, 46],
-    "description":"Flash back to classic Reebok running style. These shoes have a comfortable dual-density midsole and a TPU shank that provides extra stability. The one-piece moulded upper has mesh inserts for a layered look. A geometric design adds style points.",
-    "sku":30197537,
-    "style":"GX4659"
+    "description":"The “Bronx Origins” style nods to the fact that the shoe and New York City go hand-in-hand, in particular in the “B.X.” The arrangement found on the sneaker is relatively straightforward, but details like brass jewelry-reminiscent lace dubraes, vinyl-inspired profile swooshes and “BRONX ORIGINS” text visible through the semi-translucent outsole inject a special quality to the kicks.",
+    "sku":30190660,
+    "style":"DX2305-100"
   },
   {
-    "id":10,
-    "imgUrls":"converse_166800c_01_dc87be06-76d9-4035-9dc2-b00e4526b009_400x.jpg",
-    "brand":"Converse",
-    "model":"WOMEN’S RUN STAR HIKE HI (BLACK | WHITE | GUM)",
-    "price":"100",
-    "gender":"female",
-    "sizes":[35, 35.5, 36, 36.5, 37, 37.5, 38, 38.5, 39, 40, 41.5]
+    "imgUrls":[
+      "asics_1201A677-100_01.webp",
+      "asics_1201A677-100_02.webp",
+      "asics_1201A677-100_03.webp"
+    ],
+    "brand":"Asics",
+    "model":"ASICS X PLEASURES GEL LYTE III OG",
+    "price":120,
+    "gender":"male",
+    "sizes":[35, 35.5, 36, 36.5, 37, 37.5, 38, 38.5, 39, 40, 41.5],
+    "description":"Los Angeles streetwear label, PLEASURES implements normcore influences into their rendition of the GEL-LYTE™ III OG sneaker.A piping detail over the seams is met with greyscale hues to represent the general space between black and white—where the PLEASURES design ethos exists.Key details include: suede overlays, pigskin nubuck ASICS Stripes, a terry cloth lining, and debossed PLEASURES logos on the heel counter.",
+    "sku":30200741,
+    "style":"1201A677-100"
   }, 
   {
-    "id":11,
-    "imgUrls":"newbalance_wtthierp6_01_600x.jpg",
-    "brand":"New balance",
-    "model":"FRESH FOAM HIERRO V6 GTX (GARNET)",
-    "price":"140",
-    "gender":"female",
-    "sizes":[35, 35.5, 36, 37, 38, 38.5, 39, 41]
-  },
-  {
-    "id":12,
-    "imgUrls":"nike-dm9461-100_01_600x.jpg",
+    "imgUrls":[
+      "nike_DM7926-300_01.webp",
+      "nike_DM7926-300_02.webp",
+      "nike_DM7926-300_03.webp"
+    ],
     "brand":"Nike",
-    "model":"AIR FORCE 1 (WHITE | SUMMIT WHITE | PHOTON DUST)",
-    "price":"110",
-    "gender":"female",
-    "sizes":[36, 36.5, 37, 37.5, 39, 40, 40.5]
+    "model":"NIKE X BILLIE EILISH AIR FORCE 1 HIGH '07",
+    "price":180,
+    "gender":"male",
+    "sizes":[35, 35.5, 36, 37, 38, 38.5, 39, 41],
+    "description":"Originally created for the hardwood, the Dunk later took to the streets—and as they say, the rest is history. More than 35 years after its debut, the silhouette still delivers bold, defiant style and remains a coveted look for crews across both sport and culture. Now, the university-hoops OG returns covered in crisp material overlays with heritage-inspired colour-blocking.",
+    "sku":30200390,
+    "style":"DM7926-300"
   },
   {
-    "id":13,
-    "imgUrls":"nike_dm8328-600_01_600x.jpg",
+    "imgUrls":[
+      "nike_dc7695-004_01.webp",
+      "nike_dc7695-004_02.webp",
+      "nike_dc7695-004_03.webp"
+    ],
     "brand":"Nike",
-    "model":"W’S AIR PRESTO (PINK OXFORD)",
-    "price":"130",
-    "gender":"female",
-    "sizes":[35, 35.5, 37, 37.5, 38, 39, 40, 41]
+    "model":"NIKE SB ZOOM BLAZER LOW PRO GT",
+    "price":80,
+    "gender":"male",
+    "sizes":[36, 36.5, 37, 37.5, 39, 40, 40.5],
+    "description":"If you were outside in the '90s, you know about this hiking classic. Originally designed in 1994, the Air Mada is breathable, durable and has functional pull tabs with low-key branding. Leaning into heritage ACG colours and original colour-blocking, the return of the Air Mada uses premium leathers and tooling for the modern adventurer.",
+    "sku":30199530,
+    "style":"DC7695-004"
   },
   {
-    "id":14,
-    "imgUrls":"asics_1202a045-400_01_600x.jpg",
+    "imgUrls":[
+      "asics_1201a440-301_01.webp",
+      "asics_1201a440-301_02.webp",
+      "asics_1201a440-301_03.webp"
+    ],
     "brand":"Asics",
-    "model":"W’S GEL-MC PLUS (MONACO BLUE | VANILLA)",
-    "price":"100",
-    "gender":"female",
-    "sizes":[35.5, 36.5, 37.5, 38, 38.5, 39]
+    "model":"HS4-S GEL SONOMA 15-50 GTX",
+    "price":150,
+    "gender":"male",
+    "sizes":[35, 35.5, 37, 37.5, 38, 39, 40, 41],
+    "description":"PE Nation reworks the GEL-1130™ sneaker from the late 2000s with a contemporary lacing system and color palette. The stability running shoe from 2008 was originally inspired by the GEL-KAYANO™ 14 sneaker, featuring similar aesthetics as the hero trainer. Its traditional materials have been repurposed with synthetic leather paneling to evolve the shoe with a more modern aesthetic.",
+    "sku":30198593,
+    "style":"1201A440-301"
   },
+  {
+    "imgUrls":[
+      "nike_dj2518-101_01.webp",
+      "nike_dj2518-101_02.webp",
+      "nike_dj2518-101_03.webp"
+    ],
+    "brand":"Nike",
+    "model":"NIKE AIR FLIGHT LITE MID",
+    "price":110,
+    "gender":"male",
+    "sizes":[35.5, 36.5, 37.5, 38, 38.5, 39],
+    "description":"Constructed with premium leather and hairy suede, this new 'Photon Dust' colorway of the Nike Air Max Penny 1 is a must-have in the collection. It comes equipped with visible Max Air units and signature foam overlays.",
+    "sku":30192635,
+    "style":"DX5801-001"
+  },
+
+
+  
   {
     "id":15,
     "imgUrls":"newbalance_U9060BRN_01_600x.jpg",
@@ -185,7 +222,10 @@
     "model":"NB 9060 (BROWN)",
     "price":"150",
     "gender":"male",
-    "sizes":[42, 42.5, 43, 43.5, 45, 47]
+    "sizes":[42, 42.5, 43, 43.5, 45, 47],
+    "description":"",
+    "sku":30190660,
+    "style":"DX2305-100"
   },
   {
     "id":16,
@@ -194,7 +234,10 @@
     "model":"Nike Air Trainer 1 (White Midnight Navy)",
     "price":"125",
     "gender":"male",
-    "sizes":[44, 44.5, 45, 45.5, 46, 46.5, 47]
+    "sizes":[44, 44.5, 45, 45.5, 46, 46.5, 47],
+    "description":"",
+    "sku":30190660,
+    "style":"DX2305-100"
   },
   {
     "id":17,
@@ -203,7 +246,10 @@
     "model":"Blaze of Glory The Neverworn (Whisper White)",
     "price":"140",
     "gender":"male",
-    "sizes":[40, 40.5, 41, 42, 43, 44, 45, 46, 46.5]
+    "sizes":[40, 40.5, 41, 42, 43, 44, 45, 46, 46.5],
+    "description":"",
+    "sku":30190660,
+    "style":"DX2305-100"
   },
   {
     "id":18,
@@ -212,7 +258,10 @@
     "model":"Club C Geo Mid (White | Chalk | Dark Green)",
     "price":"100",
     "gender":"male",
-    "sizes":[40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44, 44.5, 45, 45.5, 46, 46.5, 47]
+    "sizes":[40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44, 44.5, 45, 45.5, 46, 46.5, 47],
+    "description":"",
+    "sku":30190660,
+    "style":"DX2305-100"
   },
   {
     "id":19,
@@ -221,6 +270,9 @@
     "model":"Club C Geo Mid (Chalk | Flash Red | Vector Blue)",
     "price":"100",
     "gender":"male",
-    "sizes":[39, 39.5, 42, 43, 47]
+    "sizes":[39, 39.5, 42, 43, 47],
+    "description":"",
+    "sku":30190660,
+    "style":"DX2305-100"
   }
 ]

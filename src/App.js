@@ -14,6 +14,7 @@ import ChangePassword from './components/account/changePassword/ChangePassword';
 import PrivateRoutes from './services/PrivateRoutes';
 import axios from 'axios';
 import CartPage from './pages/cart/CartPage';
+import BrandsPage from './pages/brands/BrandsPage';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -43,7 +44,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage products={products}/>} />
         <Route path="/newarrivals" element={<HomePage products={products}/>} />
-        <Route path="/brands" element={<HomePage products={products}/>} />
+        <Route path="/brands" element={<BrandsPage/>} />
         <Route path="/mens" element={<CollectionPage title={"Men's collection"} products={products}/>} />
         <Route path="/womans" element={<CollectionPage title={"Womens's collection"} products={products.filter((item) => item.gender === 'female')}/>} />
         <Route path="/login" element={<LoginPage/>}/>
