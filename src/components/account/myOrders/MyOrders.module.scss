@@ -1,6 +1,7 @@
 @import '../../../styles/global.scss';
 
 .myOrders {
+  width: 100%;
   padding: 0 30px 30px 30px;
   &__icon {
     width: 30px;
@@ -20,12 +21,38 @@
     margin: 0 0 30px 0;
     letter-spacing: 0.05rem;
   }
+  &__listHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #d0d0d0;
+    span {
+      text-transform: uppercase;
+    }
+  }
+  &__productTitle {
+    max-width: 70%;
+    width: 100%;
+  } 
+  &__quantityTitle,
+  &__priceTitle {
+    max-width: 15%;
+    width: 100%;
+  }
+  &__quantityTitle {
+    text-align: center;
+  }
+  &__priceTitle {
+    text-align: right;
+  }
 }
 
 .noOrders {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   &__icon {
     width: 80px;
     height: 80px;
@@ -34,5 +61,13 @@
       height: 100%;
       fill: var(--secondary-color);
     }
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin: 0 0 5px 0;
+  }
+  &__caption {
+    margin: 0 0 25px 0;
   }
 }

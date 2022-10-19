@@ -119,9 +119,6 @@
     "sku":30197537,
     "style":"GX4659"
   },
-
-
-
   {
     "imgUrls":[
       "nike_DX2305-100_01.webp",
@@ -177,7 +174,7 @@
     "model":"NIKE SB ZOOM BLAZER LOW PRO GT",
     "price":80,
     "gender":"male",
-    "sizes":[36, 36.5, 37, 37.5, 39, 40, 40.5],
+    "sizes":[40, 40.5, 41, 42, 43, 44, 45, 46, 46.5],
     "description":"If you were outside in the '90s, you know about this hiking classic. Originally designed in 1994, the Air Mada is breathable, durable and has functional pull tabs with low-key branding. Leaning into heritage ACG colours and original colour-blocking, the return of the Air Mada uses premium leathers and tooling for the modern adventurer.",
     "sku":30199530,
     "style":"DC7695-004"
@@ -192,7 +189,7 @@
     "model":"HS4-S GEL SONOMA 15-50 GTX",
     "price":150,
     "gender":"male",
-    "sizes":[35, 35.5, 37, 37.5, 38, 39, 40, 41],
+    "sizes":[44, 44.5, 45, 45.5, 46, 46.5, 47],
     "description":"PE Nation reworks the GEL-1130™ sneaker from the late 2000s with a contemporary lacing system and color palette. The stability running shoe from 2008 was originally inspired by the GEL-KAYANO™ 14 sneaker, featuring similar aesthetics as the hero trainer. Its traditional materials have been repurposed with synthetic leather paneling to evolve the shoe with a more modern aesthetic.",
     "sku":30198593,
     "style":"1201A440-301"
@@ -207,72 +204,135 @@
     "model":"NIKE AIR FLIGHT LITE MID",
     "price":110,
     "gender":"male",
-    "sizes":[35.5, 36.5, 37.5, 38, 38.5, 39],
+    "sizes":[42, 42.5, 43, 43.5, 45, 47],
     "description":"Constructed with premium leather and hairy suede, this new 'Photon Dust' colorway of the Nike Air Max Penny 1 is a must-have in the collection. It comes equipped with visible Max Air units and signature foam overlays.",
     "sku":30192635,
     "style":"DX5801-001"
   },
 
 
+
+  {
+    "imgUrls":[
+      "nike_DX2678-100_01.webp",
+      "nike_DX2678-100_02.webp",
+      "nike_DX2678-100_03.webp"
+    ],
+    "brand":"Nike",
+    "model":"W AIR FORCE 1 '07",
+    "price":140,
+    "gender":"female",
+    "sizes":[35.5, 36.5, 37.5, 38, 38.5, 39],
+    "description":"Get going without a glitch in this retro-futuristic take on a '90s running icon. Taking inspiration from classic video games, we've unlocked next-level style with pixelated graphics and glow-in-the-dark details. Stretchy, 'hug your foot' fabric, Nike Air cushioning and an innovative heel cage bring the comfort so you can focus on the task at hand—whether that's AABA-ing, driving karts or smashing bricks.",
+    "sku":30190562,
+    "style":"DX2678-100"
+  },
+  {
+    "imgUrls":[
+      "nike_DR9842-400_01.webp",
+      "nike_DR9842-400_02.webp",
+      "nike_DR9842-400_03.webp"
+    ],
+    "brand":"Nike",
+    "model":"W SERENA WILLIAMS DESIGN CREW X AIR FORCE 1 LXX",
+    "price":140,
+    "gender":"female",
+    "sizes":[35, 35.5, 37, 37.5, 38, 39, 40, 41],
+    "description":"Fast, fluid, refreshing—the Air Max 97 celebrates its 25th anniversary with a cool colourway. The iconic design was famously inspired by Japanese bullet trains and water droplets, making the polished Metallic Silver mudguard and Chlorine Blue accents a perfect fit. Airy mesh keeps you cool, while full-length Nike Air cushioning keeps you riding aloft in first-class comfort.",
+    "sku":30193809,
+    "style":"DR9842-400"
+  },
+  {
+    "imgUrls":[
+      "nike_DM9073-300_01.webp",
+      "nike_DM9073-300_02.webp",
+      "nike_DM9073-300_03.webp"
+    ],
+    "brand":"Nike",
+    "model":"W NIKE AIR MAX FLYKNIT RACER",
+    "price":160,
+    "gender":"female",
+    "sizes":[36, 36.5, 37, 37.5, 39, 40, 40.5],
+    "description":"The Nike Air Max Flyknit Racer is an updated take on the futuristic model. Crafted from lightweight, breathable Flyknit for comfortable all-day wear.",
+    "sku":30192474,
+    "style":"DM9073-300"
+  },
+
+
   
   {
-    "id":15,
-    "imgUrls":"newbalance_U9060BRN_01_600x.jpg",
-    "brand":"New balance",
-    "model":"NB 9060 (BROWN)",
-    "price":"150",
-    "gender":"male",
-    "sizes":[42, 42.5, 43, 43.5, 45, 47],
-    "description":"",
-    "sku":30190660,
-    "style":"DX2305-100"
-  },
-  {
-    "id":16,
-    "imgUrls":"nike_dm0521-101_01_400x.jpg",
+    "imgUrls":[
+      "nike_dq1470-103_01.webp",
+      "nike_dq1470-103_02.webp",
+      "nike_dq1470-103_03.webp"
+    ],
     "brand":"Nike",
-    "model":"Nike Air Trainer 1 (White Midnight Navy)",
-    "price":"125",
-    "gender":"male",
-    "sizes":[44, 44.5, 45, 45.5, 46, 46.5, 47],
-    "description":"",
-    "sku":30190660,
-    "style":"DX2305-100"
-  },
-  {
-    "id":17,
-    "imgUrls":"puma_385629-01_400x.jpg",
-    "brand":"Puma",
-    "model":"Blaze of Glory The Neverworn (Whisper White)",
-    "price":"140",
-    "gender":"male",
-    "sizes":[40, 40.5, 41, 42, 43, 44, 45, 46, 46.5],
-    "description":"",
-    "sku":30190660,
-    "style":"DX2305-100"
-  },
-  {
-    "id":18,
-    "imgUrls":"reebok_gz4935_01_400x.jpg",
-    "brand":"Reebok",
-    "model":"Club C Geo Mid (White | Chalk | Dark Green)",
-    "price":"100",
-    "gender":"male",
+    "model":"W NIKE BLAZER LOW '77 JUMBO",
+    "price":95,
+    "gender":"female",
     "sizes":[40, 40.5, 41, 41.5, 42, 42.5, 43, 43.5, 44, 44.5, 45, 45.5, 46, 46.5, 47],
-    "description":"",
-    "sku":30190660,
-    "style":"DX2305-100"
+    "description":"This streetwear superstar gets revamped with jumbo-sized details. Harnessing the old-school look you love, the Nike Blazer Low '77 Jumbo features an oversized Swoosh design, extra-wide laces and thicker stitching.",
+    "sku":30191199,
+    "style":"DQ1470-103"
   },
   {
-    "id":19,
-    "imgUrls":"reebok_gz4936_01_400x.jpg",
-    "brand":"Reebok",
-    "model":"Club C Geo Mid (Chalk | Flash Red | Vector Blue)",
-    "price":"100",
-    "gender":"male",
+    "imgUrls":[
+      "nike_dv1031-030_01.webp",
+      "nike_dv1031-030_02.webp",
+      "nike_dv1031-030_03.webp"
+    ],
+    "brand":"Nike",
+    "model":"W AIR FORCE 1 '07 LX",
+    "price":105,
+    "gender":"female",
     "sizes":[39, 39.5, 42, 43, 47],
-    "description":"",
-    "sku":30190660,
-    "style":"DX2305-100"
+    "description":"This streetwear superstar gets revamped with jumbo-sized details. Harnessing the old-school look you love, the Nike Blazer Low '77 Jumbo features an oversized Swoosh design, extra-wide laces and thicker stitching.",
+    "sku":30198827,
+    "style":"DV1031-030"
+  },
+  {
+    "imgUrls":[
+      "puma_38411401_01.webp",
+      "puma_38411401_02.webp",
+      "puma_38411401_03.webp"
+    ],
+    "brand":"Puma",
+    "model":"PUMA X LIBERTY BASKET VTG",
+    "price":120,
+    "gender":"female",
+    "sizes":[39, 39.5, 42, 43, 47],
+    "description":"PUMA teamed up with the legendary Kenny Burns to create this handpainted limited edition shoe. The Iconic GV Special has been reimagined with fresh colors designed in collaboration with Alexander John, the WORK SMARTA & HARDER pack represents the two major cities in Kenny Burns’s life, Washington DC and Atlanta.",
+    "sku":30199044,
+    "style":"38411401"
+  },
+  {
+    "imgUrls":[
+      "puma_38587502_01.webp",
+      "puma_38587502_02.webp",
+      "puma_38587502_03.webp"
+    ],
+    "brand":"Puma",
+    "model":"PUMA X NANAMICA GORETEX SUEDE",
+    "price":150,
+    "gender":"female",
+    "sizes":[39, 39.5, 42, 43, 47],
+    "description":"PUMA teamed up with the legendary Kenny Burns to create this handpainted limited edition shoe. The Iconic GV Special has been reimagined with fresh colors designed in collaboration with Alexander John, the WORK SMARTA & HARDER pack represents the two major cities in Kenny Burns’s life, Washington DC and Atlanta.",
+    "sku":30200184,
+    "style":"38587502"
+  },
+  {
+    "imgUrls":[
+      "converse_172481c_01.webp",
+      "converse_172481c_02.webp",
+      "converse_172481c_03.webp"
+    ],
+    "brand":"Converse",
+    "model":"SPACE JAM PRO LEATHER LOW",
+    "price":120,
+    "gender":"female",
+    "sizes":[39, 39.5, 42, 43, 47],
+    "description":"Get into the game with the Space Jam collection! With a new all-star for a new generation, LeBron James and the Tune Squad are ready for action! Space Jam Pro Leather features a Lola Bunny theme with embroidery and faux rabbit fur.",
+    "sku":30175428,
+    "style":"172481C"
   }
 ]

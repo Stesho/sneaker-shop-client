@@ -2,9 +2,13 @@ import { React, useEffect } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './AccountPage.module.scss';
 import cookies from '../../services/cookies';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearOrders, setIsAuth } from '../../store/userSlice';
 
 const AccountPage = () => {
   const navigate = useNavigate();
+  const user = useSelector(state => state.user);
+  const dispatch = useDispatch();
 
   const setActive = ({isActive}) => {
     return isActive ? [styles.active, styles.navigation__link].join(' ') : styles.navigation__link;
@@ -12,6 +16,10 @@ const AccountPage = () => {
 
   const signOut = () => {
     cookies.deleteCookie('token');
+
+    dispatch(setIsAuth(false));
+    dispatch(clearOrders());
+
     navigate('/login');
   }
 

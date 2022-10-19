@@ -49,7 +49,6 @@ const Header = () => {
                 checked={theme === 'dark' ? true : false}
               />
               <div className={styles.themeSwitcher__btn} />
-              {/* <span className={styles.themeSwitcher__btn}></span> */}
             </label>
           </div>
           <ul className={styles.list}>
